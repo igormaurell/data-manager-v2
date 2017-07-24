@@ -11,10 +11,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = data-manager-v2
 TEMPLATE = app
 
-INCLUDEPATH += comunication \
-               vision-manager \
+INCLUDEPATH += vision-manager \
                feedback-manager \
-               visualization
+               entities
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked as deprecated (the exact warnings
@@ -30,15 +29,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
            mainwindow.cpp \
-           robot.cpp \
-           ball.cpp \
+           entities/robot.cpp \
+           entities/ball.cpp \
            feedback-manager/feedbackManager.cpp \
-    vision-manager/visionManager.cpp
+           vision-manager/visionManager.cpp
 
 HEADERS  += mainwindow.h \
-            robot.h \
-            ball.h \
+            entities/robot.h \
+            entities/ball.h \
             feedback-manager/feedbackManager.h \
-    vision-manager/visionManager.h
+            vision-manager/visionManager.h \
+            definitions.h
 
 FORMS    += mainwindow.ui
