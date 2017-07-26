@@ -13,12 +13,6 @@ private:
     Mat_<float> state_v; //visualized state (from vision-manager)
     float confiability_v; //confiability of visualization (from vision-manager)
 
-    /*Feedback data*/
-    Mat_<float> velocity;
-    float capacitor_charge;
-    float batery_charge;
-    float orientation;
-
     /*Control*/
     int frames_in;
     int frames_out;

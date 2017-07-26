@@ -32,13 +32,17 @@ SOURCES += main.cpp\
            entities/robot.cpp \
            entities/ball.cpp \
            feedback-manager/feedbackManager.cpp \
-           vision-manager/visionManager.cpp
+           vision-manager/visionManager.cpp \
+    entities/teamRobot.cpp \
+    entities/enemyRobot.cpp
 
 HEADERS  += mainwindow.h \
             entities/robot.h \
             entities/ball.h \
             feedback-manager/feedbackManager.h \
             vision-manager/visionManager.h \
-            definitions.h
+            definitions.h \
+    entities/teamRobot.h \
+    entities/enemyRobot.h
 
 FORMS    += mainwindow.ui
