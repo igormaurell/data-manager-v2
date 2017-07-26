@@ -5,10 +5,12 @@
 
 class EnemyRobot : public Robot
 {
-private:
-    Mat_<float> velocity;
 public:
     EnemyRobot(int _id);
+
+    /*Setters*/
+    void setVisionData(Mat_<float> &_state, float _confiability);
+
 };
 
 #endif // ENEMYROBOT_H

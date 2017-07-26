@@ -9,23 +9,36 @@ Robot::Robot(int _id)
     state_v = Mat_<float>(3,1);
     confiability_v = 0;
 
+    velocity = Mat_<float>(3,1);
+
     frames_in = frames_out = 0;
 }
 
-/*Seters*/
-void Robot::setVisionData(Mat_<float> &_position, float _confiability)
+
+/*Setters*/
+void Robot::setVisionData(Mat_<float> &_state, float _confiability)
 {
-    state_v = _position;
+    state_v = _state.clone();
     confiability_v = _confiability;
 }
 
-void Robot::setFeedbackData(Mat_<float> &_velocity, float _cg, float _bc, float _orientation)
-{
-    velocity = _velocity;
-    capacitor_charge = _cg;
-    batery_charge = _bc;
-    orientation = _orientation;
+/*Getters*/
+int Robot::getId(){
+    return id;
 }
+
+Mat_<float> Robot::getState(){
+    return state.clone();
+}
+
+float Robot::getConfiability(){
+    return confiability_v;
+}
+
+Mat_<float> Robot::getVelocity(){
+    return velocity;
+}
+
 
 /*Control methods*/
 bool Robot::founded()

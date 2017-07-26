@@ -6,14 +6,21 @@
 class TeamRobot : public Robot
 {
 private:
-    /*Feedback data*/
-    Mat_<float> velocity;
+    /*Final data (from feedback-manager)*/
     float capacitor_charge;
     float batery_charge;
     float orientation;
 
 public:
     TeamRobot(int _id);
+
+    /*Setters*/
+    void setFeedbackData(Mat_<float> &_velocity, float _cg, float _bc, float _orientation);
+
+    /*Getters*/
+    float getCapacitorCharge();
+    float getBateryCharge();
+    float getOrientetion();
 };
 
 #endif // TEAMROBOT_H

@@ -1,7 +1,15 @@
 #include "enemyRobot.h"
 
-EnemyRobot::EnemyRobot(int _id)
+/*Constructor*/
+EnemyRobot::EnemyRobot(int _id): Robot(_id){}
+
+/*Setters*/
+void EnemyRobot::setVisionData(Mat_<float> &_state, float _confiability)
 {
-    Robot:Robot(_id);
-    velocity = Mat_<float>(3,1);
+    Mat_<float> last_state_v;
+    last_state_v = state_v.clone();
+
+    EnemyRobot::setVisionData(_state, _confiability);
+
+    //velocity
 }

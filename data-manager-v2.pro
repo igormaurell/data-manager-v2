@@ -33,16 +33,18 @@ SOURCES += main.cpp\
            entities/ball.cpp \
            feedback-manager/feedbackManager.cpp \
            vision-manager/visionManager.cpp \
-    entities/teamRobot.cpp \
-    entities/enemyRobot.cpp
+           entities/teamRobot.cpp \
+           entities/enemyRobot.cpp
 
-HEADERS  += mainwindow.h \
-            entities/robot.h \
-            entities/ball.h \
-            feedback-manager/feedbackManager.h \
-            vision-manager/visionManager.h \
-            definitions.h \
-    entities/teamRobot.h \
-    entities/enemyRobot.h
+HEADERS += mainwindow.h \
+           entities/robot.h \
+           entities/ball.h \
+           feedback-manager/feedbackManager.h \
+           vision-manager/visionManager.h \
+           definitions.h \
+           entities/teamRobot.h \
+           entities/enemyRobot.h
+
+LIBS += `pkg-config --libs --cflags opencv`
 
 FORMS    += mainwindow.ui

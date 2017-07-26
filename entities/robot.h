@@ -6,24 +6,35 @@
 class Robot
 {
 private:
-    int id;
+    int id; //Id of the robot
+
+    /*Control data*/
+    int frames_in; //number of frames inside the field
+    int frames_out; //number of frames outside the field
+
+protected:
+    /*Final data*/
+    Mat_<float> state; //final state (after kalman or particle-filter)
+    Mat_<float> velocity; //velocity of a robot (from feedback-manager or position vector difference)
+    //final confiability will be a covariance matrix
 
     /*Vision data*/
-    Mat_<float> state; //final state (after kalman or particle-filter)
     Mat_<float> state_v; //visualized state (from vision-manager)
     float confiability_v; //confiability of visualization (from vision-manager)
-
-    /*Control*/
-    int frames_in;
-    int frames_out;
 
 public:
     Robot(int id);
 
-    /*Seters*/
-    void setVisionData(Mat_<float> &_position, float _confiability);
+    /*Setters*/
+    void setVisionData(Mat_<float> &_state, float _confiability); //method to set all of the vision data
 
-    /*Control functions*/
+    /*Getters*/
+    int getId();
+    Mat_<float> getState();
+    float getConfiability();
+    Mat_<float> getVelocity();
+
+    /*Control methods*/
     bool founded(); //verify if the robot is playing
     void operator ++(); //increases frames_in and put 0 on frames_out
     void operator --(); //increases frames_out and put 0 on frames_in
