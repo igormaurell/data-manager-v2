@@ -1,0 +1,13 @@
+message PacoteVelocidades{
+  required uint32 id           =  1;                     //id do robo
+  required float  vx           =  2;                     //posicao x do robo
+  required float  vy           =  3;                     //posicao y do robo
+  required float  vtheta       =  4;                     //orientacao o robo
+}
+
+
+message PacoteIAGerenteDados{
+    required uint32                 numFrame       = 1;
+    repeated PacoteVelocidades      velocidades    = 2;    //pacote velocidades
+}
+
