@@ -16,28 +16,35 @@ protected:
     /*Final data*/
     Mat_<float> state; //final state (after kalman or particle-filter)
     Mat_<float> velocity; //velocity of a robot (from feedback-manager or position vector difference)
-    //final confiability will be a covariance matrix
+    //final confidence will be a covariance matrix
 
     /*Vision data*/
     Mat_<float> state_v; //visualized state (from vision-manager)
-    float confiability_v; //confiability of visualization (from vision-manager)
+    float confidence_v; //confidence of visualization (from vision-manager)
 
 public:
     Robot(int id);
 
     /*Setters*/
-    void setVisionData(Mat_<float> &_state, float _confiability); //method to set all of the vision data
+    void setVisionData(Mat_<float> &_state, float _confidence); //method to set all of the vision data
 
     /*Getters*/
     int getId();
     Mat_<float> getState();
-    float getConfiability();
+    float getconfidence();
     Mat_<float> getVelocity();
 
     /*Control methods*/
-    bool founded(); //verify if the robot is playing
+    bool found(); //verify if the robot is playing
     void operator ++(); //increases frames_in and put 0 on frames_out
     void operator --(); //increases frames_out and put 0 on frames_in
+};
+
+struct visionRobot{
+    visionRobot():id(-1), found(false), confidence(0.f){}
+    int id;
+    float x, y, orientation, confidence;
+    bool found;
 };
 
 #endif // ROBOT_H

@@ -7,7 +7,7 @@ Robot::Robot(int _id)
 
     state = Mat_<float>(3,1);
     state_v = Mat_<float>(3,1);
-    confiability_v = 0;
+    confidence_v = 0;
 
     velocity = Mat_<float>(3,1);
 
@@ -16,10 +16,10 @@ Robot::Robot(int _id)
 
 
 /*Setters*/
-void Robot::setVisionData(Mat_<float> &_state, float _confiability)
+void Robot::setVisionData(Mat_<float> &_state, float _confidence)
 {
     state_v = _state.clone();
-    confiability_v = _confiability;
+    confidence_v = _confidence;
 }
 
 /*Getters*/
@@ -31,8 +31,8 @@ Mat_<float> Robot::getState(){
     return state.clone();
 }
 
-float Robot::getConfiability(){
-    return confiability_v;
+float Robot::getconfidence(){
+    return confidence_v;
 }
 
 Mat_<float> Robot::getVelocity(){

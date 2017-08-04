@@ -7,16 +7,16 @@ Ball::Ball()
     velocity = Mat_<float>(2,1);
 
     state_v = Mat_<float>(3,1);
-    confiability_v = 0;
+    confidence_v = 0;
 }
 
 /*Setters*/
-void Ball::setVisionData(Mat_<float> &_state, float _confiability)
+void Ball::setVisionData(Mat_<float> &_state, float _confidence)
 {
     Mat_<float> last_state_v;
     last_state_v = Mat_<float>(3,1);
     state_v = _state.clone();
-    confiability_v = _confiability;
+    confidence_v = _confidence;
 
     //velocity
 }
@@ -34,6 +34,6 @@ Mat_<float> Ball::getVelocity()
 
 float Ball::getConfibility()
 {
-    return confiability_v;
+    return confidence_v;
 }
 
