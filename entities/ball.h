@@ -12,13 +12,13 @@ private:
 
     /*Vision data*/
     Mat_<float> state_v;
-    float confiability_v;
+    float confidence_v;
 
 public:
     Ball();
 
     /*Setters*/
-    void setVisionData(Mat_<float> &_state, float _confiability);
+    void setVisionData(Mat_<float> &_state, float _confidence);
 
     /*Getters*/
     Mat_<float> getState();

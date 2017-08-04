@@ -9,7 +9,7 @@ public:
     EnemyRobot(int _id);
 
     /*Setters*/
-    void setVisionData(Mat_<float> &_state, float _confiability);
+    void setVisionData(Mat_<float> &_state, float _confidence);
 
 };
 
