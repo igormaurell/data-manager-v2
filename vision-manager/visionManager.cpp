@@ -105,7 +105,7 @@ void VisionManager::updateEntities()
     /*Robots*/
     //TEAM_COLOR going to be picked up from the interface
     if(TEAM_COLOR==Blue){
-        Mat robot_state;
+        Mat_<float> robot_state;
         int i;
         for(i = 0;i<MAX_ID_ROBOTS;i++){
             if(blue_v[i].found){
@@ -134,7 +134,7 @@ void VisionManager::updateEntities()
         }
     }
     else{
-        Mat robot_state;
+        Mat_<float> robot_state;
         int i;
         for(i = 0;i<MAX_ID_ROBOTS;i++){
             if(yellow_v[i].found){

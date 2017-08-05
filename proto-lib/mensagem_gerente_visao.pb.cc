@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -31,6 +32,7 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 }  // namespace
 
 
+void protobuf_AssignDesc_mensagem_5fgerente_5fvisao_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_mensagem_5fgerente_5fvisao_2eproto() {
   protobuf_AddDesc_mensagem_5fgerente_5fvisao_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -44,16 +46,16 @@ void protobuf_AssignDesc_mensagem_5fgerente_5fvisao_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteBola, z_),
   };
   PacoteBola_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       PacoteBola_descriptor_,
       PacoteBola::default_instance_,
       PacoteBola_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteBola, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteBola, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(PacoteBola));
+      -1,
+      sizeof(PacoteBola),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteBola, _internal_metadata_),
+      -1);
   PacoteRobo_descriptor_ = file->message_type(1);
   static const int PacoteRobo_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteRobo, id_),
@@ -62,16 +64,16 @@ void protobuf_AssignDesc_mensagem_5fgerente_5fvisao_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteRobo, orientation_),
   };
   PacoteRobo_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       PacoteRobo_descriptor_,
       PacoteRobo::default_instance_,
       PacoteRobo_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteRobo, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteRobo, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(PacoteRobo));
+      -1,
+      sizeof(PacoteRobo),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteRobo, _internal_metadata_),
+      -1);
   PacoteVisao_descriptor_ = file->message_type(2);
   static const int PacoteVisao_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteVisao, numeroframe_),
@@ -81,16 +83,16 @@ void protobuf_AssignDesc_mensagem_5fgerente_5fvisao_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteVisao, robosadversarios_),
   };
   PacoteVisao_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       PacoteVisao_descriptor_,
       PacoteVisao::default_instance_,
       PacoteVisao_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteVisao, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteVisao, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(PacoteVisao));
+      -1,
+      sizeof(PacoteVisao),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteVisao, _internal_metadata_),
+      -1);
 }
 
 namespace {
@@ -101,14 +103,15 @@ inline void protobuf_AssignDescriptorsOnce() {
                  &protobuf_AssignDesc_mensagem_5fgerente_5fvisao_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    PacoteBola_descriptor_, &PacoteBola::default_instance());
+      PacoteBola_descriptor_, &PacoteBola::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    PacoteRobo_descriptor_, &PacoteRobo::default_instance());
+      PacoteRobo_descriptor_, &PacoteRobo::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    PacoteVisao_descriptor_, &PacoteVisao::default_instance());
+      PacoteVisao_descriptor_, &PacoteVisao::default_instance());
 }
 
 }  // namespace
@@ -122,6 +125,7 @@ void protobuf_ShutdownFile_mensagem_5fgerente_5fvisao_2eproto() {
   delete PacoteVisao_reflection_;
 }
 
+void protobuf_AddDesc_mensagem_5fgerente_5fvisao_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AddDesc_mensagem_5fgerente_5fvisao_2eproto() {
   static bool already_here = false;
   if (already_here) return;
@@ -157,14 +161,14 @@ struct StaticDescriptorInitializer_mensagem_5fgerente_5fvisao_2eproto {
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int PacoteBola::kXFieldNumber;
 const int PacoteBola::kYFieldNumber;
 const int PacoteBola::kZFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 PacoteBola::PacoteBola()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:PacoteBola)
 }
@@ -173,7 +177,8 @@ void PacoteBola::InitAsDefaultInstance() {
 }
 
 PacoteBola::PacoteBola(const PacoteBola& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:PacoteBola)
@@ -214,33 +219,46 @@ const PacoteBola& PacoteBola::default_instance() {
 
 PacoteBola* PacoteBola::default_instance_ = NULL;
 
-PacoteBola* PacoteBola::New() const {
-  return new PacoteBola;
+PacoteBola* PacoteBola::New(::google::protobuf::Arena* arena) const {
+  PacoteBola* n = new PacoteBola;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void PacoteBola::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<PacoteBola*>(16)->f) - \
-   reinterpret_cast<char*>(16))
+// @@protoc_insertion_point(message_clear_start:PacoteBola)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(PacoteBola, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<PacoteBola*>(16)->f)
+#endif
 
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
 
   ZR_(x_, z_);
 
-#undef OFFSET_OF_FIELD_
+#undef ZR_HELPER_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool PacoteBola::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:PacoteBola)
   for (;;) {
@@ -332,15 +350,15 @@ void PacoteBola::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->z(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:PacoteBola)
 }
 
-::google::protobuf::uint8* PacoteBola::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* PacoteBola::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:PacoteBola)
   // required float x = 1;
   if (has_x()) {
@@ -357,7 +375,7 @@ void PacoteBola::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->z(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -365,27 +383,42 @@ void PacoteBola::SerializeWithCachedSizes(
   return target;
 }
 
-int PacoteBola::ByteSize() const {
+int PacoteBola::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:PacoteBola)
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (has_x()) {
     // required float x = 1;
-    if (has_x()) {
-      total_size += 1 + 4;
-    }
+    total_size += 1 + 4;
+  }
+
+  if (has_y()) {
+    // required float y = 2;
+    total_size += 1 + 4;
+  }
+
+  return total_size;
+}
+int PacoteBola::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:PacoteBola)
+  int total_size = 0;
+
+  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
+    // required float x = 1;
+    total_size += 1 + 4;
 
     // required float y = 2;
-    if (has_y()) {
-      total_size += 1 + 4;
-    }
+    total_size += 1 + 4;
 
-    // optional float z = 3;
-    if (has_z()) {
-      total_size += 1 + 4;
-    }
-
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (!unknown_fields().empty()) {
+  // optional float z = 3;
+  if (has_z()) {
+    total_size += 1 + 4;
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -397,19 +430,27 @@ int PacoteBola::ByteSize() const {
 }
 
 void PacoteBola::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const PacoteBola* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const PacoteBola*>(
-      &from);
+// @@protoc_insertion_point(generalized_merge_from_start:PacoteBola)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const PacoteBola* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const PacoteBola>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:PacoteBola)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:PacoteBola)
     MergeFrom(*source);
   }
 }
 
 void PacoteBola::MergeFrom(const PacoteBola& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:PacoteBola)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_x()) {
       set_x(from.x());
@@ -421,16 +462,20 @@ void PacoteBola::MergeFrom(const PacoteBola& from) {
       set_z(from.z());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void PacoteBola::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:PacoteBola)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PacoteBola::CopyFrom(const PacoteBola& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:PacoteBola)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -443,14 +488,16 @@ bool PacoteBola::IsInitialized() const {
 }
 
 void PacoteBola::Swap(PacoteBola* other) {
-  if (other != this) {
-    std::swap(x_, other->x_);
-    std::swap(y_, other->y_);
-    std::swap(z_, other->z_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void PacoteBola::InternalSwap(PacoteBola* other) {
+  std::swap(x_, other->x_);
+  std::swap(y_, other->y_);
+  std::swap(z_, other->z_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata PacoteBola::GetMetadata() const {
@@ -461,18 +508,94 @@ void PacoteBola::Swap(PacoteBola* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// PacoteBola
+
+// required float x = 1;
+bool PacoteBola::has_x() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void PacoteBola::set_has_x() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void PacoteBola::clear_has_x() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void PacoteBola::clear_x() {
+  x_ = 0;
+  clear_has_x();
+}
+ float PacoteBola::x() const {
+  // @@protoc_insertion_point(field_get:PacoteBola.x)
+  return x_;
+}
+ void PacoteBola::set_x(float value) {
+  set_has_x();
+  x_ = value;
+  // @@protoc_insertion_point(field_set:PacoteBola.x)
+}
+
+// required float y = 2;
+bool PacoteBola::has_y() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void PacoteBola::set_has_y() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void PacoteBola::clear_has_y() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void PacoteBola::clear_y() {
+  y_ = 0;
+  clear_has_y();
+}
+ float PacoteBola::y() const {
+  // @@protoc_insertion_point(field_get:PacoteBola.y)
+  return y_;
+}
+ void PacoteBola::set_y(float value) {
+  set_has_y();
+  y_ = value;
+  // @@protoc_insertion_point(field_set:PacoteBola.y)
+}
+
+// optional float z = 3;
+bool PacoteBola::has_z() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void PacoteBola::set_has_z() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void PacoteBola::clear_has_z() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void PacoteBola::clear_z() {
+  z_ = 0;
+  clear_has_z();
+}
+ float PacoteBola::z() const {
+  // @@protoc_insertion_point(field_get:PacoteBola.z)
+  return z_;
+}
+ void PacoteBola::set_z(float value) {
+  set_has_z();
+  z_ = value;
+  // @@protoc_insertion_point(field_set:PacoteBola.z)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int PacoteRobo::kIdFieldNumber;
 const int PacoteRobo::kXFieldNumber;
 const int PacoteRobo::kYFieldNumber;
 const int PacoteRobo::kOrientationFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 PacoteRobo::PacoteRobo()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:PacoteRobo)
 }
@@ -481,7 +604,8 @@ void PacoteRobo::InitAsDefaultInstance() {
 }
 
 PacoteRobo::PacoteRobo(const PacoteRobo& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:PacoteRobo)
@@ -523,33 +647,46 @@ const PacoteRobo& PacoteRobo::default_instance() {
 
 PacoteRobo* PacoteRobo::default_instance_ = NULL;
 
-PacoteRobo* PacoteRobo::New() const {
-  return new PacoteRobo;
+PacoteRobo* PacoteRobo::New(::google::protobuf::Arena* arena) const {
+  PacoteRobo* n = new PacoteRobo;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void PacoteRobo::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<PacoteRobo*>(16)->f) - \
-   reinterpret_cast<char*>(16))
+// @@protoc_insertion_point(message_clear_start:PacoteRobo)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(PacoteRobo, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<PacoteRobo*>(16)->f)
+#endif
 
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
 
   ZR_(id_, orientation_);
 
-#undef OFFSET_OF_FIELD_
+#undef ZR_HELPER_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool PacoteRobo::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:PacoteRobo)
   for (;;) {
@@ -661,15 +798,15 @@ void PacoteRobo::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->orientation(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:PacoteRobo)
 }
 
-::google::protobuf::uint8* PacoteRobo::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* PacoteRobo::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:PacoteRobo)
   // required uint32 id = 1;
   if (has_id()) {
@@ -691,7 +828,7 @@ void PacoteRobo::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->orientation(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -699,34 +836,57 @@ void PacoteRobo::SerializeWithCachedSizes(
   return target;
 }
 
-int PacoteRobo::ByteSize() const {
+int PacoteRobo::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:PacoteRobo)
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (has_id()) {
     // required uint32 id = 1;
-    if (has_id()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->id());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->id());
+  }
+
+  if (has_x()) {
+    // required float x = 2;
+    total_size += 1 + 4;
+  }
+
+  if (has_y()) {
+    // required float y = 3;
+    total_size += 1 + 4;
+  }
+
+  if (has_orientation()) {
+    // required float orientation = 4;
+    total_size += 1 + 4;
+  }
+
+  return total_size;
+}
+int PacoteRobo::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:PacoteRobo)
+  int total_size = 0;
+
+  if (((_has_bits_[0] & 0x0000000f) ^ 0x0000000f) == 0) {  // All required fields are present.
+    // required uint32 id = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->id());
 
     // required float x = 2;
-    if (has_x()) {
-      total_size += 1 + 4;
-    }
+    total_size += 1 + 4;
 
     // required float y = 3;
-    if (has_y()) {
-      total_size += 1 + 4;
-    }
+    total_size += 1 + 4;
 
     // required float orientation = 4;
-    if (has_orientation()) {
-      total_size += 1 + 4;
-    }
+    total_size += 1 + 4;
 
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -738,19 +898,27 @@ int PacoteRobo::ByteSize() const {
 }
 
 void PacoteRobo::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const PacoteRobo* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const PacoteRobo*>(
-      &from);
+// @@protoc_insertion_point(generalized_merge_from_start:PacoteRobo)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const PacoteRobo* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const PacoteRobo>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:PacoteRobo)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:PacoteRobo)
     MergeFrom(*source);
   }
 }
 
 void PacoteRobo::MergeFrom(const PacoteRobo& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:PacoteRobo)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_id()) {
       set_id(from.id());
@@ -765,16 +933,20 @@ void PacoteRobo::MergeFrom(const PacoteRobo& from) {
       set_orientation(from.orientation());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void PacoteRobo::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:PacoteRobo)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PacoteRobo::CopyFrom(const PacoteRobo& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:PacoteRobo)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -787,15 +959,17 @@ bool PacoteRobo::IsInitialized() const {
 }
 
 void PacoteRobo::Swap(PacoteRobo* other) {
-  if (other != this) {
-    std::swap(id_, other->id_);
-    std::swap(x_, other->x_);
-    std::swap(y_, other->y_);
-    std::swap(orientation_, other->orientation_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void PacoteRobo::InternalSwap(PacoteRobo* other) {
+  std::swap(id_, other->id_);
+  std::swap(x_, other->x_);
+  std::swap(y_, other->y_);
+  std::swap(orientation_, other->orientation_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata PacoteRobo::GetMetadata() const {
@@ -806,19 +980,119 @@ void PacoteRobo::Swap(PacoteRobo* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// PacoteRobo
+
+// required uint32 id = 1;
+bool PacoteRobo::has_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void PacoteRobo::set_has_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void PacoteRobo::clear_has_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void PacoteRobo::clear_id() {
+  id_ = 0u;
+  clear_has_id();
+}
+ ::google::protobuf::uint32 PacoteRobo::id() const {
+  // @@protoc_insertion_point(field_get:PacoteRobo.id)
+  return id_;
+}
+ void PacoteRobo::set_id(::google::protobuf::uint32 value) {
+  set_has_id();
+  id_ = value;
+  // @@protoc_insertion_point(field_set:PacoteRobo.id)
+}
+
+// required float x = 2;
+bool PacoteRobo::has_x() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void PacoteRobo::set_has_x() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void PacoteRobo::clear_has_x() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void PacoteRobo::clear_x() {
+  x_ = 0;
+  clear_has_x();
+}
+ float PacoteRobo::x() const {
+  // @@protoc_insertion_point(field_get:PacoteRobo.x)
+  return x_;
+}
+ void PacoteRobo::set_x(float value) {
+  set_has_x();
+  x_ = value;
+  // @@protoc_insertion_point(field_set:PacoteRobo.x)
+}
+
+// required float y = 3;
+bool PacoteRobo::has_y() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void PacoteRobo::set_has_y() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void PacoteRobo::clear_has_y() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void PacoteRobo::clear_y() {
+  y_ = 0;
+  clear_has_y();
+}
+ float PacoteRobo::y() const {
+  // @@protoc_insertion_point(field_get:PacoteRobo.y)
+  return y_;
+}
+ void PacoteRobo::set_y(float value) {
+  set_has_y();
+  y_ = value;
+  // @@protoc_insertion_point(field_set:PacoteRobo.y)
+}
+
+// required float orientation = 4;
+bool PacoteRobo::has_orientation() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void PacoteRobo::set_has_orientation() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void PacoteRobo::clear_has_orientation() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+void PacoteRobo::clear_orientation() {
+  orientation_ = 0;
+  clear_has_orientation();
+}
+ float PacoteRobo::orientation() const {
+  // @@protoc_insertion_point(field_get:PacoteRobo.orientation)
+  return orientation_;
+}
+ void PacoteRobo::set_orientation(float value) {
+  set_has_orientation();
+  orientation_ = value;
+  // @@protoc_insertion_point(field_set:PacoteRobo.orientation)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int PacoteVisao::kNumeroFrameFieldNumber;
 const int PacoteVisao::kDelayFieldNumber;
 const int PacoteVisao::kBolaFieldNumber;
 const int PacoteVisao::kRobosEquipeFieldNumber;
 const int PacoteVisao::kRobosAdversariosFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 PacoteVisao::PacoteVisao()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:PacoteVisao)
 }
@@ -828,7 +1102,8 @@ void PacoteVisao::InitAsDefaultInstance() {
 }
 
 PacoteVisao::PacoteVisao(const PacoteVisao& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:PacoteVisao)
@@ -870,12 +1145,17 @@ const PacoteVisao& PacoteVisao::default_instance() {
 
 PacoteVisao* PacoteVisao::default_instance_ = NULL;
 
-PacoteVisao* PacoteVisao::New() const {
-  return new PacoteVisao;
+PacoteVisao* PacoteVisao::New(::google::protobuf::Arena* arena) const {
+  PacoteVisao* n = new PacoteVisao;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void PacoteVisao::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
+// @@protoc_insertion_point(message_clear_start:PacoteVisao)
+  if (_has_bits_[0 / 32] & 7u) {
     numeroframe_ = 0u;
     delay_ = 0;
     if (has_bola()) {
@@ -885,12 +1165,14 @@ void PacoteVisao::Clear() {
   robosequipe_.Clear();
   robosadversarios_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool PacoteVisao::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:PacoteVisao)
   for (;;) {
@@ -944,26 +1226,31 @@ bool PacoteVisao::MergePartialFromCodedStream(
       case 4: {
         if (tag == 34) {
          parse_robosEquipe:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+          DO_(input->IncrementRecursionDepth());
+         parse_loop_robosEquipe:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
                 input, add_robosequipe()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_robosEquipe;
-        if (input->ExpectTag(42)) goto parse_robosAdversarios;
+        if (input->ExpectTag(34)) goto parse_loop_robosEquipe;
+        if (input->ExpectTag(42)) goto parse_loop_robosAdversarios;
+        input->UnsafeDecrementRecursionDepth();
         break;
       }
 
       // repeated .PacoteRobo robosAdversarios = 5;
       case 5: {
         if (tag == 42) {
-         parse_robosAdversarios:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+          DO_(input->IncrementRecursionDepth());
+         parse_loop_robosAdversarios:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
                 input, add_robosadversarios()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(42)) goto parse_robosAdversarios;
+        if (input->ExpectTag(42)) goto parse_loop_robosAdversarios;
+        input->UnsafeDecrementRecursionDepth();
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -1006,30 +1293,30 @@ void PacoteVisao::SerializeWithCachedSizes(
   // required .PacoteBola bola = 3;
   if (has_bola()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->bola(), output);
+      3, *this->bola_, output);
   }
 
   // repeated .PacoteRobo robosEquipe = 4;
-  for (int i = 0; i < this->robosequipe_size(); i++) {
+  for (unsigned int i = 0, n = this->robosequipe_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4, this->robosequipe(i), output);
   }
 
   // repeated .PacoteRobo robosAdversarios = 5;
-  for (int i = 0; i < this->robosadversarios_size(); i++) {
+  for (unsigned int i = 0, n = this->robosadversarios_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       5, this->robosadversarios(i), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:PacoteVisao)
 }
 
-::google::protobuf::uint8* PacoteVisao::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* PacoteVisao::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:PacoteVisao)
   // required uint32 numeroFrame = 1;
   if (has_numeroframe()) {
@@ -1044,25 +1331,25 @@ void PacoteVisao::SerializeWithCachedSizes(
   // required .PacoteBola bola = 3;
   if (has_bola()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        3, this->bola(), target);
+      InternalWriteMessageNoVirtualToArray(
+        3, *this->bola_, false, target);
   }
 
   // repeated .PacoteRobo robosEquipe = 4;
-  for (int i = 0; i < this->robosequipe_size(); i++) {
+  for (unsigned int i = 0, n = this->robosequipe_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        4, this->robosequipe(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        4, this->robosequipe(i), false, target);
   }
 
   // repeated .PacoteRobo robosAdversarios = 5;
-  for (int i = 0; i < this->robosadversarios_size(); i++) {
+  for (unsigned int i = 0, n = this->robosadversarios_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        5, this->robosadversarios(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        5, this->robosadversarios(i), false, target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1070,29 +1357,51 @@ void PacoteVisao::SerializeWithCachedSizes(
   return target;
 }
 
-int PacoteVisao::ByteSize() const {
+int PacoteVisao::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:PacoteVisao)
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (has_numeroframe()) {
     // required uint32 numeroFrame = 1;
-    if (has_numeroframe()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->numeroframe());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->numeroframe());
+  }
+
+  if (has_delay()) {
+    // required double delay = 2;
+    total_size += 1 + 8;
+  }
+
+  if (has_bola()) {
+    // required .PacoteBola bola = 3;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->bola_);
+  }
+
+  return total_size;
+}
+int PacoteVisao::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:PacoteVisao)
+  int total_size = 0;
+
+  if (((_has_bits_[0] & 0x00000007) ^ 0x00000007) == 0) {  // All required fields are present.
+    // required uint32 numeroFrame = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->numeroframe());
 
     // required double delay = 2;
-    if (has_delay()) {
-      total_size += 1 + 8;
-    }
+    total_size += 1 + 8;
 
     // required .PacoteBola bola = 3;
-    if (has_bola()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->bola());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->bola_);
 
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
   }
   // repeated .PacoteRobo robosEquipe = 4;
   total_size += 1 * this->robosequipe_size();
@@ -1110,7 +1419,7 @@ int PacoteVisao::ByteSize() const {
         this->robosadversarios(i));
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -1122,19 +1431,27 @@ int PacoteVisao::ByteSize() const {
 }
 
 void PacoteVisao::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const PacoteVisao* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const PacoteVisao*>(
-      &from);
+// @@protoc_insertion_point(generalized_merge_from_start:PacoteVisao)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const PacoteVisao* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const PacoteVisao>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:PacoteVisao)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:PacoteVisao)
     MergeFrom(*source);
   }
 }
 
 void PacoteVisao::MergeFrom(const PacoteVisao& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:PacoteVisao)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   robosequipe_.MergeFrom(from.robosequipe_);
   robosadversarios_.MergeFrom(from.robosadversarios_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
@@ -1148,16 +1465,20 @@ void PacoteVisao::MergeFrom(const PacoteVisao& from) {
       mutable_bola()->::PacoteBola::MergeFrom(from.bola());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void PacoteVisao::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:PacoteVisao)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PacoteVisao::CopyFrom(const PacoteVisao& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:PacoteVisao)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1167,7 +1488,7 @@ bool PacoteVisao::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
 
   if (has_bola()) {
-    if (!this->bola().IsInitialized()) return false;
+    if (!this->bola_->IsInitialized()) return false;
   }
   if (!::google::protobuf::internal::AllAreInitialized(this->robosequipe())) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->robosadversarios())) return false;
@@ -1175,16 +1496,18 @@ bool PacoteVisao::IsInitialized() const {
 }
 
 void PacoteVisao::Swap(PacoteVisao* other) {
-  if (other != this) {
-    std::swap(numeroframe_, other->numeroframe_);
-    std::swap(delay_, other->delay_);
-    std::swap(bola_, other->bola_);
-    robosequipe_.Swap(&other->robosequipe_);
-    robosadversarios_.Swap(&other->robosadversarios_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void PacoteVisao::InternalSwap(PacoteVisao* other) {
+  std::swap(numeroframe_, other->numeroframe_);
+  std::swap(delay_, other->delay_);
+  std::swap(bola_, other->bola_);
+  robosequipe_.UnsafeArenaSwap(&other->robosequipe_);
+  robosadversarios_.UnsafeArenaSwap(&other->robosadversarios_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata PacoteVisao::GetMetadata() const {
@@ -1195,6 +1518,162 @@ void PacoteVisao::Swap(PacoteVisao* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// PacoteVisao
+
+// required uint32 numeroFrame = 1;
+bool PacoteVisao::has_numeroframe() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void PacoteVisao::set_has_numeroframe() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void PacoteVisao::clear_has_numeroframe() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void PacoteVisao::clear_numeroframe() {
+  numeroframe_ = 0u;
+  clear_has_numeroframe();
+}
+ ::google::protobuf::uint32 PacoteVisao::numeroframe() const {
+  // @@protoc_insertion_point(field_get:PacoteVisao.numeroFrame)
+  return numeroframe_;
+}
+ void PacoteVisao::set_numeroframe(::google::protobuf::uint32 value) {
+  set_has_numeroframe();
+  numeroframe_ = value;
+  // @@protoc_insertion_point(field_set:PacoteVisao.numeroFrame)
+}
+
+// required double delay = 2;
+bool PacoteVisao::has_delay() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void PacoteVisao::set_has_delay() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void PacoteVisao::clear_has_delay() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void PacoteVisao::clear_delay() {
+  delay_ = 0;
+  clear_has_delay();
+}
+ double PacoteVisao::delay() const {
+  // @@protoc_insertion_point(field_get:PacoteVisao.delay)
+  return delay_;
+}
+ void PacoteVisao::set_delay(double value) {
+  set_has_delay();
+  delay_ = value;
+  // @@protoc_insertion_point(field_set:PacoteVisao.delay)
+}
+
+// required .PacoteBola bola = 3;
+bool PacoteVisao::has_bola() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void PacoteVisao::set_has_bola() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void PacoteVisao::clear_has_bola() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void PacoteVisao::clear_bola() {
+  if (bola_ != NULL) bola_->::PacoteBola::Clear();
+  clear_has_bola();
+}
+const ::PacoteBola& PacoteVisao::bola() const {
+  // @@protoc_insertion_point(field_get:PacoteVisao.bola)
+  return bola_ != NULL ? *bola_ : *default_instance_->bola_;
+}
+::PacoteBola* PacoteVisao::mutable_bola() {
+  set_has_bola();
+  if (bola_ == NULL) {
+    bola_ = new ::PacoteBola;
+  }
+  // @@protoc_insertion_point(field_mutable:PacoteVisao.bola)
+  return bola_;
+}
+::PacoteBola* PacoteVisao::release_bola() {
+  // @@protoc_insertion_point(field_release:PacoteVisao.bola)
+  clear_has_bola();
+  ::PacoteBola* temp = bola_;
+  bola_ = NULL;
+  return temp;
+}
+void PacoteVisao::set_allocated_bola(::PacoteBola* bola) {
+  delete bola_;
+  bola_ = bola;
+  if (bola) {
+    set_has_bola();
+  } else {
+    clear_has_bola();
+  }
+  // @@protoc_insertion_point(field_set_allocated:PacoteVisao.bola)
+}
+
+// repeated .PacoteRobo robosEquipe = 4;
+int PacoteVisao::robosequipe_size() const {
+  return robosequipe_.size();
+}
+void PacoteVisao::clear_robosequipe() {
+  robosequipe_.Clear();
+}
+const ::PacoteRobo& PacoteVisao::robosequipe(int index) const {
+  // @@protoc_insertion_point(field_get:PacoteVisao.robosEquipe)
+  return robosequipe_.Get(index);
+}
+::PacoteRobo* PacoteVisao::mutable_robosequipe(int index) {
+  // @@protoc_insertion_point(field_mutable:PacoteVisao.robosEquipe)
+  return robosequipe_.Mutable(index);
+}
+::PacoteRobo* PacoteVisao::add_robosequipe() {
+  // @@protoc_insertion_point(field_add:PacoteVisao.robosEquipe)
+  return robosequipe_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::PacoteRobo >*
+PacoteVisao::mutable_robosequipe() {
+  // @@protoc_insertion_point(field_mutable_list:PacoteVisao.robosEquipe)
+  return &robosequipe_;
+}
+const ::google::protobuf::RepeatedPtrField< ::PacoteRobo >&
+PacoteVisao::robosequipe() const {
+  // @@protoc_insertion_point(field_list:PacoteVisao.robosEquipe)
+  return robosequipe_;
+}
+
+// repeated .PacoteRobo robosAdversarios = 5;
+int PacoteVisao::robosadversarios_size() const {
+  return robosadversarios_.size();
+}
+void PacoteVisao::clear_robosadversarios() {
+  robosadversarios_.Clear();
+}
+const ::PacoteRobo& PacoteVisao::robosadversarios(int index) const {
+  // @@protoc_insertion_point(field_get:PacoteVisao.robosAdversarios)
+  return robosadversarios_.Get(index);
+}
+::PacoteRobo* PacoteVisao::mutable_robosadversarios(int index) {
+  // @@protoc_insertion_point(field_mutable:PacoteVisao.robosAdversarios)
+  return robosadversarios_.Mutable(index);
+}
+::PacoteRobo* PacoteVisao::add_robosadversarios() {
+  // @@protoc_insertion_point(field_add:PacoteVisao.robosAdversarios)
+  return robosadversarios_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::PacoteRobo >*
+PacoteVisao::mutable_robosadversarios() {
+  // @@protoc_insertion_point(field_mutable_list:PacoteVisao.robosAdversarios)
+  return &robosadversarios_;
+}
+const ::google::protobuf::RepeatedPtrField< ::PacoteRobo >&
+PacoteVisao::robosadversarios() const {
+  // @@protoc_insertion_point(field_list:PacoteVisao.robosAdversarios)
+  return robosadversarios_;
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

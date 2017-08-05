@@ -26,7 +26,7 @@ public:
     Robot(int id);
 
     /*Setters*/
-    void setVisionData(Mat_<float> _state, float _confidence); //method to set all of the vision data
+    void setVisionData(Mat_<float> &_state, float _confidence); //method to set all of the vision data
 
     /*Getters*/
     int getId();

@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -27,6 +28,7 @@ const ::google::protobuf::EnumDescriptor* PacoteControle_CorEquipe_descriptor_ =
 }  // namespace
 
 
+void protobuf_AssignDesc_mensagem_5fcontrole_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_mensagem_5fcontrole_2eproto() {
   protobuf_AddDesc_mensagem_5fcontrole_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -40,16 +42,16 @@ void protobuf_AssignDesc_mensagem_5fcontrole_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteControle, idgoleiro_),
   };
   PacoteControle_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       PacoteControle_descriptor_,
       PacoteControle::default_instance_,
       PacoteControle_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteControle, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteControle, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(PacoteControle));
+      -1,
+      sizeof(PacoteControle),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteControle, _internal_metadata_),
+      -1);
   PacoteControle_LadoCampo_descriptor_ = PacoteControle_descriptor_->enum_type(0);
   PacoteControle_CorEquipe_descriptor_ = PacoteControle_descriptor_->enum_type(1);
 }
@@ -62,10 +64,11 @@ inline void protobuf_AssignDescriptorsOnce() {
                  &protobuf_AssignDesc_mensagem_5fcontrole_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    PacoteControle_descriptor_, &PacoteControle::default_instance());
+      PacoteControle_descriptor_, &PacoteControle::default_instance());
 }
 
 }  // namespace
@@ -75,6 +78,7 @@ void protobuf_ShutdownFile_mensagem_5fcontrole_2eproto() {
   delete PacoteControle_reflection_;
 }
 
+void protobuf_AddDesc_mensagem_5fcontrole_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AddDesc_mensagem_5fcontrole_2eproto() {
   static bool already_here = false;
   if (already_here) return;
@@ -118,13 +122,13 @@ bool PacoteControle_LadoCampo_IsValid(int value) {
   }
 }
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const PacoteControle_LadoCampo PacoteControle::ESQUERDO;
 const PacoteControle_LadoCampo PacoteControle::DIREITO;
 const PacoteControle_LadoCampo PacoteControle::LadoCampo_MIN;
 const PacoteControle_LadoCampo PacoteControle::LadoCampo_MAX;
 const int PacoteControle::LadoCampo_ARRAYSIZE;
-#endif  // _MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 const ::google::protobuf::EnumDescriptor* PacoteControle_CorEquipe_descriptor() {
   protobuf_AssignDescriptorsOnce();
   return PacoteControle_CorEquipe_descriptor_;
@@ -139,21 +143,21 @@ bool PacoteControle_CorEquipe_IsValid(int value) {
   }
 }
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const PacoteControle_CorEquipe PacoteControle::AMARELO;
 const PacoteControle_CorEquipe PacoteControle::AZUL;
 const PacoteControle_CorEquipe PacoteControle::CorEquipe_MIN;
 const PacoteControle_CorEquipe PacoteControle::CorEquipe_MAX;
 const int PacoteControle::CorEquipe_ARRAYSIZE;
-#endif  // _MSC_VER
-#ifndef _MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int PacoteControle::kLadoCampoFieldNumber;
 const int PacoteControle::kCorEquipeFieldNumber;
 const int PacoteControle::kIdGoleiroFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 PacoteControle::PacoteControle()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:PacoteControle)
 }
@@ -162,7 +166,8 @@ void PacoteControle::InitAsDefaultInstance() {
 }
 
 PacoteControle::PacoteControle(const PacoteControle& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:PacoteControle)
@@ -203,33 +208,46 @@ const PacoteControle& PacoteControle::default_instance() {
 
 PacoteControle* PacoteControle::default_instance_ = NULL;
 
-PacoteControle* PacoteControle::New() const {
-  return new PacoteControle;
+PacoteControle* PacoteControle::New(::google::protobuf::Arena* arena) const {
+  PacoteControle* n = new PacoteControle;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void PacoteControle::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<PacoteControle*>(16)->f) - \
-   reinterpret_cast<char*>(16))
+// @@protoc_insertion_point(message_clear_start:PacoteControle)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(PacoteControle, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<PacoteControle*>(16)->f)
+#endif
 
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
 
   ZR_(ladocampo_, idgoleiro_);
 
-#undef OFFSET_OF_FIELD_
+#undef ZR_HELPER_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool PacoteControle::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:PacoteControle)
   for (;;) {
@@ -333,15 +351,15 @@ void PacoteControle::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->idgoleiro(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:PacoteControle)
 }
 
-::google::protobuf::uint8* PacoteControle::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* PacoteControle::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:PacoteControle)
   // required .PacoteControle.LadoCampo ladoCampo = 1;
   if (has_ladocampo()) {
@@ -360,7 +378,7 @@ void PacoteControle::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->idgoleiro(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -368,31 +386,53 @@ void PacoteControle::SerializeWithCachedSizes(
   return target;
 }
 
-int PacoteControle::ByteSize() const {
+int PacoteControle::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:PacoteControle)
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (has_ladocampo()) {
     // required .PacoteControle.LadoCampo ladoCampo = 1;
-    if (has_ladocampo()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::EnumSize(this->ladocampo());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->ladocampo());
+  }
+
+  if (has_corequipe()) {
+    // required .PacoteControle.CorEquipe corEquipe = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->corequipe());
+  }
+
+  if (has_idgoleiro()) {
+    // required int32 idGoleiro = 3;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->idgoleiro());
+  }
+
+  return total_size;
+}
+int PacoteControle::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:PacoteControle)
+  int total_size = 0;
+
+  if (((_has_bits_[0] & 0x00000007) ^ 0x00000007) == 0) {  // All required fields are present.
+    // required .PacoteControle.LadoCampo ladoCampo = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->ladocampo());
 
     // required .PacoteControle.CorEquipe corEquipe = 2;
-    if (has_corequipe()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::EnumSize(this->corequipe());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->corequipe());
 
     // required int32 idGoleiro = 3;
-    if (has_idgoleiro()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->idgoleiro());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->idgoleiro());
 
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -404,19 +444,27 @@ int PacoteControle::ByteSize() const {
 }
 
 void PacoteControle::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const PacoteControle* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const PacoteControle*>(
-      &from);
+// @@protoc_insertion_point(generalized_merge_from_start:PacoteControle)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const PacoteControle* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const PacoteControle>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:PacoteControle)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:PacoteControle)
     MergeFrom(*source);
   }
 }
 
 void PacoteControle::MergeFrom(const PacoteControle& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:PacoteControle)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_ladocampo()) {
       set_ladocampo(from.ladocampo());
@@ -428,16 +476,20 @@ void PacoteControle::MergeFrom(const PacoteControle& from) {
       set_idgoleiro(from.idgoleiro());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void PacoteControle::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:PacoteControle)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PacoteControle::CopyFrom(const PacoteControle& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:PacoteControle)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -450,14 +502,16 @@ bool PacoteControle::IsInitialized() const {
 }
 
 void PacoteControle::Swap(PacoteControle* other) {
-  if (other != this) {
-    std::swap(ladocampo_, other->ladocampo_);
-    std::swap(corequipe_, other->corequipe_);
-    std::swap(idgoleiro_, other->idgoleiro_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void PacoteControle::InternalSwap(PacoteControle* other) {
+  std::swap(ladocampo_, other->ladocampo_);
+  std::swap(corequipe_, other->corequipe_);
+  std::swap(idgoleiro_, other->idgoleiro_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata PacoteControle::GetMetadata() const {
@@ -468,6 +522,84 @@ void PacoteControle::Swap(PacoteControle* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// PacoteControle
+
+// required .PacoteControle.LadoCampo ladoCampo = 1;
+bool PacoteControle::has_ladocampo() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void PacoteControle::set_has_ladocampo() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void PacoteControle::clear_has_ladocampo() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void PacoteControle::clear_ladocampo() {
+  ladocampo_ = 0;
+  clear_has_ladocampo();
+}
+ ::PacoteControle_LadoCampo PacoteControle::ladocampo() const {
+  // @@protoc_insertion_point(field_get:PacoteControle.ladoCampo)
+  return static_cast< ::PacoteControle_LadoCampo >(ladocampo_);
+}
+ void PacoteControle::set_ladocampo(::PacoteControle_LadoCampo value) {
+  assert(::PacoteControle_LadoCampo_IsValid(value));
+  set_has_ladocampo();
+  ladocampo_ = value;
+  // @@protoc_insertion_point(field_set:PacoteControle.ladoCampo)
+}
+
+// required .PacoteControle.CorEquipe corEquipe = 2;
+bool PacoteControle::has_corequipe() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void PacoteControle::set_has_corequipe() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void PacoteControle::clear_has_corequipe() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void PacoteControle::clear_corequipe() {
+  corequipe_ = 0;
+  clear_has_corequipe();
+}
+ ::PacoteControle_CorEquipe PacoteControle::corequipe() const {
+  // @@protoc_insertion_point(field_get:PacoteControle.corEquipe)
+  return static_cast< ::PacoteControle_CorEquipe >(corequipe_);
+}
+ void PacoteControle::set_corequipe(::PacoteControle_CorEquipe value) {
+  assert(::PacoteControle_CorEquipe_IsValid(value));
+  set_has_corequipe();
+  corequipe_ = value;
+  // @@protoc_insertion_point(field_set:PacoteControle.corEquipe)
+}
+
+// required int32 idGoleiro = 3;
+bool PacoteControle::has_idgoleiro() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void PacoteControle::set_has_idgoleiro() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void PacoteControle::clear_has_idgoleiro() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void PacoteControle::clear_idgoleiro() {
+  idgoleiro_ = 0;
+  clear_has_idgoleiro();
+}
+ ::google::protobuf::int32 PacoteControle::idgoleiro() const {
+  // @@protoc_insertion_point(field_get:PacoteControle.idGoleiro)
+  return idgoleiro_;
+}
+ void PacoteControle::set_idgoleiro(::google::protobuf::int32 value) {
+  set_has_idgoleiro();
+  idgoleiro_ = value;
+  // @@protoc_insertion_point(field_set:PacoteControle.idGoleiro)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

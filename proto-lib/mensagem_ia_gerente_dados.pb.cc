@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -28,6 +29,7 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 }  // namespace
 
 
+void protobuf_AssignDesc_mensagem_5fia_5fgerente_5fdados_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_mensagem_5fia_5fgerente_5fdados_2eproto() {
   protobuf_AddDesc_mensagem_5fia_5fgerente_5fdados_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -42,32 +44,32 @@ void protobuf_AssignDesc_mensagem_5fia_5fgerente_5fdados_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteVelocidades, vtheta_),
   };
   PacoteVelocidades_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       PacoteVelocidades_descriptor_,
       PacoteVelocidades::default_instance_,
       PacoteVelocidades_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteVelocidades, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteVelocidades, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(PacoteVelocidades));
+      -1,
+      sizeof(PacoteVelocidades),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteVelocidades, _internal_metadata_),
+      -1);
   PacoteIAGerenteDados_descriptor_ = file->message_type(1);
   static const int PacoteIAGerenteDados_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteIAGerenteDados, numframe_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteIAGerenteDados, velocidades_),
   };
   PacoteIAGerenteDados_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       PacoteIAGerenteDados_descriptor_,
       PacoteIAGerenteDados::default_instance_,
       PacoteIAGerenteDados_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteIAGerenteDados, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteIAGerenteDados, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(PacoteIAGerenteDados));
+      -1,
+      sizeof(PacoteIAGerenteDados),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteIAGerenteDados, _internal_metadata_),
+      -1);
 }
 
 namespace {
@@ -78,12 +80,13 @@ inline void protobuf_AssignDescriptorsOnce() {
                  &protobuf_AssignDesc_mensagem_5fia_5fgerente_5fdados_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    PacoteVelocidades_descriptor_, &PacoteVelocidades::default_instance());
+      PacoteVelocidades_descriptor_, &PacoteVelocidades::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    PacoteIAGerenteDados_descriptor_, &PacoteIAGerenteDados::default_instance());
+      PacoteIAGerenteDados_descriptor_, &PacoteIAGerenteDados::default_instance());
 }
 
 }  // namespace
@@ -95,6 +98,7 @@ void protobuf_ShutdownFile_mensagem_5fia_5fgerente_5fdados_2eproto() {
   delete PacoteIAGerenteDados_reflection_;
 }
 
+void protobuf_AddDesc_mensagem_5fia_5fgerente_5fdados_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AddDesc_mensagem_5fia_5fgerente_5fdados_2eproto() {
   static bool already_here = false;
   if (already_here) return;
@@ -125,15 +129,15 @@ struct StaticDescriptorInitializer_mensagem_5fia_5fgerente_5fdados_2eproto {
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int PacoteVelocidades::kIdFieldNumber;
 const int PacoteVelocidades::kVxFieldNumber;
 const int PacoteVelocidades::kVyFieldNumber;
 const int PacoteVelocidades::kVthetaFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 PacoteVelocidades::PacoteVelocidades()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:PacoteVelocidades)
 }
@@ -142,7 +146,8 @@ void PacoteVelocidades::InitAsDefaultInstance() {
 }
 
 PacoteVelocidades::PacoteVelocidades(const PacoteVelocidades& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:PacoteVelocidades)
@@ -184,33 +189,46 @@ const PacoteVelocidades& PacoteVelocidades::default_instance() {
 
 PacoteVelocidades* PacoteVelocidades::default_instance_ = NULL;
 
-PacoteVelocidades* PacoteVelocidades::New() const {
-  return new PacoteVelocidades;
+PacoteVelocidades* PacoteVelocidades::New(::google::protobuf::Arena* arena) const {
+  PacoteVelocidades* n = new PacoteVelocidades;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void PacoteVelocidades::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<PacoteVelocidades*>(16)->f) - \
-   reinterpret_cast<char*>(16))
+// @@protoc_insertion_point(message_clear_start:PacoteVelocidades)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(PacoteVelocidades, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<PacoteVelocidades*>(16)->f)
+#endif
 
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
 
   ZR_(id_, vtheta_);
 
-#undef OFFSET_OF_FIELD_
+#undef ZR_HELPER_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool PacoteVelocidades::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:PacoteVelocidades)
   for (;;) {
@@ -322,15 +340,15 @@ void PacoteVelocidades::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->vtheta(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:PacoteVelocidades)
 }
 
-::google::protobuf::uint8* PacoteVelocidades::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* PacoteVelocidades::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:PacoteVelocidades)
   // required uint32 id = 1;
   if (has_id()) {
@@ -352,7 +370,7 @@ void PacoteVelocidades::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->vtheta(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -360,34 +378,57 @@ void PacoteVelocidades::SerializeWithCachedSizes(
   return target;
 }
 
-int PacoteVelocidades::ByteSize() const {
+int PacoteVelocidades::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:PacoteVelocidades)
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (has_id()) {
     // required uint32 id = 1;
-    if (has_id()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->id());
-    }
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->id());
+  }
+
+  if (has_vx()) {
+    // required float vx = 2;
+    total_size += 1 + 4;
+  }
+
+  if (has_vy()) {
+    // required float vy = 3;
+    total_size += 1 + 4;
+  }
+
+  if (has_vtheta()) {
+    // required float vtheta = 4;
+    total_size += 1 + 4;
+  }
+
+  return total_size;
+}
+int PacoteVelocidades::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:PacoteVelocidades)
+  int total_size = 0;
+
+  if (((_has_bits_[0] & 0x0000000f) ^ 0x0000000f) == 0) {  // All required fields are present.
+    // required uint32 id = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->id());
 
     // required float vx = 2;
-    if (has_vx()) {
-      total_size += 1 + 4;
-    }
+    total_size += 1 + 4;
 
     // required float vy = 3;
-    if (has_vy()) {
-      total_size += 1 + 4;
-    }
+    total_size += 1 + 4;
 
     // required float vtheta = 4;
-    if (has_vtheta()) {
-      total_size += 1 + 4;
-    }
+    total_size += 1 + 4;
 
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -399,19 +440,27 @@ int PacoteVelocidades::ByteSize() const {
 }
 
 void PacoteVelocidades::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const PacoteVelocidades* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const PacoteVelocidades*>(
-      &from);
+// @@protoc_insertion_point(generalized_merge_from_start:PacoteVelocidades)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const PacoteVelocidades* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const PacoteVelocidades>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:PacoteVelocidades)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:PacoteVelocidades)
     MergeFrom(*source);
   }
 }
 
 void PacoteVelocidades::MergeFrom(const PacoteVelocidades& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:PacoteVelocidades)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_id()) {
       set_id(from.id());
@@ -426,16 +475,20 @@ void PacoteVelocidades::MergeFrom(const PacoteVelocidades& from) {
       set_vtheta(from.vtheta());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void PacoteVelocidades::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:PacoteVelocidades)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PacoteVelocidades::CopyFrom(const PacoteVelocidades& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:PacoteVelocidades)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -448,15 +501,17 @@ bool PacoteVelocidades::IsInitialized() const {
 }
 
 void PacoteVelocidades::Swap(PacoteVelocidades* other) {
-  if (other != this) {
-    std::swap(id_, other->id_);
-    std::swap(vx_, other->vx_);
-    std::swap(vy_, other->vy_);
-    std::swap(vtheta_, other->vtheta_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void PacoteVelocidades::InternalSwap(PacoteVelocidades* other) {
+  std::swap(id_, other->id_);
+  std::swap(vx_, other->vx_);
+  std::swap(vy_, other->vy_);
+  std::swap(vtheta_, other->vtheta_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata PacoteVelocidades::GetMetadata() const {
@@ -467,16 +522,116 @@ void PacoteVelocidades::Swap(PacoteVelocidades* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// PacoteVelocidades
+
+// required uint32 id = 1;
+bool PacoteVelocidades::has_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void PacoteVelocidades::set_has_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void PacoteVelocidades::clear_has_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void PacoteVelocidades::clear_id() {
+  id_ = 0u;
+  clear_has_id();
+}
+ ::google::protobuf::uint32 PacoteVelocidades::id() const {
+  // @@protoc_insertion_point(field_get:PacoteVelocidades.id)
+  return id_;
+}
+ void PacoteVelocidades::set_id(::google::protobuf::uint32 value) {
+  set_has_id();
+  id_ = value;
+  // @@protoc_insertion_point(field_set:PacoteVelocidades.id)
+}
+
+// required float vx = 2;
+bool PacoteVelocidades::has_vx() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void PacoteVelocidades::set_has_vx() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void PacoteVelocidades::clear_has_vx() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void PacoteVelocidades::clear_vx() {
+  vx_ = 0;
+  clear_has_vx();
+}
+ float PacoteVelocidades::vx() const {
+  // @@protoc_insertion_point(field_get:PacoteVelocidades.vx)
+  return vx_;
+}
+ void PacoteVelocidades::set_vx(float value) {
+  set_has_vx();
+  vx_ = value;
+  // @@protoc_insertion_point(field_set:PacoteVelocidades.vx)
+}
+
+// required float vy = 3;
+bool PacoteVelocidades::has_vy() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void PacoteVelocidades::set_has_vy() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void PacoteVelocidades::clear_has_vy() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void PacoteVelocidades::clear_vy() {
+  vy_ = 0;
+  clear_has_vy();
+}
+ float PacoteVelocidades::vy() const {
+  // @@protoc_insertion_point(field_get:PacoteVelocidades.vy)
+  return vy_;
+}
+ void PacoteVelocidades::set_vy(float value) {
+  set_has_vy();
+  vy_ = value;
+  // @@protoc_insertion_point(field_set:PacoteVelocidades.vy)
+}
+
+// required float vtheta = 4;
+bool PacoteVelocidades::has_vtheta() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void PacoteVelocidades::set_has_vtheta() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void PacoteVelocidades::clear_has_vtheta() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+void PacoteVelocidades::clear_vtheta() {
+  vtheta_ = 0;
+  clear_has_vtheta();
+}
+ float PacoteVelocidades::vtheta() const {
+  // @@protoc_insertion_point(field_get:PacoteVelocidades.vtheta)
+  return vtheta_;
+}
+ void PacoteVelocidades::set_vtheta(float value) {
+  set_has_vtheta();
+  vtheta_ = value;
+  // @@protoc_insertion_point(field_set:PacoteVelocidades.vtheta)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int PacoteIAGerenteDados::kNumFrameFieldNumber;
 const int PacoteIAGerenteDados::kVelocidadesFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 PacoteIAGerenteDados::PacoteIAGerenteDados()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:PacoteIAGerenteDados)
 }
@@ -485,7 +640,8 @@ void PacoteIAGerenteDados::InitAsDefaultInstance() {
 }
 
 PacoteIAGerenteDados::PacoteIAGerenteDados(const PacoteIAGerenteDados& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:PacoteIAGerenteDados)
@@ -524,20 +680,27 @@ const PacoteIAGerenteDados& PacoteIAGerenteDados::default_instance() {
 
 PacoteIAGerenteDados* PacoteIAGerenteDados::default_instance_ = NULL;
 
-PacoteIAGerenteDados* PacoteIAGerenteDados::New() const {
-  return new PacoteIAGerenteDados;
+PacoteIAGerenteDados* PacoteIAGerenteDados::New(::google::protobuf::Arena* arena) const {
+  PacoteIAGerenteDados* n = new PacoteIAGerenteDados;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void PacoteIAGerenteDados::Clear() {
+// @@protoc_insertion_point(message_clear_start:PacoteIAGerenteDados)
   numframe_ = 0u;
   velocidades_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool PacoteIAGerenteDados::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:PacoteIAGerenteDados)
   for (;;) {
@@ -563,12 +726,15 @@ bool PacoteIAGerenteDados::MergePartialFromCodedStream(
       case 2: {
         if (tag == 18) {
          parse_velocidades:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+          DO_(input->IncrementRecursionDepth());
+         parse_loop_velocidades:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
                 input, add_velocidades()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(18)) goto parse_velocidades;
+        if (input->ExpectTag(18)) goto parse_loop_velocidades;
+        input->UnsafeDecrementRecursionDepth();
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -604,20 +770,20 @@ void PacoteIAGerenteDados::SerializeWithCachedSizes(
   }
 
   // repeated .PacoteVelocidades velocidades = 2;
-  for (int i = 0; i < this->velocidades_size(); i++) {
+  for (unsigned int i = 0, n = this->velocidades_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2, this->velocidades(i), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:PacoteIAGerenteDados)
 }
 
-::google::protobuf::uint8* PacoteIAGerenteDados::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* PacoteIAGerenteDados::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:PacoteIAGerenteDados)
   // required uint32 numFrame = 1;
   if (has_numframe()) {
@@ -625,13 +791,13 @@ void PacoteIAGerenteDados::SerializeWithCachedSizes(
   }
 
   // repeated .PacoteVelocidades velocidades = 2;
-  for (int i = 0; i < this->velocidades_size(); i++) {
+  for (unsigned int i = 0, n = this->velocidades_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->velocidades(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        2, this->velocidades(i), false, target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -640,16 +806,14 @@ void PacoteIAGerenteDados::SerializeWithCachedSizes(
 }
 
 int PacoteIAGerenteDados::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:PacoteIAGerenteDados)
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required uint32 numFrame = 1;
-    if (has_numframe()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->numframe());
-    }
-
+  // required uint32 numFrame = 1;
+  if (has_numframe()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->numframe());
   }
   // repeated .PacoteVelocidades velocidades = 2;
   total_size += 1 * this->velocidades_size();
@@ -659,7 +823,7 @@ int PacoteIAGerenteDados::ByteSize() const {
         this->velocidades(i));
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -671,35 +835,47 @@ int PacoteIAGerenteDados::ByteSize() const {
 }
 
 void PacoteIAGerenteDados::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const PacoteIAGerenteDados* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const PacoteIAGerenteDados*>(
-      &from);
+// @@protoc_insertion_point(generalized_merge_from_start:PacoteIAGerenteDados)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const PacoteIAGerenteDados* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const PacoteIAGerenteDados>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:PacoteIAGerenteDados)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:PacoteIAGerenteDados)
     MergeFrom(*source);
   }
 }
 
 void PacoteIAGerenteDados::MergeFrom(const PacoteIAGerenteDados& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:PacoteIAGerenteDados)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   velocidades_.MergeFrom(from.velocidades_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_numframe()) {
       set_numframe(from.numframe());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void PacoteIAGerenteDados::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:PacoteIAGerenteDados)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PacoteIAGerenteDados::CopyFrom(const PacoteIAGerenteDados& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:PacoteIAGerenteDados)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -713,13 +889,15 @@ bool PacoteIAGerenteDados::IsInitialized() const {
 }
 
 void PacoteIAGerenteDados::Swap(PacoteIAGerenteDados* other) {
-  if (other != this) {
-    std::swap(numframe_, other->numframe_);
-    velocidades_.Swap(&other->velocidades_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void PacoteIAGerenteDados::InternalSwap(PacoteIAGerenteDados* other) {
+  std::swap(numframe_, other->numframe_);
+  velocidades_.UnsafeArenaSwap(&other->velocidades_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata PacoteIAGerenteDados::GetMetadata() const {
@@ -730,6 +908,64 @@ void PacoteIAGerenteDados::Swap(PacoteIAGerenteDados* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// PacoteIAGerenteDados
+
+// required uint32 numFrame = 1;
+bool PacoteIAGerenteDados::has_numframe() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void PacoteIAGerenteDados::set_has_numframe() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void PacoteIAGerenteDados::clear_has_numframe() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void PacoteIAGerenteDados::clear_numframe() {
+  numframe_ = 0u;
+  clear_has_numframe();
+}
+ ::google::protobuf::uint32 PacoteIAGerenteDados::numframe() const {
+  // @@protoc_insertion_point(field_get:PacoteIAGerenteDados.numFrame)
+  return numframe_;
+}
+ void PacoteIAGerenteDados::set_numframe(::google::protobuf::uint32 value) {
+  set_has_numframe();
+  numframe_ = value;
+  // @@protoc_insertion_point(field_set:PacoteIAGerenteDados.numFrame)
+}
+
+// repeated .PacoteVelocidades velocidades = 2;
+int PacoteIAGerenteDados::velocidades_size() const {
+  return velocidades_.size();
+}
+void PacoteIAGerenteDados::clear_velocidades() {
+  velocidades_.Clear();
+}
+const ::PacoteVelocidades& PacoteIAGerenteDados::velocidades(int index) const {
+  // @@protoc_insertion_point(field_get:PacoteIAGerenteDados.velocidades)
+  return velocidades_.Get(index);
+}
+::PacoteVelocidades* PacoteIAGerenteDados::mutable_velocidades(int index) {
+  // @@protoc_insertion_point(field_mutable:PacoteIAGerenteDados.velocidades)
+  return velocidades_.Mutable(index);
+}
+::PacoteVelocidades* PacoteIAGerenteDados::add_velocidades() {
+  // @@protoc_insertion_point(field_add:PacoteIAGerenteDados.velocidades)
+  return velocidades_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::PacoteVelocidades >*
+PacoteIAGerenteDados::mutable_velocidades() {
+  // @@protoc_insertion_point(field_mutable_list:PacoteIAGerenteDados.velocidades)
+  return &velocidades_;
+}
+const ::google::protobuf::RepeatedPtrField< ::PacoteVelocidades >&
+PacoteIAGerenteDados::velocidades() const {
+  // @@protoc_insertion_point(field_list:PacoteIAGerenteDados.velocidades)
+  return velocidades_;
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

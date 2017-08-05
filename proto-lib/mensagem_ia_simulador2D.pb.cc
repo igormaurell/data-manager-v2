@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -33,6 +34,7 @@ const ::google::protobuf::EnumDescriptor* PacoteIASimulador2D_LadoCampo_descript
 }  // namespace
 
 
+void protobuf_AssignDesc_mensagem_5fia_5fsimulador2D_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_mensagem_5fia_5fsimulador2D_2eproto() {
   protobuf_AddDesc_mensagem_5fia_5fsimulador2D_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -45,16 +47,16 @@ void protobuf_AssignDesc_mensagem_5fia_5fsimulador2D_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacotePathPlanning, y_),
   };
   PacotePathPlanning_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       PacotePathPlanning_descriptor_,
       PacotePathPlanning::default_instance_,
       PacotePathPlanning_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacotePathPlanning, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacotePathPlanning, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(PacotePathPlanning));
+      -1,
+      sizeof(PacotePathPlanning),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacotePathPlanning, _internal_metadata_),
+      -1);
   PacoteRoboIA_descriptor_ = file->message_type(1);
   static const int PacoteRoboIA_offsets_[16] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteRoboIA, id_),
@@ -75,16 +77,16 @@ void protobuf_AssignDesc_mensagem_5fia_5fsimulador2D_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteRoboIA, drible_ligado_),
   };
   PacoteRoboIA_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       PacoteRoboIA_descriptor_,
       PacoteRoboIA::default_instance_,
       PacoteRoboIA_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteRoboIA, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteRoboIA, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(PacoteRoboIA));
+      -1,
+      sizeof(PacoteRoboIA),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteRoboIA, _internal_metadata_),
+      -1);
   PacoteIASimulador2D_descriptor_ = file->message_type(2);
   static const int PacoteIASimulador2D_offsets_[8] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteIASimulador2D, bola_),
@@ -97,16 +99,16 @@ void protobuf_AssignDesc_mensagem_5fia_5fsimulador2D_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteIASimulador2D, ladocampo_),
   };
   PacoteIASimulador2D_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       PacoteIASimulador2D_descriptor_,
       PacoteIASimulador2D::default_instance_,
       PacoteIASimulador2D_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteIASimulador2D, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteIASimulador2D, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(PacoteIASimulador2D));
+      -1,
+      sizeof(PacoteIASimulador2D),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PacoteIASimulador2D, _internal_metadata_),
+      -1);
   PacoteIASimulador2D_CorEquipe_descriptor_ = PacoteIASimulador2D_descriptor_->enum_type(0);
   PacoteIASimulador2D_LadoCampo_descriptor_ = PacoteIASimulador2D_descriptor_->enum_type(1);
 }
@@ -119,14 +121,15 @@ inline void protobuf_AssignDescriptorsOnce() {
                  &protobuf_AssignDesc_mensagem_5fia_5fsimulador2D_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    PacotePathPlanning_descriptor_, &PacotePathPlanning::default_instance());
+      PacotePathPlanning_descriptor_, &PacotePathPlanning::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    PacoteRoboIA_descriptor_, &PacoteRoboIA::default_instance());
+      PacoteRoboIA_descriptor_, &PacoteRoboIA::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    PacoteIASimulador2D_descriptor_, &PacoteIASimulador2D::default_instance());
+      PacoteIASimulador2D_descriptor_, &PacoteIASimulador2D::default_instance());
 }
 
 }  // namespace
@@ -140,6 +143,7 @@ void protobuf_ShutdownFile_mensagem_5fia_5fsimulador2D_2eproto() {
   delete PacoteIASimulador2D_reflection_;
 }
 
+void protobuf_AddDesc_mensagem_5fia_5fsimulador2D_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AddDesc_mensagem_5fia_5fsimulador2D_2eproto() {
   static bool already_here = false;
   if (already_here) return;
@@ -190,13 +194,13 @@ struct StaticDescriptorInitializer_mensagem_5fia_5fsimulador2D_2eproto {
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int PacotePathPlanning::kXFieldNumber;
 const int PacotePathPlanning::kYFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 PacotePathPlanning::PacotePathPlanning()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:PacotePathPlanning)
 }
@@ -205,7 +209,8 @@ void PacotePathPlanning::InitAsDefaultInstance() {
 }
 
 PacotePathPlanning::PacotePathPlanning(const PacotePathPlanning& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:PacotePathPlanning)
@@ -243,20 +248,27 @@ const PacotePathPlanning& PacotePathPlanning::default_instance() {
 
 PacotePathPlanning* PacotePathPlanning::default_instance_ = NULL;
 
-PacotePathPlanning* PacotePathPlanning::New() const {
-  return new PacotePathPlanning;
+PacotePathPlanning* PacotePathPlanning::New(::google::protobuf::Arena* arena) const {
+  PacotePathPlanning* n = new PacotePathPlanning;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void PacotePathPlanning::Clear() {
+// @@protoc_insertion_point(message_clear_start:PacotePathPlanning)
   x_.Clear();
   y_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool PacotePathPlanning::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:PacotePathPlanning)
   for (;;) {
@@ -339,15 +351,15 @@ void PacotePathPlanning::SerializeWithCachedSizes(
       2, this->y(i), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:PacotePathPlanning)
 }
 
-::google::protobuf::uint8* PacotePathPlanning::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* PacotePathPlanning::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:PacotePathPlanning)
   // repeated float x = 1;
   for (int i = 0; i < this->x_size(); i++) {
@@ -361,7 +373,7 @@ void PacotePathPlanning::SerializeWithCachedSizes(
       WriteFloatToArray(2, this->y(i), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -370,6 +382,7 @@ void PacotePathPlanning::SerializeWithCachedSizes(
 }
 
 int PacotePathPlanning::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:PacotePathPlanning)
   int total_size = 0;
 
   // repeated float x = 1;
@@ -386,7 +399,7 @@ int PacotePathPlanning::ByteSize() const {
     total_size += 1 * this->y_size() + data_size;
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -398,31 +411,43 @@ int PacotePathPlanning::ByteSize() const {
 }
 
 void PacotePathPlanning::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const PacotePathPlanning* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const PacotePathPlanning*>(
-      &from);
+// @@protoc_insertion_point(generalized_merge_from_start:PacotePathPlanning)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const PacotePathPlanning* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const PacotePathPlanning>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:PacotePathPlanning)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:PacotePathPlanning)
     MergeFrom(*source);
   }
 }
 
 void PacotePathPlanning::MergeFrom(const PacotePathPlanning& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:PacotePathPlanning)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   x_.MergeFrom(from.x_);
   y_.MergeFrom(from.y_);
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void PacotePathPlanning::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:PacotePathPlanning)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PacotePathPlanning::CopyFrom(const PacotePathPlanning& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:PacotePathPlanning)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -434,13 +459,15 @@ bool PacotePathPlanning::IsInitialized() const {
 }
 
 void PacotePathPlanning::Swap(PacotePathPlanning* other) {
-  if (other != this) {
-    x_.Swap(&other->x_);
-    y_.Swap(&other->y_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void PacotePathPlanning::InternalSwap(PacotePathPlanning* other) {
+  x_.UnsafeArenaSwap(&other->x_);
+  y_.UnsafeArenaSwap(&other->y_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata PacotePathPlanning::GetMetadata() const {
@@ -451,10 +478,74 @@ void PacotePathPlanning::Swap(PacotePathPlanning* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// PacotePathPlanning
+
+// repeated float x = 1;
+int PacotePathPlanning::x_size() const {
+  return x_.size();
+}
+void PacotePathPlanning::clear_x() {
+  x_.Clear();
+}
+ float PacotePathPlanning::x(int index) const {
+  // @@protoc_insertion_point(field_get:PacotePathPlanning.x)
+  return x_.Get(index);
+}
+ void PacotePathPlanning::set_x(int index, float value) {
+  x_.Set(index, value);
+  // @@protoc_insertion_point(field_set:PacotePathPlanning.x)
+}
+ void PacotePathPlanning::add_x(float value) {
+  x_.Add(value);
+  // @@protoc_insertion_point(field_add:PacotePathPlanning.x)
+}
+ const ::google::protobuf::RepeatedField< float >&
+PacotePathPlanning::x() const {
+  // @@protoc_insertion_point(field_list:PacotePathPlanning.x)
+  return x_;
+}
+ ::google::protobuf::RepeatedField< float >*
+PacotePathPlanning::mutable_x() {
+  // @@protoc_insertion_point(field_mutable_list:PacotePathPlanning.x)
+  return &x_;
+}
+
+// repeated float y = 2;
+int PacotePathPlanning::y_size() const {
+  return y_.size();
+}
+void PacotePathPlanning::clear_y() {
+  y_.Clear();
+}
+ float PacotePathPlanning::y(int index) const {
+  // @@protoc_insertion_point(field_get:PacotePathPlanning.y)
+  return y_.Get(index);
+}
+ void PacotePathPlanning::set_y(int index, float value) {
+  y_.Set(index, value);
+  // @@protoc_insertion_point(field_set:PacotePathPlanning.y)
+}
+ void PacotePathPlanning::add_y(float value) {
+  y_.Add(value);
+  // @@protoc_insertion_point(field_add:PacotePathPlanning.y)
+}
+ const ::google::protobuf::RepeatedField< float >&
+PacotePathPlanning::y() const {
+  // @@protoc_insertion_point(field_list:PacotePathPlanning.y)
+  return y_;
+}
+ ::google::protobuf::RepeatedField< float >*
+PacotePathPlanning::mutable_y() {
+  // @@protoc_insertion_point(field_mutable_list:PacotePathPlanning.y)
+  return &y_;
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int PacoteRoboIA::kIdFieldNumber;
 const int PacoteRoboIA::kXFieldNumber;
 const int PacoteRoboIA::kYFieldNumber;
@@ -471,10 +562,10 @@ const int PacoteRoboIA::kVelAngFieldNumber;
 const int PacoteRoboIA::kChuteBaixoFieldNumber;
 const int PacoteRoboIA::kChuteAltoFieldNumber;
 const int PacoteRoboIA::kDribleLigadoFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 PacoteRoboIA::PacoteRoboIA()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:PacoteRoboIA)
 }
@@ -484,7 +575,8 @@ void PacoteRoboIA::InitAsDefaultInstance() {
 }
 
 PacoteRoboIA::PacoteRoboIA(const PacoteRoboIA& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:PacoteRoboIA)
@@ -499,8 +591,8 @@ void PacoteRoboIA::SharedCtor() {
   velx_ = 0;
   vely_ = 0;
   orientation_ = 0;
-  skill_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  tatica_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  skill_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  tatica_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   alvox_ = 0;
   alvoy_ = 0;
   pathplanning_ = NULL;
@@ -517,12 +609,8 @@ PacoteRoboIA::~PacoteRoboIA() {
 }
 
 void PacoteRoboIA::SharedDtor() {
-  if (skill_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete skill_;
-  }
-  if (tatica_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete tatica_;
-  }
+  skill_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  tatica_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != default_instance_) {
     delete pathplanning_;
   }
@@ -545,35 +633,42 @@ const PacoteRoboIA& PacoteRoboIA::default_instance() {
 
 PacoteRoboIA* PacoteRoboIA::default_instance_ = NULL;
 
-PacoteRoboIA* PacoteRoboIA::New() const {
-  return new PacoteRoboIA;
+PacoteRoboIA* PacoteRoboIA::New(::google::protobuf::Arena* arena) const {
+  PacoteRoboIA* n = new PacoteRoboIA;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void PacoteRoboIA::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<PacoteRoboIA*>(16)->f) - \
-   reinterpret_cast<char*>(16))
+// @@protoc_insertion_point(message_clear_start:PacoteRoboIA)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(PacoteRoboIA, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<PacoteRoboIA*>(16)->f)
+#endif
 
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
 
-  if (_has_bits_[0 / 32] & 255) {
+  if (_has_bits_[0 / 32] & 255u) {
     ZR_(id_, orientation_);
     if (has_skill()) {
-      if (skill_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        skill_->clear();
-      }
+      skill_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     }
     if (has_tatica()) {
-      if (tatica_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        tatica_->clear();
-      }
+      tatica_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     }
   }
-  if (_has_bits_[8 / 32] & 65024) {
+  if (_has_bits_[8 / 32] & 65024u) {
     ZR_(alvox_, alvoy_);
     ZR_(vel_ang_, drible_ligado_);
     if (has_pathplanning()) {
@@ -581,17 +676,19 @@ void PacoteRoboIA::Clear() {
     }
   }
 
-#undef OFFSET_OF_FIELD_
+#undef ZR_HELPER_
 #undef ZR_
 
   informacoessensorias_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool PacoteRoboIA::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:PacoteRoboIA)
   for (;;) {
@@ -697,7 +794,7 @@ bool PacoteRoboIA::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->skill().data(), this->skill().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "skill");
+            "PacoteRoboIA.skill");
         } else {
           goto handle_unusual;
         }
@@ -714,7 +811,7 @@ bool PacoteRoboIA::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->tatica().data(), this->tatica().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "tatica");
+            "PacoteRoboIA.tatica");
         } else {
           goto handle_unusual;
         }
@@ -732,7 +829,7 @@ bool PacoteRoboIA::MergePartialFromCodedStream(
             this->informacoessensorias(this->informacoessensorias_size() - 1).data(),
             this->informacoessensorias(this->informacoessensorias_size() - 1).length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "informacoessensorias");
+            "PacoteRoboIA.informacoesSensorias");
         } else {
           goto handle_unusual;
         }
@@ -904,7 +1001,7 @@ void PacoteRoboIA::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->skill().data(), this->skill().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "skill");
+      "PacoteRoboIA.skill");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       7, this->skill(), output);
   }
@@ -914,17 +1011,17 @@ void PacoteRoboIA::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->tatica().data(), this->tatica().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "tatica");
+      "PacoteRoboIA.tatica");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       8, this->tatica(), output);
   }
 
   // repeated string informacoesSensorias = 9;
   for (int i = 0; i < this->informacoessensorias_size(); i++) {
-  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-    this->informacoessensorias(i).data(), this->informacoessensorias(i).length(),
-    ::google::protobuf::internal::WireFormat::SERIALIZE,
-    "informacoessensorias");
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->informacoessensorias(i).data(), this->informacoessensorias(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "PacoteRoboIA.informacoesSensorias");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       9, this->informacoessensorias(i), output);
   }
@@ -942,7 +1039,7 @@ void PacoteRoboIA::SerializeWithCachedSizes(
   // optional .PacotePathPlanning pathPlanning = 12;
   if (has_pathplanning()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      12, this->pathplanning(), output);
+      12, *this->pathplanning_, output);
   }
 
   // optional float vel_ang = 13;
@@ -965,15 +1062,15 @@ void PacoteRoboIA::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(16, this->drible_ligado(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:PacoteRoboIA)
 }
 
-::google::protobuf::uint8* PacoteRoboIA::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* PacoteRoboIA::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:PacoteRoboIA)
   // optional uint32 id = 1;
   if (has_id()) {
@@ -1010,7 +1107,7 @@ void PacoteRoboIA::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->skill().data(), this->skill().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "skill");
+      "PacoteRoboIA.skill");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         7, this->skill(), target);
@@ -1021,7 +1118,7 @@ void PacoteRoboIA::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->tatica().data(), this->tatica().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "tatica");
+      "PacoteRoboIA.tatica");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         8, this->tatica(), target);
@@ -1032,7 +1129,7 @@ void PacoteRoboIA::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->informacoessensorias(i).data(), this->informacoessensorias(i).length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "informacoessensorias");
+      "PacoteRoboIA.informacoesSensorias");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(9, this->informacoessensorias(i), target);
   }
@@ -1050,8 +1147,8 @@ void PacoteRoboIA::SerializeWithCachedSizes(
   // optional .PacotePathPlanning pathPlanning = 12;
   if (has_pathplanning()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        12, this->pathplanning(), target);
+      InternalWriteMessageNoVirtualToArray(
+        12, *this->pathplanning_, false, target);
   }
 
   // optional float vel_ang = 13;
@@ -1074,7 +1171,7 @@ void PacoteRoboIA::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(16, this->drible_ligado(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1083,9 +1180,10 @@ void PacoteRoboIA::SerializeWithCachedSizes(
 }
 
 int PacoteRoboIA::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:PacoteRoboIA)
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 255u) {
     // optional uint32 id = 1;
     if (has_id()) {
       total_size += 1 +
@@ -1133,7 +1231,7 @@ int PacoteRoboIA::ByteSize() const {
     }
 
   }
-  if (_has_bits_[9 / 32] & (0xffu << (9 % 32))) {
+  if (_has_bits_[9 / 32] & 65024u) {
     // optional float alvoX = 10;
     if (has_alvox()) {
       total_size += 1 + 4;
@@ -1148,7 +1246,7 @@ int PacoteRoboIA::ByteSize() const {
     if (has_pathplanning()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->pathplanning());
+          *this->pathplanning_);
     }
 
     // optional float vel_ang = 13;
@@ -1179,7 +1277,7 @@ int PacoteRoboIA::ByteSize() const {
       this->informacoessensorias(i));
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -1191,19 +1289,27 @@ int PacoteRoboIA::ByteSize() const {
 }
 
 void PacoteRoboIA::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const PacoteRoboIA* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const PacoteRoboIA*>(
-      &from);
+// @@protoc_insertion_point(generalized_merge_from_start:PacoteRoboIA)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const PacoteRoboIA* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const PacoteRoboIA>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:PacoteRoboIA)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:PacoteRoboIA)
     MergeFrom(*source);
   }
 }
 
 void PacoteRoboIA::MergeFrom(const PacoteRoboIA& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:PacoteRoboIA)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   informacoessensorias_.MergeFrom(from.informacoessensorias_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_id()) {
@@ -1225,10 +1331,12 @@ void PacoteRoboIA::MergeFrom(const PacoteRoboIA& from) {
       set_orientation(from.orientation());
     }
     if (from.has_skill()) {
-      set_skill(from.skill());
+      set_has_skill();
+      skill_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.skill_);
     }
     if (from.has_tatica()) {
-      set_tatica(from.tatica());
+      set_has_tatica();
+      tatica_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.tatica_);
     }
   }
   if (from._has_bits_[9 / 32] & (0xffu << (9 % 32))) {
@@ -1254,16 +1362,20 @@ void PacoteRoboIA::MergeFrom(const PacoteRoboIA& from) {
       set_drible_ligado(from.drible_ligado());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void PacoteRoboIA::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:PacoteRoboIA)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PacoteRoboIA::CopyFrom(const PacoteRoboIA& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:PacoteRoboIA)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1275,27 +1387,29 @@ bool PacoteRoboIA::IsInitialized() const {
 }
 
 void PacoteRoboIA::Swap(PacoteRoboIA* other) {
-  if (other != this) {
-    std::swap(id_, other->id_);
-    std::swap(x_, other->x_);
-    std::swap(y_, other->y_);
-    std::swap(velx_, other->velx_);
-    std::swap(vely_, other->vely_);
-    std::swap(orientation_, other->orientation_);
-    std::swap(skill_, other->skill_);
-    std::swap(tatica_, other->tatica_);
-    informacoessensorias_.Swap(&other->informacoessensorias_);
-    std::swap(alvox_, other->alvox_);
-    std::swap(alvoy_, other->alvoy_);
-    std::swap(pathplanning_, other->pathplanning_);
-    std::swap(vel_ang_, other->vel_ang_);
-    std::swap(chute_baixo_, other->chute_baixo_);
-    std::swap(chute_alto_, other->chute_alto_);
-    std::swap(drible_ligado_, other->drible_ligado_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void PacoteRoboIA::InternalSwap(PacoteRoboIA* other) {
+  std::swap(id_, other->id_);
+  std::swap(x_, other->x_);
+  std::swap(y_, other->y_);
+  std::swap(velx_, other->velx_);
+  std::swap(vely_, other->vely_);
+  std::swap(orientation_, other->orientation_);
+  skill_.Swap(&other->skill_);
+  tatica_.Swap(&other->tatica_);
+  informacoessensorias_.UnsafeArenaSwap(&other->informacoessensorias_);
+  std::swap(alvox_, other->alvox_);
+  std::swap(alvoy_, other->alvoy_);
+  std::swap(pathplanning_, other->pathplanning_);
+  std::swap(vel_ang_, other->vel_ang_);
+  std::swap(chute_baixo_, other->chute_baixo_);
+  std::swap(chute_alto_, other->chute_alto_);
+  std::swap(drible_ligado_, other->drible_ligado_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata PacoteRoboIA::GetMetadata() const {
@@ -1306,6 +1420,505 @@ void PacoteRoboIA::Swap(PacoteRoboIA* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// PacoteRoboIA
+
+// optional uint32 id = 1;
+bool PacoteRoboIA::has_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void PacoteRoboIA::set_has_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void PacoteRoboIA::clear_has_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void PacoteRoboIA::clear_id() {
+  id_ = 0u;
+  clear_has_id();
+}
+ ::google::protobuf::uint32 PacoteRoboIA::id() const {
+  // @@protoc_insertion_point(field_get:PacoteRoboIA.id)
+  return id_;
+}
+ void PacoteRoboIA::set_id(::google::protobuf::uint32 value) {
+  set_has_id();
+  id_ = value;
+  // @@protoc_insertion_point(field_set:PacoteRoboIA.id)
+}
+
+// optional float x = 2;
+bool PacoteRoboIA::has_x() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void PacoteRoboIA::set_has_x() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void PacoteRoboIA::clear_has_x() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void PacoteRoboIA::clear_x() {
+  x_ = 0;
+  clear_has_x();
+}
+ float PacoteRoboIA::x() const {
+  // @@protoc_insertion_point(field_get:PacoteRoboIA.x)
+  return x_;
+}
+ void PacoteRoboIA::set_x(float value) {
+  set_has_x();
+  x_ = value;
+  // @@protoc_insertion_point(field_set:PacoteRoboIA.x)
+}
+
+// optional float y = 3;
+bool PacoteRoboIA::has_y() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void PacoteRoboIA::set_has_y() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void PacoteRoboIA::clear_has_y() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void PacoteRoboIA::clear_y() {
+  y_ = 0;
+  clear_has_y();
+}
+ float PacoteRoboIA::y() const {
+  // @@protoc_insertion_point(field_get:PacoteRoboIA.y)
+  return y_;
+}
+ void PacoteRoboIA::set_y(float value) {
+  set_has_y();
+  y_ = value;
+  // @@protoc_insertion_point(field_set:PacoteRoboIA.y)
+}
+
+// optional float velX = 4;
+bool PacoteRoboIA::has_velx() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+void PacoteRoboIA::set_has_velx() {
+  _has_bits_[0] |= 0x00000008u;
+}
+void PacoteRoboIA::clear_has_velx() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+void PacoteRoboIA::clear_velx() {
+  velx_ = 0;
+  clear_has_velx();
+}
+ float PacoteRoboIA::velx() const {
+  // @@protoc_insertion_point(field_get:PacoteRoboIA.velX)
+  return velx_;
+}
+ void PacoteRoboIA::set_velx(float value) {
+  set_has_velx();
+  velx_ = value;
+  // @@protoc_insertion_point(field_set:PacoteRoboIA.velX)
+}
+
+// optional float velY = 5;
+bool PacoteRoboIA::has_vely() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+void PacoteRoboIA::set_has_vely() {
+  _has_bits_[0] |= 0x00000010u;
+}
+void PacoteRoboIA::clear_has_vely() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+void PacoteRoboIA::clear_vely() {
+  vely_ = 0;
+  clear_has_vely();
+}
+ float PacoteRoboIA::vely() const {
+  // @@protoc_insertion_point(field_get:PacoteRoboIA.velY)
+  return vely_;
+}
+ void PacoteRoboIA::set_vely(float value) {
+  set_has_vely();
+  vely_ = value;
+  // @@protoc_insertion_point(field_set:PacoteRoboIA.velY)
+}
+
+// optional float orientation = 6;
+bool PacoteRoboIA::has_orientation() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+void PacoteRoboIA::set_has_orientation() {
+  _has_bits_[0] |= 0x00000020u;
+}
+void PacoteRoboIA::clear_has_orientation() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+void PacoteRoboIA::clear_orientation() {
+  orientation_ = 0;
+  clear_has_orientation();
+}
+ float PacoteRoboIA::orientation() const {
+  // @@protoc_insertion_point(field_get:PacoteRoboIA.orientation)
+  return orientation_;
+}
+ void PacoteRoboIA::set_orientation(float value) {
+  set_has_orientation();
+  orientation_ = value;
+  // @@protoc_insertion_point(field_set:PacoteRoboIA.orientation)
+}
+
+// optional string skill = 7;
+bool PacoteRoboIA::has_skill() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+void PacoteRoboIA::set_has_skill() {
+  _has_bits_[0] |= 0x00000040u;
+}
+void PacoteRoboIA::clear_has_skill() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+void PacoteRoboIA::clear_skill() {
+  skill_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_skill();
+}
+ const ::std::string& PacoteRoboIA::skill() const {
+  // @@protoc_insertion_point(field_get:PacoteRoboIA.skill)
+  return skill_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ void PacoteRoboIA::set_skill(const ::std::string& value) {
+  set_has_skill();
+  skill_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:PacoteRoboIA.skill)
+}
+ void PacoteRoboIA::set_skill(const char* value) {
+  set_has_skill();
+  skill_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:PacoteRoboIA.skill)
+}
+ void PacoteRoboIA::set_skill(const char* value, size_t size) {
+  set_has_skill();
+  skill_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:PacoteRoboIA.skill)
+}
+ ::std::string* PacoteRoboIA::mutable_skill() {
+  set_has_skill();
+  // @@protoc_insertion_point(field_mutable:PacoteRoboIA.skill)
+  return skill_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ ::std::string* PacoteRoboIA::release_skill() {
+  // @@protoc_insertion_point(field_release:PacoteRoboIA.skill)
+  clear_has_skill();
+  return skill_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ void PacoteRoboIA::set_allocated_skill(::std::string* skill) {
+  if (skill != NULL) {
+    set_has_skill();
+  } else {
+    clear_has_skill();
+  }
+  skill_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), skill);
+  // @@protoc_insertion_point(field_set_allocated:PacoteRoboIA.skill)
+}
+
+// optional string tatica = 8;
+bool PacoteRoboIA::has_tatica() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+void PacoteRoboIA::set_has_tatica() {
+  _has_bits_[0] |= 0x00000080u;
+}
+void PacoteRoboIA::clear_has_tatica() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+void PacoteRoboIA::clear_tatica() {
+  tatica_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_tatica();
+}
+ const ::std::string& PacoteRoboIA::tatica() const {
+  // @@protoc_insertion_point(field_get:PacoteRoboIA.tatica)
+  return tatica_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ void PacoteRoboIA::set_tatica(const ::std::string& value) {
+  set_has_tatica();
+  tatica_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:PacoteRoboIA.tatica)
+}
+ void PacoteRoboIA::set_tatica(const char* value) {
+  set_has_tatica();
+  tatica_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:PacoteRoboIA.tatica)
+}
+ void PacoteRoboIA::set_tatica(const char* value, size_t size) {
+  set_has_tatica();
+  tatica_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:PacoteRoboIA.tatica)
+}
+ ::std::string* PacoteRoboIA::mutable_tatica() {
+  set_has_tatica();
+  // @@protoc_insertion_point(field_mutable:PacoteRoboIA.tatica)
+  return tatica_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ ::std::string* PacoteRoboIA::release_tatica() {
+  // @@protoc_insertion_point(field_release:PacoteRoboIA.tatica)
+  clear_has_tatica();
+  return tatica_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ void PacoteRoboIA::set_allocated_tatica(::std::string* tatica) {
+  if (tatica != NULL) {
+    set_has_tatica();
+  } else {
+    clear_has_tatica();
+  }
+  tatica_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), tatica);
+  // @@protoc_insertion_point(field_set_allocated:PacoteRoboIA.tatica)
+}
+
+// repeated string informacoesSensorias = 9;
+int PacoteRoboIA::informacoessensorias_size() const {
+  return informacoessensorias_.size();
+}
+void PacoteRoboIA::clear_informacoessensorias() {
+  informacoessensorias_.Clear();
+}
+ const ::std::string& PacoteRoboIA::informacoessensorias(int index) const {
+  // @@protoc_insertion_point(field_get:PacoteRoboIA.informacoesSensorias)
+  return informacoessensorias_.Get(index);
+}
+ ::std::string* PacoteRoboIA::mutable_informacoessensorias(int index) {
+  // @@protoc_insertion_point(field_mutable:PacoteRoboIA.informacoesSensorias)
+  return informacoessensorias_.Mutable(index);
+}
+ void PacoteRoboIA::set_informacoessensorias(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:PacoteRoboIA.informacoesSensorias)
+  informacoessensorias_.Mutable(index)->assign(value);
+}
+ void PacoteRoboIA::set_informacoessensorias(int index, const char* value) {
+  informacoessensorias_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:PacoteRoboIA.informacoesSensorias)
+}
+ void PacoteRoboIA::set_informacoessensorias(int index, const char* value, size_t size) {
+  informacoessensorias_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:PacoteRoboIA.informacoesSensorias)
+}
+ ::std::string* PacoteRoboIA::add_informacoessensorias() {
+  // @@protoc_insertion_point(field_add_mutable:PacoteRoboIA.informacoesSensorias)
+  return informacoessensorias_.Add();
+}
+ void PacoteRoboIA::add_informacoessensorias(const ::std::string& value) {
+  informacoessensorias_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:PacoteRoboIA.informacoesSensorias)
+}
+ void PacoteRoboIA::add_informacoessensorias(const char* value) {
+  informacoessensorias_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:PacoteRoboIA.informacoesSensorias)
+}
+ void PacoteRoboIA::add_informacoessensorias(const char* value, size_t size) {
+  informacoessensorias_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:PacoteRoboIA.informacoesSensorias)
+}
+ const ::google::protobuf::RepeatedPtrField< ::std::string>&
+PacoteRoboIA::informacoessensorias() const {
+  // @@protoc_insertion_point(field_list:PacoteRoboIA.informacoesSensorias)
+  return informacoessensorias_;
+}
+ ::google::protobuf::RepeatedPtrField< ::std::string>*
+PacoteRoboIA::mutable_informacoessensorias() {
+  // @@protoc_insertion_point(field_mutable_list:PacoteRoboIA.informacoesSensorias)
+  return &informacoessensorias_;
+}
+
+// optional float alvoX = 10;
+bool PacoteRoboIA::has_alvox() const {
+  return (_has_bits_[0] & 0x00000200u) != 0;
+}
+void PacoteRoboIA::set_has_alvox() {
+  _has_bits_[0] |= 0x00000200u;
+}
+void PacoteRoboIA::clear_has_alvox() {
+  _has_bits_[0] &= ~0x00000200u;
+}
+void PacoteRoboIA::clear_alvox() {
+  alvox_ = 0;
+  clear_has_alvox();
+}
+ float PacoteRoboIA::alvox() const {
+  // @@protoc_insertion_point(field_get:PacoteRoboIA.alvoX)
+  return alvox_;
+}
+ void PacoteRoboIA::set_alvox(float value) {
+  set_has_alvox();
+  alvox_ = value;
+  // @@protoc_insertion_point(field_set:PacoteRoboIA.alvoX)
+}
+
+// optional float alvoY = 11;
+bool PacoteRoboIA::has_alvoy() const {
+  return (_has_bits_[0] & 0x00000400u) != 0;
+}
+void PacoteRoboIA::set_has_alvoy() {
+  _has_bits_[0] |= 0x00000400u;
+}
+void PacoteRoboIA::clear_has_alvoy() {
+  _has_bits_[0] &= ~0x00000400u;
+}
+void PacoteRoboIA::clear_alvoy() {
+  alvoy_ = 0;
+  clear_has_alvoy();
+}
+ float PacoteRoboIA::alvoy() const {
+  // @@protoc_insertion_point(field_get:PacoteRoboIA.alvoY)
+  return alvoy_;
+}
+ void PacoteRoboIA::set_alvoy(float value) {
+  set_has_alvoy();
+  alvoy_ = value;
+  // @@protoc_insertion_point(field_set:PacoteRoboIA.alvoY)
+}
+
+// optional .PacotePathPlanning pathPlanning = 12;
+bool PacoteRoboIA::has_pathplanning() const {
+  return (_has_bits_[0] & 0x00000800u) != 0;
+}
+void PacoteRoboIA::set_has_pathplanning() {
+  _has_bits_[0] |= 0x00000800u;
+}
+void PacoteRoboIA::clear_has_pathplanning() {
+  _has_bits_[0] &= ~0x00000800u;
+}
+void PacoteRoboIA::clear_pathplanning() {
+  if (pathplanning_ != NULL) pathplanning_->::PacotePathPlanning::Clear();
+  clear_has_pathplanning();
+}
+const ::PacotePathPlanning& PacoteRoboIA::pathplanning() const {
+  // @@protoc_insertion_point(field_get:PacoteRoboIA.pathPlanning)
+  return pathplanning_ != NULL ? *pathplanning_ : *default_instance_->pathplanning_;
+}
+::PacotePathPlanning* PacoteRoboIA::mutable_pathplanning() {
+  set_has_pathplanning();
+  if (pathplanning_ == NULL) {
+    pathplanning_ = new ::PacotePathPlanning;
+  }
+  // @@protoc_insertion_point(field_mutable:PacoteRoboIA.pathPlanning)
+  return pathplanning_;
+}
+::PacotePathPlanning* PacoteRoboIA::release_pathplanning() {
+  // @@protoc_insertion_point(field_release:PacoteRoboIA.pathPlanning)
+  clear_has_pathplanning();
+  ::PacotePathPlanning* temp = pathplanning_;
+  pathplanning_ = NULL;
+  return temp;
+}
+void PacoteRoboIA::set_allocated_pathplanning(::PacotePathPlanning* pathplanning) {
+  delete pathplanning_;
+  pathplanning_ = pathplanning;
+  if (pathplanning) {
+    set_has_pathplanning();
+  } else {
+    clear_has_pathplanning();
+  }
+  // @@protoc_insertion_point(field_set_allocated:PacoteRoboIA.pathPlanning)
+}
+
+// optional float vel_ang = 13;
+bool PacoteRoboIA::has_vel_ang() const {
+  return (_has_bits_[0] & 0x00001000u) != 0;
+}
+void PacoteRoboIA::set_has_vel_ang() {
+  _has_bits_[0] |= 0x00001000u;
+}
+void PacoteRoboIA::clear_has_vel_ang() {
+  _has_bits_[0] &= ~0x00001000u;
+}
+void PacoteRoboIA::clear_vel_ang() {
+  vel_ang_ = 0;
+  clear_has_vel_ang();
+}
+ float PacoteRoboIA::vel_ang() const {
+  // @@protoc_insertion_point(field_get:PacoteRoboIA.vel_ang)
+  return vel_ang_;
+}
+ void PacoteRoboIA::set_vel_ang(float value) {
+  set_has_vel_ang();
+  vel_ang_ = value;
+  // @@protoc_insertion_point(field_set:PacoteRoboIA.vel_ang)
+}
+
+// optional float chute_baixo = 14;
+bool PacoteRoboIA::has_chute_baixo() const {
+  return (_has_bits_[0] & 0x00002000u) != 0;
+}
+void PacoteRoboIA::set_has_chute_baixo() {
+  _has_bits_[0] |= 0x00002000u;
+}
+void PacoteRoboIA::clear_has_chute_baixo() {
+  _has_bits_[0] &= ~0x00002000u;
+}
+void PacoteRoboIA::clear_chute_baixo() {
+  chute_baixo_ = 0;
+  clear_has_chute_baixo();
+}
+ float PacoteRoboIA::chute_baixo() const {
+  // @@protoc_insertion_point(field_get:PacoteRoboIA.chute_baixo)
+  return chute_baixo_;
+}
+ void PacoteRoboIA::set_chute_baixo(float value) {
+  set_has_chute_baixo();
+  chute_baixo_ = value;
+  // @@protoc_insertion_point(field_set:PacoteRoboIA.chute_baixo)
+}
+
+// optional float chute_alto = 15;
+bool PacoteRoboIA::has_chute_alto() const {
+  return (_has_bits_[0] & 0x00004000u) != 0;
+}
+void PacoteRoboIA::set_has_chute_alto() {
+  _has_bits_[0] |= 0x00004000u;
+}
+void PacoteRoboIA::clear_has_chute_alto() {
+  _has_bits_[0] &= ~0x00004000u;
+}
+void PacoteRoboIA::clear_chute_alto() {
+  chute_alto_ = 0;
+  clear_has_chute_alto();
+}
+ float PacoteRoboIA::chute_alto() const {
+  // @@protoc_insertion_point(field_get:PacoteRoboIA.chute_alto)
+  return chute_alto_;
+}
+ void PacoteRoboIA::set_chute_alto(float value) {
+  set_has_chute_alto();
+  chute_alto_ = value;
+  // @@protoc_insertion_point(field_set:PacoteRoboIA.chute_alto)
+}
+
+// optional float drible_ligado = 16;
+bool PacoteRoboIA::has_drible_ligado() const {
+  return (_has_bits_[0] & 0x00008000u) != 0;
+}
+void PacoteRoboIA::set_has_drible_ligado() {
+  _has_bits_[0] |= 0x00008000u;
+}
+void PacoteRoboIA::clear_has_drible_ligado() {
+  _has_bits_[0] &= ~0x00008000u;
+}
+void PacoteRoboIA::clear_drible_ligado() {
+  drible_ligado_ = 0;
+  clear_has_drible_ligado();
+}
+ float PacoteRoboIA::drible_ligado() const {
+  // @@protoc_insertion_point(field_get:PacoteRoboIA.drible_ligado)
+  return drible_ligado_;
+}
+ void PacoteRoboIA::set_drible_ligado(float value) {
+  set_has_drible_ligado();
+  drible_ligado_ = value;
+  // @@protoc_insertion_point(field_set:PacoteRoboIA.drible_ligado)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
 
@@ -1323,13 +1936,13 @@ bool PacoteIASimulador2D_CorEquipe_IsValid(int value) {
   }
 }
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const PacoteIASimulador2D_CorEquipe PacoteIASimulador2D::AMARELO;
 const PacoteIASimulador2D_CorEquipe PacoteIASimulador2D::AZUL;
 const PacoteIASimulador2D_CorEquipe PacoteIASimulador2D::CorEquipe_MIN;
 const PacoteIASimulador2D_CorEquipe PacoteIASimulador2D::CorEquipe_MAX;
 const int PacoteIASimulador2D::CorEquipe_ARRAYSIZE;
-#endif  // _MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 const ::google::protobuf::EnumDescriptor* PacoteIASimulador2D_LadoCampo_descriptor() {
   protobuf_AssignDescriptorsOnce();
   return PacoteIASimulador2D_LadoCampo_descriptor_;
@@ -1344,14 +1957,14 @@ bool PacoteIASimulador2D_LadoCampo_IsValid(int value) {
   }
 }
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const PacoteIASimulador2D_LadoCampo PacoteIASimulador2D::ESQUERDO;
 const PacoteIASimulador2D_LadoCampo PacoteIASimulador2D::DIREITO;
 const PacoteIASimulador2D_LadoCampo PacoteIASimulador2D::LadoCampo_MIN;
 const PacoteIASimulador2D_LadoCampo PacoteIASimulador2D::LadoCampo_MAX;
 const int PacoteIASimulador2D::LadoCampo_ARRAYSIZE;
-#endif  // _MSC_VER
-#ifndef _MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int PacoteIASimulador2D::kBolaFieldNumber;
 const int PacoteIASimulador2D::kDadosEstadosFieldNumber;
 const int PacoteIASimulador2D::kJogadaFieldNumber;
@@ -1360,10 +1973,10 @@ const int PacoteIASimulador2D::kRobosFieldNumber;
 const int PacoteIASimulador2D::kRobosAdvFieldNumber;
 const int PacoteIASimulador2D::kCorEquipeFieldNumber;
 const int PacoteIASimulador2D::kLadoCampoFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 PacoteIASimulador2D::PacoteIASimulador2D()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:PacoteIASimulador2D)
 }
@@ -1374,7 +1987,8 @@ void PacoteIASimulador2D::InitAsDefaultInstance() {
 }
 
 PacoteIASimulador2D::PacoteIASimulador2D(const PacoteIASimulador2D& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:PacoteIASimulador2D)
@@ -1385,7 +1999,7 @@ void PacoteIASimulador2D::SharedCtor() {
   _cached_size_ = 0;
   bola_ = NULL;
   dadosestados_ = NULL;
-  jogada_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  jogada_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   corequipe_ = 0;
   ladocampo_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -1397,9 +2011,7 @@ PacoteIASimulador2D::~PacoteIASimulador2D() {
 }
 
 void PacoteIASimulador2D::SharedDtor() {
-  if (jogada_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete jogada_;
-  }
+  jogada_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != default_instance_) {
     delete bola_;
     delete dadosestados_;
@@ -1423,22 +2035,33 @@ const PacoteIASimulador2D& PacoteIASimulador2D::default_instance() {
 
 PacoteIASimulador2D* PacoteIASimulador2D::default_instance_ = NULL;
 
-PacoteIASimulador2D* PacoteIASimulador2D::New() const {
-  return new PacoteIASimulador2D;
+PacoteIASimulador2D* PacoteIASimulador2D::New(::google::protobuf::Arena* arena) const {
+  PacoteIASimulador2D* n = new PacoteIASimulador2D;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void PacoteIASimulador2D::Clear() {
-#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
-  &reinterpret_cast<PacoteIASimulador2D*>(16)->f) - \
-   reinterpret_cast<char*>(16))
+// @@protoc_insertion_point(message_clear_start:PacoteIASimulador2D)
+#if defined(__clang__)
+#define ZR_HELPER_(f) \
+  _Pragma("clang diagnostic push") \
+  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
+  __builtin_offsetof(PacoteIASimulador2D, f) \
+  _Pragma("clang diagnostic pop")
+#else
+#define ZR_HELPER_(f) reinterpret_cast<char*>(\
+  &reinterpret_cast<PacoteIASimulador2D*>(16)->f)
+#endif
 
-#define ZR_(first, last) do {                              \
-    size_t f = OFFSET_OF_FIELD_(first);                    \
-    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
-    ::memset(&first, 0, n);                                \
-  } while (0)
+#define ZR_(first, last) do {\
+  ::memset(&first, 0,\
+           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
+} while (0)
 
-  if (_has_bits_[0 / 32] & 199) {
+  if (_has_bits_[0 / 32] & 199u) {
     ZR_(corequipe_, ladocampo_);
     if (has_bola()) {
       if (bola_ != NULL) bola_->::PacoteBola::Clear();
@@ -1447,25 +2070,25 @@ void PacoteIASimulador2D::Clear() {
       if (dadosestados_ != NULL) dadosestados_->::SSL_Referee::Clear();
     }
     if (has_jogada()) {
-      if (jogada_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-        jogada_->clear();
-      }
+      jogada_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
     }
   }
 
-#undef OFFSET_OF_FIELD_
+#undef ZR_HELPER_
 #undef ZR_
 
   fatosdomundo_.Clear();
   robos_.Clear();
   robosadv_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool PacoteIASimulador2D::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:PacoteIASimulador2D)
   for (;;) {
@@ -1507,7 +2130,7 @@ bool PacoteIASimulador2D::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->jogada().data(), this->jogada().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "jogada");
+            "PacoteIASimulador2D.jogada");
         } else {
           goto handle_unusual;
         }
@@ -1525,7 +2148,7 @@ bool PacoteIASimulador2D::MergePartialFromCodedStream(
             this->fatosdomundo(this->fatosdomundo_size() - 1).data(),
             this->fatosdomundo(this->fatosdomundo_size() - 1).length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "fatosdomundo");
+            "PacoteIASimulador2D.fatosDoMundo");
         } else {
           goto handle_unusual;
         }
@@ -1538,26 +2161,31 @@ bool PacoteIASimulador2D::MergePartialFromCodedStream(
       case 5: {
         if (tag == 42) {
          parse_robos:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+          DO_(input->IncrementRecursionDepth());
+         parse_loop_robos:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
                 input, add_robos()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(42)) goto parse_robos;
-        if (input->ExpectTag(50)) goto parse_robosAdv;
+        if (input->ExpectTag(42)) goto parse_loop_robos;
+        if (input->ExpectTag(50)) goto parse_loop_robosAdv;
+        input->UnsafeDecrementRecursionDepth();
         break;
       }
 
       // repeated .PacoteRobo robosAdv = 6;
       case 6: {
         if (tag == 50) {
-         parse_robosAdv:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+          DO_(input->IncrementRecursionDepth());
+         parse_loop_robosAdv:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
                 input, add_robosadv()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(50)) goto parse_robosAdv;
+        if (input->ExpectTag(50)) goto parse_loop_robosAdv;
+        input->UnsafeDecrementRecursionDepth();
         if (input->ExpectTag(56)) goto parse_corEquipe;
         break;
       }
@@ -1630,13 +2258,13 @@ void PacoteIASimulador2D::SerializeWithCachedSizes(
   // optional .PacoteBola bola = 1;
   if (has_bola()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->bola(), output);
+      1, *this->bola_, output);
   }
 
   // optional .SSL_Referee dadosEstados = 2;
   if (has_dadosestados()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->dadosestados(), output);
+      2, *this->dadosestados_, output);
   }
 
   // optional string jogada = 3;
@@ -1644,29 +2272,29 @@ void PacoteIASimulador2D::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->jogada().data(), this->jogada().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "jogada");
+      "PacoteIASimulador2D.jogada");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       3, this->jogada(), output);
   }
 
   // repeated string fatosDoMundo = 4;
   for (int i = 0; i < this->fatosdomundo_size(); i++) {
-  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-    this->fatosdomundo(i).data(), this->fatosdomundo(i).length(),
-    ::google::protobuf::internal::WireFormat::SERIALIZE,
-    "fatosdomundo");
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->fatosdomundo(i).data(), this->fatosdomundo(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "PacoteIASimulador2D.fatosDoMundo");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       4, this->fatosdomundo(i), output);
   }
 
   // repeated .PacoteRoboIA robos = 5;
-  for (int i = 0; i < this->robos_size(); i++) {
+  for (unsigned int i = 0, n = this->robos_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       5, this->robos(i), output);
   }
 
   // repeated .PacoteRobo robosAdv = 6;
-  for (int i = 0; i < this->robosadv_size(); i++) {
+  for (unsigned int i = 0, n = this->robosadv_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       6, this->robosadv(i), output);
   }
@@ -1683,28 +2311,28 @@ void PacoteIASimulador2D::SerializeWithCachedSizes(
       8, this->ladocampo(), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:PacoteIASimulador2D)
 }
 
-::google::protobuf::uint8* PacoteIASimulador2D::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* PacoteIASimulador2D::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:PacoteIASimulador2D)
   // optional .PacoteBola bola = 1;
   if (has_bola()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, this->bola(), target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->bola_, false, target);
   }
 
   // optional .SSL_Referee dadosEstados = 2;
   if (has_dadosestados()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->dadosestados(), target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->dadosestados_, false, target);
   }
 
   // optional string jogada = 3;
@@ -1712,7 +2340,7 @@ void PacoteIASimulador2D::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->jogada().data(), this->jogada().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "jogada");
+      "PacoteIASimulador2D.jogada");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         3, this->jogada(), target);
@@ -1723,23 +2351,23 @@ void PacoteIASimulador2D::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->fatosdomundo(i).data(), this->fatosdomundo(i).length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "fatosdomundo");
+      "PacoteIASimulador2D.fatosDoMundo");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(4, this->fatosdomundo(i), target);
   }
 
   // repeated .PacoteRoboIA robos = 5;
-  for (int i = 0; i < this->robos_size(); i++) {
+  for (unsigned int i = 0, n = this->robos_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        5, this->robos(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        5, this->robos(i), false, target);
   }
 
   // repeated .PacoteRobo robosAdv = 6;
-  for (int i = 0; i < this->robosadv_size(); i++) {
+  for (unsigned int i = 0, n = this->robosadv_size(); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        6, this->robosadv(i), target);
+      InternalWriteMessageNoVirtualToArray(
+        6, this->robosadv(i), false, target);
   }
 
   // required .PacoteIASimulador2D.CorEquipe corEquipe = 7;
@@ -1754,7 +2382,7 @@ void PacoteIASimulador2D::SerializeWithCachedSizes(
       8, this->ladocampo(), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -1763,21 +2391,27 @@ void PacoteIASimulador2D::SerializeWithCachedSizes(
 }
 
 int PacoteIASimulador2D::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:PacoteIASimulador2D)
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  // required .PacoteIASimulador2D.CorEquipe corEquipe = 7;
+  if (has_corequipe()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->corequipe());
+  }
+  if (_has_bits_[0 / 32] & 135u) {
     // optional .PacoteBola bola = 1;
     if (has_bola()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->bola());
+          *this->bola_);
     }
 
     // optional .SSL_Referee dadosEstados = 2;
     if (has_dadosestados()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->dadosestados());
+          *this->dadosestados_);
     }
 
     // optional string jogada = 3;
@@ -1785,12 +2419,6 @@ int PacoteIASimulador2D::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->jogada());
-    }
-
-    // required .PacoteIASimulador2D.CorEquipe corEquipe = 7;
-    if (has_corequipe()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::EnumSize(this->corequipe());
     }
 
     // optional .PacoteIASimulador2D.LadoCampo ladoCampo = 8;
@@ -1823,7 +2451,7 @@ int PacoteIASimulador2D::ByteSize() const {
         this->robosadv(i));
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -1835,19 +2463,27 @@ int PacoteIASimulador2D::ByteSize() const {
 }
 
 void PacoteIASimulador2D::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const PacoteIASimulador2D* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const PacoteIASimulador2D*>(
-      &from);
+// @@protoc_insertion_point(generalized_merge_from_start:PacoteIASimulador2D)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const PacoteIASimulador2D* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const PacoteIASimulador2D>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:PacoteIASimulador2D)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:PacoteIASimulador2D)
     MergeFrom(*source);
   }
 }
 
 void PacoteIASimulador2D::MergeFrom(const PacoteIASimulador2D& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:PacoteIASimulador2D)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   fatosdomundo_.MergeFrom(from.fatosdomundo_);
   robos_.MergeFrom(from.robos_);
   robosadv_.MergeFrom(from.robosadv_);
@@ -1859,7 +2495,8 @@ void PacoteIASimulador2D::MergeFrom(const PacoteIASimulador2D& from) {
       mutable_dadosestados()->::SSL_Referee::MergeFrom(from.dadosestados());
     }
     if (from.has_jogada()) {
-      set_jogada(from.jogada());
+      set_has_jogada();
+      jogada_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.jogada_);
     }
     if (from.has_corequipe()) {
       set_corequipe(from.corequipe());
@@ -1868,16 +2505,20 @@ void PacoteIASimulador2D::MergeFrom(const PacoteIASimulador2D& from) {
       set_ladocampo(from.ladocampo());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void PacoteIASimulador2D::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:PacoteIASimulador2D)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PacoteIASimulador2D::CopyFrom(const PacoteIASimulador2D& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:PacoteIASimulador2D)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1887,29 +2528,31 @@ bool PacoteIASimulador2D::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000040) != 0x00000040) return false;
 
   if (has_bola()) {
-    if (!this->bola().IsInitialized()) return false;
+    if (!this->bola_->IsInitialized()) return false;
   }
   if (has_dadosestados()) {
-    if (!this->dadosestados().IsInitialized()) return false;
+    if (!this->dadosestados_->IsInitialized()) return false;
   }
   if (!::google::protobuf::internal::AllAreInitialized(this->robosadv())) return false;
   return true;
 }
 
 void PacoteIASimulador2D::Swap(PacoteIASimulador2D* other) {
-  if (other != this) {
-    std::swap(bola_, other->bola_);
-    std::swap(dadosestados_, other->dadosestados_);
-    std::swap(jogada_, other->jogada_);
-    fatosdomundo_.Swap(&other->fatosdomundo_);
-    robos_.Swap(&other->robos_);
-    robosadv_.Swap(&other->robosadv_);
-    std::swap(corequipe_, other->corequipe_);
-    std::swap(ladocampo_, other->ladocampo_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void PacoteIASimulador2D::InternalSwap(PacoteIASimulador2D* other) {
+  std::swap(bola_, other->bola_);
+  std::swap(dadosestados_, other->dadosestados_);
+  jogada_.Swap(&other->jogada_);
+  fatosdomundo_.UnsafeArenaSwap(&other->fatosdomundo_);
+  robos_.UnsafeArenaSwap(&other->robos_);
+  robosadv_.UnsafeArenaSwap(&other->robosadv_);
+  std::swap(corequipe_, other->corequipe_);
+  std::swap(ladocampo_, other->ladocampo_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata PacoteIASimulador2D::GetMetadata() const {
@@ -1920,6 +2563,317 @@ void PacoteIASimulador2D::Swap(PacoteIASimulador2D* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// PacoteIASimulador2D
+
+// optional .PacoteBola bola = 1;
+bool PacoteIASimulador2D::has_bola() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void PacoteIASimulador2D::set_has_bola() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void PacoteIASimulador2D::clear_has_bola() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void PacoteIASimulador2D::clear_bola() {
+  if (bola_ != NULL) bola_->::PacoteBola::Clear();
+  clear_has_bola();
+}
+const ::PacoteBola& PacoteIASimulador2D::bola() const {
+  // @@protoc_insertion_point(field_get:PacoteIASimulador2D.bola)
+  return bola_ != NULL ? *bola_ : *default_instance_->bola_;
+}
+::PacoteBola* PacoteIASimulador2D::mutable_bola() {
+  set_has_bola();
+  if (bola_ == NULL) {
+    bola_ = new ::PacoteBola;
+  }
+  // @@protoc_insertion_point(field_mutable:PacoteIASimulador2D.bola)
+  return bola_;
+}
+::PacoteBola* PacoteIASimulador2D::release_bola() {
+  // @@protoc_insertion_point(field_release:PacoteIASimulador2D.bola)
+  clear_has_bola();
+  ::PacoteBola* temp = bola_;
+  bola_ = NULL;
+  return temp;
+}
+void PacoteIASimulador2D::set_allocated_bola(::PacoteBola* bola) {
+  delete bola_;
+  bola_ = bola;
+  if (bola) {
+    set_has_bola();
+  } else {
+    clear_has_bola();
+  }
+  // @@protoc_insertion_point(field_set_allocated:PacoteIASimulador2D.bola)
+}
+
+// optional .SSL_Referee dadosEstados = 2;
+bool PacoteIASimulador2D::has_dadosestados() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void PacoteIASimulador2D::set_has_dadosestados() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void PacoteIASimulador2D::clear_has_dadosestados() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void PacoteIASimulador2D::clear_dadosestados() {
+  if (dadosestados_ != NULL) dadosestados_->::SSL_Referee::Clear();
+  clear_has_dadosestados();
+}
+const ::SSL_Referee& PacoteIASimulador2D::dadosestados() const {
+  // @@protoc_insertion_point(field_get:PacoteIASimulador2D.dadosEstados)
+  return dadosestados_ != NULL ? *dadosestados_ : *default_instance_->dadosestados_;
+}
+::SSL_Referee* PacoteIASimulador2D::mutable_dadosestados() {
+  set_has_dadosestados();
+  if (dadosestados_ == NULL) {
+    dadosestados_ = new ::SSL_Referee;
+  }
+  // @@protoc_insertion_point(field_mutable:PacoteIASimulador2D.dadosEstados)
+  return dadosestados_;
+}
+::SSL_Referee* PacoteIASimulador2D::release_dadosestados() {
+  // @@protoc_insertion_point(field_release:PacoteIASimulador2D.dadosEstados)
+  clear_has_dadosestados();
+  ::SSL_Referee* temp = dadosestados_;
+  dadosestados_ = NULL;
+  return temp;
+}
+void PacoteIASimulador2D::set_allocated_dadosestados(::SSL_Referee* dadosestados) {
+  delete dadosestados_;
+  dadosestados_ = dadosestados;
+  if (dadosestados) {
+    set_has_dadosestados();
+  } else {
+    clear_has_dadosestados();
+  }
+  // @@protoc_insertion_point(field_set_allocated:PacoteIASimulador2D.dadosEstados)
+}
+
+// optional string jogada = 3;
+bool PacoteIASimulador2D::has_jogada() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+void PacoteIASimulador2D::set_has_jogada() {
+  _has_bits_[0] |= 0x00000004u;
+}
+void PacoteIASimulador2D::clear_has_jogada() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+void PacoteIASimulador2D::clear_jogada() {
+  jogada_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_jogada();
+}
+ const ::std::string& PacoteIASimulador2D::jogada() const {
+  // @@protoc_insertion_point(field_get:PacoteIASimulador2D.jogada)
+  return jogada_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ void PacoteIASimulador2D::set_jogada(const ::std::string& value) {
+  set_has_jogada();
+  jogada_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:PacoteIASimulador2D.jogada)
+}
+ void PacoteIASimulador2D::set_jogada(const char* value) {
+  set_has_jogada();
+  jogada_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:PacoteIASimulador2D.jogada)
+}
+ void PacoteIASimulador2D::set_jogada(const char* value, size_t size) {
+  set_has_jogada();
+  jogada_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:PacoteIASimulador2D.jogada)
+}
+ ::std::string* PacoteIASimulador2D::mutable_jogada() {
+  set_has_jogada();
+  // @@protoc_insertion_point(field_mutable:PacoteIASimulador2D.jogada)
+  return jogada_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ ::std::string* PacoteIASimulador2D::release_jogada() {
+  // @@protoc_insertion_point(field_release:PacoteIASimulador2D.jogada)
+  clear_has_jogada();
+  return jogada_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+ void PacoteIASimulador2D::set_allocated_jogada(::std::string* jogada) {
+  if (jogada != NULL) {
+    set_has_jogada();
+  } else {
+    clear_has_jogada();
+  }
+  jogada_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), jogada);
+  // @@protoc_insertion_point(field_set_allocated:PacoteIASimulador2D.jogada)
+}
+
+// repeated string fatosDoMundo = 4;
+int PacoteIASimulador2D::fatosdomundo_size() const {
+  return fatosdomundo_.size();
+}
+void PacoteIASimulador2D::clear_fatosdomundo() {
+  fatosdomundo_.Clear();
+}
+ const ::std::string& PacoteIASimulador2D::fatosdomundo(int index) const {
+  // @@protoc_insertion_point(field_get:PacoteIASimulador2D.fatosDoMundo)
+  return fatosdomundo_.Get(index);
+}
+ ::std::string* PacoteIASimulador2D::mutable_fatosdomundo(int index) {
+  // @@protoc_insertion_point(field_mutable:PacoteIASimulador2D.fatosDoMundo)
+  return fatosdomundo_.Mutable(index);
+}
+ void PacoteIASimulador2D::set_fatosdomundo(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:PacoteIASimulador2D.fatosDoMundo)
+  fatosdomundo_.Mutable(index)->assign(value);
+}
+ void PacoteIASimulador2D::set_fatosdomundo(int index, const char* value) {
+  fatosdomundo_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:PacoteIASimulador2D.fatosDoMundo)
+}
+ void PacoteIASimulador2D::set_fatosdomundo(int index, const char* value, size_t size) {
+  fatosdomundo_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:PacoteIASimulador2D.fatosDoMundo)
+}
+ ::std::string* PacoteIASimulador2D::add_fatosdomundo() {
+  // @@protoc_insertion_point(field_add_mutable:PacoteIASimulador2D.fatosDoMundo)
+  return fatosdomundo_.Add();
+}
+ void PacoteIASimulador2D::add_fatosdomundo(const ::std::string& value) {
+  fatosdomundo_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:PacoteIASimulador2D.fatosDoMundo)
+}
+ void PacoteIASimulador2D::add_fatosdomundo(const char* value) {
+  fatosdomundo_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:PacoteIASimulador2D.fatosDoMundo)
+}
+ void PacoteIASimulador2D::add_fatosdomundo(const char* value, size_t size) {
+  fatosdomundo_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:PacoteIASimulador2D.fatosDoMundo)
+}
+ const ::google::protobuf::RepeatedPtrField< ::std::string>&
+PacoteIASimulador2D::fatosdomundo() const {
+  // @@protoc_insertion_point(field_list:PacoteIASimulador2D.fatosDoMundo)
+  return fatosdomundo_;
+}
+ ::google::protobuf::RepeatedPtrField< ::std::string>*
+PacoteIASimulador2D::mutable_fatosdomundo() {
+  // @@protoc_insertion_point(field_mutable_list:PacoteIASimulador2D.fatosDoMundo)
+  return &fatosdomundo_;
+}
+
+// repeated .PacoteRoboIA robos = 5;
+int PacoteIASimulador2D::robos_size() const {
+  return robos_.size();
+}
+void PacoteIASimulador2D::clear_robos() {
+  robos_.Clear();
+}
+const ::PacoteRoboIA& PacoteIASimulador2D::robos(int index) const {
+  // @@protoc_insertion_point(field_get:PacoteIASimulador2D.robos)
+  return robos_.Get(index);
+}
+::PacoteRoboIA* PacoteIASimulador2D::mutable_robos(int index) {
+  // @@protoc_insertion_point(field_mutable:PacoteIASimulador2D.robos)
+  return robos_.Mutable(index);
+}
+::PacoteRoboIA* PacoteIASimulador2D::add_robos() {
+  // @@protoc_insertion_point(field_add:PacoteIASimulador2D.robos)
+  return robos_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::PacoteRoboIA >*
+PacoteIASimulador2D::mutable_robos() {
+  // @@protoc_insertion_point(field_mutable_list:PacoteIASimulador2D.robos)
+  return &robos_;
+}
+const ::google::protobuf::RepeatedPtrField< ::PacoteRoboIA >&
+PacoteIASimulador2D::robos() const {
+  // @@protoc_insertion_point(field_list:PacoteIASimulador2D.robos)
+  return robos_;
+}
+
+// repeated .PacoteRobo robosAdv = 6;
+int PacoteIASimulador2D::robosadv_size() const {
+  return robosadv_.size();
+}
+void PacoteIASimulador2D::clear_robosadv() {
+  robosadv_.Clear();
+}
+const ::PacoteRobo& PacoteIASimulador2D::robosadv(int index) const {
+  // @@protoc_insertion_point(field_get:PacoteIASimulador2D.robosAdv)
+  return robosadv_.Get(index);
+}
+::PacoteRobo* PacoteIASimulador2D::mutable_robosadv(int index) {
+  // @@protoc_insertion_point(field_mutable:PacoteIASimulador2D.robosAdv)
+  return robosadv_.Mutable(index);
+}
+::PacoteRobo* PacoteIASimulador2D::add_robosadv() {
+  // @@protoc_insertion_point(field_add:PacoteIASimulador2D.robosAdv)
+  return robosadv_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::PacoteRobo >*
+PacoteIASimulador2D::mutable_robosadv() {
+  // @@protoc_insertion_point(field_mutable_list:PacoteIASimulador2D.robosAdv)
+  return &robosadv_;
+}
+const ::google::protobuf::RepeatedPtrField< ::PacoteRobo >&
+PacoteIASimulador2D::robosadv() const {
+  // @@protoc_insertion_point(field_list:PacoteIASimulador2D.robosAdv)
+  return robosadv_;
+}
+
+// required .PacoteIASimulador2D.CorEquipe corEquipe = 7;
+bool PacoteIASimulador2D::has_corequipe() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+void PacoteIASimulador2D::set_has_corequipe() {
+  _has_bits_[0] |= 0x00000040u;
+}
+void PacoteIASimulador2D::clear_has_corequipe() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+void PacoteIASimulador2D::clear_corequipe() {
+  corequipe_ = 0;
+  clear_has_corequipe();
+}
+ ::PacoteIASimulador2D_CorEquipe PacoteIASimulador2D::corequipe() const {
+  // @@protoc_insertion_point(field_get:PacoteIASimulador2D.corEquipe)
+  return static_cast< ::PacoteIASimulador2D_CorEquipe >(corequipe_);
+}
+ void PacoteIASimulador2D::set_corequipe(::PacoteIASimulador2D_CorEquipe value) {
+  assert(::PacoteIASimulador2D_CorEquipe_IsValid(value));
+  set_has_corequipe();
+  corequipe_ = value;
+  // @@protoc_insertion_point(field_set:PacoteIASimulador2D.corEquipe)
+}
+
+// optional .PacoteIASimulador2D.LadoCampo ladoCampo = 8;
+bool PacoteIASimulador2D::has_ladocampo() const {
+  return (_has_bits_[0] & 0x00000080u) != 0;
+}
+void PacoteIASimulador2D::set_has_ladocampo() {
+  _has_bits_[0] |= 0x00000080u;
+}
+void PacoteIASimulador2D::clear_has_ladocampo() {
+  _has_bits_[0] &= ~0x00000080u;
+}
+void PacoteIASimulador2D::clear_ladocampo() {
+  ladocampo_ = 0;
+  clear_has_ladocampo();
+}
+ ::PacoteIASimulador2D_LadoCampo PacoteIASimulador2D::ladocampo() const {
+  // @@protoc_insertion_point(field_get:PacoteIASimulador2D.ladoCampo)
+  return static_cast< ::PacoteIASimulador2D_LadoCampo >(ladocampo_);
+}
+ void PacoteIASimulador2D::set_ladocampo(::PacoteIASimulador2D_LadoCampo value) {
+  assert(::PacoteIASimulador2D_LadoCampo_IsValid(value));
+  set_has_ladocampo();
+  ladocampo_ = value;
+  // @@protoc_insertion_point(field_set:PacoteIASimulador2D.ladoCampo)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

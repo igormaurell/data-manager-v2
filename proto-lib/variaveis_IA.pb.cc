@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -25,6 +26,7 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 }  // namespace
 
 
+void protobuf_AssignDesc_variaveis_5fIA_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_variaveis_5fIA_2eproto() {
   protobuf_AddDesc_variaveis_5fIA_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -38,16 +40,16 @@ void protobuf_AssignDesc_variaveis_5fIA_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(pacote_variaveis_IA, valor_componente_),
   };
   pacote_variaveis_IA_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       pacote_variaveis_IA_descriptor_,
       pacote_variaveis_IA::default_instance_,
       pacote_variaveis_IA_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(pacote_variaveis_IA, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(pacote_variaveis_IA, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(pacote_variaveis_IA));
+      -1,
+      sizeof(pacote_variaveis_IA),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(pacote_variaveis_IA, _internal_metadata_),
+      -1);
 }
 
 namespace {
@@ -58,10 +60,11 @@ inline void protobuf_AssignDescriptorsOnce() {
                  &protobuf_AssignDesc_variaveis_5fIA_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    pacote_variaveis_IA_descriptor_, &pacote_variaveis_IA::default_instance());
+      pacote_variaveis_IA_descriptor_, &pacote_variaveis_IA::default_instance());
 }
 
 }  // namespace
@@ -71,6 +74,7 @@ void protobuf_ShutdownFile_variaveis_5fIA_2eproto() {
   delete pacote_variaveis_IA_reflection_;
 }
 
+void protobuf_AddDesc_variaveis_5fIA_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AddDesc_variaveis_5fIA_2eproto() {
   static bool already_here = false;
   if (already_here) return;
@@ -97,14 +101,14 @@ struct StaticDescriptorInitializer_variaveis_5fIA_2eproto {
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int pacote_variaveis_IA::kComponenteFieldNumber;
 const int pacote_variaveis_IA::kNomeComponenteFieldNumber;
 const int pacote_variaveis_IA::kValorComponenteFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 pacote_variaveis_IA::pacote_variaveis_IA()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:pacote_variaveis_IA)
 }
@@ -113,7 +117,8 @@ void pacote_variaveis_IA::InitAsDefaultInstance() {
 }
 
 pacote_variaveis_IA::pacote_variaveis_IA(const pacote_variaveis_IA& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:pacote_variaveis_IA)
@@ -152,21 +157,28 @@ const pacote_variaveis_IA& pacote_variaveis_IA::default_instance() {
 
 pacote_variaveis_IA* pacote_variaveis_IA::default_instance_ = NULL;
 
-pacote_variaveis_IA* pacote_variaveis_IA::New() const {
-  return new pacote_variaveis_IA;
+pacote_variaveis_IA* pacote_variaveis_IA::New(::google::protobuf::Arena* arena) const {
+  pacote_variaveis_IA* n = new pacote_variaveis_IA;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void pacote_variaveis_IA::Clear() {
+// @@protoc_insertion_point(message_clear_start:pacote_variaveis_IA)
   componente_.Clear();
   nome_componente_.Clear();
   valor_componente_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool pacote_variaveis_IA::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:pacote_variaveis_IA)
   for (;;) {
@@ -184,7 +196,7 @@ bool pacote_variaveis_IA::MergePartialFromCodedStream(
             this->componente(this->componente_size() - 1).data(),
             this->componente(this->componente_size() - 1).length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "componente");
+            "pacote_variaveis_IA.componente");
         } else {
           goto handle_unusual;
         }
@@ -203,7 +215,7 @@ bool pacote_variaveis_IA::MergePartialFromCodedStream(
             this->nome_componente(this->nome_componente_size() - 1).data(),
             this->nome_componente(this->nome_componente_size() - 1).length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "nome_componente");
+            "pacote_variaveis_IA.nome_componente");
         } else {
           goto handle_unusual;
         }
@@ -222,7 +234,7 @@ bool pacote_variaveis_IA::MergePartialFromCodedStream(
             this->valor_componente(this->valor_componente_size() - 1).data(),
             this->valor_componente(this->valor_componente_size() - 1).length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "valor_componente");
+            "pacote_variaveis_IA.valor_componente");
         } else {
           goto handle_unusual;
         }
@@ -258,50 +270,50 @@ void pacote_variaveis_IA::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_start:pacote_variaveis_IA)
   // repeated string componente = 1;
   for (int i = 0; i < this->componente_size(); i++) {
-  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-    this->componente(i).data(), this->componente(i).length(),
-    ::google::protobuf::internal::WireFormat::SERIALIZE,
-    "componente");
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->componente(i).data(), this->componente(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "pacote_variaveis_IA.componente");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       1, this->componente(i), output);
   }
 
   // repeated string nome_componente = 2;
   for (int i = 0; i < this->nome_componente_size(); i++) {
-  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-    this->nome_componente(i).data(), this->nome_componente(i).length(),
-    ::google::protobuf::internal::WireFormat::SERIALIZE,
-    "nome_componente");
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->nome_componente(i).data(), this->nome_componente(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "pacote_variaveis_IA.nome_componente");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       2, this->nome_componente(i), output);
   }
 
   // repeated string valor_componente = 3;
   for (int i = 0; i < this->valor_componente_size(); i++) {
-  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-    this->valor_componente(i).data(), this->valor_componente(i).length(),
-    ::google::protobuf::internal::WireFormat::SERIALIZE,
-    "valor_componente");
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->valor_componente(i).data(), this->valor_componente(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "pacote_variaveis_IA.valor_componente");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       3, this->valor_componente(i), output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:pacote_variaveis_IA)
 }
 
-::google::protobuf::uint8* pacote_variaveis_IA::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* pacote_variaveis_IA::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:pacote_variaveis_IA)
   // repeated string componente = 1;
   for (int i = 0; i < this->componente_size(); i++) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->componente(i).data(), this->componente(i).length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "componente");
+      "pacote_variaveis_IA.componente");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(1, this->componente(i), target);
   }
@@ -311,7 +323,7 @@ void pacote_variaveis_IA::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->nome_componente(i).data(), this->nome_componente(i).length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "nome_componente");
+      "pacote_variaveis_IA.nome_componente");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(2, this->nome_componente(i), target);
   }
@@ -321,12 +333,12 @@ void pacote_variaveis_IA::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->valor_componente(i).data(), this->valor_componente(i).length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "valor_componente");
+      "pacote_variaveis_IA.valor_componente");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(3, this->valor_componente(i), target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -335,6 +347,7 @@ void pacote_variaveis_IA::SerializeWithCachedSizes(
 }
 
 int pacote_variaveis_IA::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:pacote_variaveis_IA)
   int total_size = 0;
 
   // repeated string componente = 1;
@@ -358,7 +371,7 @@ int pacote_variaveis_IA::ByteSize() const {
       this->valor_componente(i));
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -370,32 +383,44 @@ int pacote_variaveis_IA::ByteSize() const {
 }
 
 void pacote_variaveis_IA::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const pacote_variaveis_IA* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const pacote_variaveis_IA*>(
-      &from);
+// @@protoc_insertion_point(generalized_merge_from_start:pacote_variaveis_IA)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const pacote_variaveis_IA* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const pacote_variaveis_IA>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pacote_variaveis_IA)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:pacote_variaveis_IA)
     MergeFrom(*source);
   }
 }
 
 void pacote_variaveis_IA::MergeFrom(const pacote_variaveis_IA& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:pacote_variaveis_IA)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   componente_.MergeFrom(from.componente_);
   nome_componente_.MergeFrom(from.nome_componente_);
   valor_componente_.MergeFrom(from.valor_componente_);
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void pacote_variaveis_IA::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:pacote_variaveis_IA)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void pacote_variaveis_IA::CopyFrom(const pacote_variaveis_IA& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:pacote_variaveis_IA)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -407,14 +432,16 @@ bool pacote_variaveis_IA::IsInitialized() const {
 }
 
 void pacote_variaveis_IA::Swap(pacote_variaveis_IA* other) {
-  if (other != this) {
-    componente_.Swap(&other->componente_);
-    nome_componente_.Swap(&other->nome_componente_);
-    valor_componente_.Swap(&other->valor_componente_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void pacote_variaveis_IA::InternalSwap(pacote_variaveis_IA* other) {
+  componente_.UnsafeArenaSwap(&other->componente_);
+  nome_componente_.UnsafeArenaSwap(&other->nome_componente_);
+  valor_componente_.UnsafeArenaSwap(&other->valor_componente_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata pacote_variaveis_IA::GetMetadata() const {
@@ -425,6 +452,175 @@ void pacote_variaveis_IA::Swap(pacote_variaveis_IA* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// pacote_variaveis_IA
+
+// repeated string componente = 1;
+int pacote_variaveis_IA::componente_size() const {
+  return componente_.size();
+}
+void pacote_variaveis_IA::clear_componente() {
+  componente_.Clear();
+}
+ const ::std::string& pacote_variaveis_IA::componente(int index) const {
+  // @@protoc_insertion_point(field_get:pacote_variaveis_IA.componente)
+  return componente_.Get(index);
+}
+ ::std::string* pacote_variaveis_IA::mutable_componente(int index) {
+  // @@protoc_insertion_point(field_mutable:pacote_variaveis_IA.componente)
+  return componente_.Mutable(index);
+}
+ void pacote_variaveis_IA::set_componente(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pacote_variaveis_IA.componente)
+  componente_.Mutable(index)->assign(value);
+}
+ void pacote_variaveis_IA::set_componente(int index, const char* value) {
+  componente_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:pacote_variaveis_IA.componente)
+}
+ void pacote_variaveis_IA::set_componente(int index, const char* value, size_t size) {
+  componente_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:pacote_variaveis_IA.componente)
+}
+ ::std::string* pacote_variaveis_IA::add_componente() {
+  // @@protoc_insertion_point(field_add_mutable:pacote_variaveis_IA.componente)
+  return componente_.Add();
+}
+ void pacote_variaveis_IA::add_componente(const ::std::string& value) {
+  componente_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:pacote_variaveis_IA.componente)
+}
+ void pacote_variaveis_IA::add_componente(const char* value) {
+  componente_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:pacote_variaveis_IA.componente)
+}
+ void pacote_variaveis_IA::add_componente(const char* value, size_t size) {
+  componente_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:pacote_variaveis_IA.componente)
+}
+ const ::google::protobuf::RepeatedPtrField< ::std::string>&
+pacote_variaveis_IA::componente() const {
+  // @@protoc_insertion_point(field_list:pacote_variaveis_IA.componente)
+  return componente_;
+}
+ ::google::protobuf::RepeatedPtrField< ::std::string>*
+pacote_variaveis_IA::mutable_componente() {
+  // @@protoc_insertion_point(field_mutable_list:pacote_variaveis_IA.componente)
+  return &componente_;
+}
+
+// repeated string nome_componente = 2;
+int pacote_variaveis_IA::nome_componente_size() const {
+  return nome_componente_.size();
+}
+void pacote_variaveis_IA::clear_nome_componente() {
+  nome_componente_.Clear();
+}
+ const ::std::string& pacote_variaveis_IA::nome_componente(int index) const {
+  // @@protoc_insertion_point(field_get:pacote_variaveis_IA.nome_componente)
+  return nome_componente_.Get(index);
+}
+ ::std::string* pacote_variaveis_IA::mutable_nome_componente(int index) {
+  // @@protoc_insertion_point(field_mutable:pacote_variaveis_IA.nome_componente)
+  return nome_componente_.Mutable(index);
+}
+ void pacote_variaveis_IA::set_nome_componente(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pacote_variaveis_IA.nome_componente)
+  nome_componente_.Mutable(index)->assign(value);
+}
+ void pacote_variaveis_IA::set_nome_componente(int index, const char* value) {
+  nome_componente_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:pacote_variaveis_IA.nome_componente)
+}
+ void pacote_variaveis_IA::set_nome_componente(int index, const char* value, size_t size) {
+  nome_componente_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:pacote_variaveis_IA.nome_componente)
+}
+ ::std::string* pacote_variaveis_IA::add_nome_componente() {
+  // @@protoc_insertion_point(field_add_mutable:pacote_variaveis_IA.nome_componente)
+  return nome_componente_.Add();
+}
+ void pacote_variaveis_IA::add_nome_componente(const ::std::string& value) {
+  nome_componente_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:pacote_variaveis_IA.nome_componente)
+}
+ void pacote_variaveis_IA::add_nome_componente(const char* value) {
+  nome_componente_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:pacote_variaveis_IA.nome_componente)
+}
+ void pacote_variaveis_IA::add_nome_componente(const char* value, size_t size) {
+  nome_componente_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:pacote_variaveis_IA.nome_componente)
+}
+ const ::google::protobuf::RepeatedPtrField< ::std::string>&
+pacote_variaveis_IA::nome_componente() const {
+  // @@protoc_insertion_point(field_list:pacote_variaveis_IA.nome_componente)
+  return nome_componente_;
+}
+ ::google::protobuf::RepeatedPtrField< ::std::string>*
+pacote_variaveis_IA::mutable_nome_componente() {
+  // @@protoc_insertion_point(field_mutable_list:pacote_variaveis_IA.nome_componente)
+  return &nome_componente_;
+}
+
+// repeated string valor_componente = 3;
+int pacote_variaveis_IA::valor_componente_size() const {
+  return valor_componente_.size();
+}
+void pacote_variaveis_IA::clear_valor_componente() {
+  valor_componente_.Clear();
+}
+ const ::std::string& pacote_variaveis_IA::valor_componente(int index) const {
+  // @@protoc_insertion_point(field_get:pacote_variaveis_IA.valor_componente)
+  return valor_componente_.Get(index);
+}
+ ::std::string* pacote_variaveis_IA::mutable_valor_componente(int index) {
+  // @@protoc_insertion_point(field_mutable:pacote_variaveis_IA.valor_componente)
+  return valor_componente_.Mutable(index);
+}
+ void pacote_variaveis_IA::set_valor_componente(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pacote_variaveis_IA.valor_componente)
+  valor_componente_.Mutable(index)->assign(value);
+}
+ void pacote_variaveis_IA::set_valor_componente(int index, const char* value) {
+  valor_componente_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:pacote_variaveis_IA.valor_componente)
+}
+ void pacote_variaveis_IA::set_valor_componente(int index, const char* value, size_t size) {
+  valor_componente_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:pacote_variaveis_IA.valor_componente)
+}
+ ::std::string* pacote_variaveis_IA::add_valor_componente() {
+  // @@protoc_insertion_point(field_add_mutable:pacote_variaveis_IA.valor_componente)
+  return valor_componente_.Add();
+}
+ void pacote_variaveis_IA::add_valor_componente(const ::std::string& value) {
+  valor_componente_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:pacote_variaveis_IA.valor_componente)
+}
+ void pacote_variaveis_IA::add_valor_componente(const char* value) {
+  valor_componente_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:pacote_variaveis_IA.valor_componente)
+}
+ void pacote_variaveis_IA::add_valor_componente(const char* value, size_t size) {
+  valor_componente_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:pacote_variaveis_IA.valor_componente)
+}
+ const ::google::protobuf::RepeatedPtrField< ::std::string>&
+pacote_variaveis_IA::valor_componente() const {
+  // @@protoc_insertion_point(field_list:pacote_variaveis_IA.valor_componente)
+  return valor_componente_;
+}
+ ::google::protobuf::RepeatedPtrField< ::std::string>*
+pacote_variaveis_IA::mutable_valor_componente() {
+  // @@protoc_insertion_point(field_mutable_list:pacote_variaveis_IA.valor_componente)
+  return &valor_componente_;
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

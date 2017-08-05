@@ -7,6 +7,7 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -25,6 +26,7 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 }  // namespace
 
 
+void protobuf_AssignDesc_messages_5frobocup_5fssl_5fwrapper_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_messages_5frobocup_5fssl_5fwrapper_2eproto() {
   protobuf_AddDesc_messages_5frobocup_5fssl_5fwrapper_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -37,16 +39,16 @@ void protobuf_AssignDesc_messages_5frobocup_5fssl_5fwrapper_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SSL_WrapperPacket, geometry_),
   };
   SSL_WrapperPacket_reflection_ =
-    new ::google::protobuf::internal::GeneratedMessageReflection(
+    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
       SSL_WrapperPacket_descriptor_,
       SSL_WrapperPacket::default_instance_,
       SSL_WrapperPacket_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SSL_WrapperPacket, _has_bits_[0]),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SSL_WrapperPacket, _unknown_fields_),
       -1,
-      ::google::protobuf::DescriptorPool::generated_pool(),
-      ::google::protobuf::MessageFactory::generated_factory(),
-      sizeof(SSL_WrapperPacket));
+      -1,
+      sizeof(SSL_WrapperPacket),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(SSL_WrapperPacket, _internal_metadata_),
+      -1);
 }
 
 namespace {
@@ -57,10 +59,11 @@ inline void protobuf_AssignDescriptorsOnce() {
                  &protobuf_AssignDesc_messages_5frobocup_5fssl_5fwrapper_2eproto);
 }
 
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-    SSL_WrapperPacket_descriptor_, &SSL_WrapperPacket::default_instance());
+      SSL_WrapperPacket_descriptor_, &SSL_WrapperPacket::default_instance());
 }
 
 }  // namespace
@@ -70,6 +73,7 @@ void protobuf_ShutdownFile_messages_5frobocup_5fssl_5fwrapper_2eproto() {
   delete SSL_WrapperPacket_reflection_;
 }
 
+void protobuf_AddDesc_messages_5frobocup_5fssl_5fwrapper_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AddDesc_messages_5frobocup_5fssl_5fwrapper_2eproto() {
   static bool already_here = false;
   if (already_here) return;
@@ -101,13 +105,13 @@ struct StaticDescriptorInitializer_messages_5frobocup_5fssl_5fwrapper_2eproto {
 
 // ===================================================================
 
-#ifndef _MSC_VER
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SSL_WrapperPacket::kDetectionFieldNumber;
 const int SSL_WrapperPacket::kGeometryFieldNumber;
-#endif  // !_MSC_VER
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SSL_WrapperPacket::SSL_WrapperPacket()
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:SSL_WrapperPacket)
 }
@@ -118,7 +122,8 @@ void SSL_WrapperPacket::InitAsDefaultInstance() {
 }
 
 SSL_WrapperPacket::SSL_WrapperPacket(const SSL_WrapperPacket& from)
-  : ::google::protobuf::Message() {
+  : ::google::protobuf::Message(),
+    _internal_metadata_(NULL) {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:SSL_WrapperPacket)
@@ -160,12 +165,17 @@ const SSL_WrapperPacket& SSL_WrapperPacket::default_instance() {
 
 SSL_WrapperPacket* SSL_WrapperPacket::default_instance_ = NULL;
 
-SSL_WrapperPacket* SSL_WrapperPacket::New() const {
-  return new SSL_WrapperPacket;
+SSL_WrapperPacket* SSL_WrapperPacket::New(::google::protobuf::Arena* arena) const {
+  SSL_WrapperPacket* n = new SSL_WrapperPacket;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
 }
 
 void SSL_WrapperPacket::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+// @@protoc_insertion_point(message_clear_start:SSL_WrapperPacket)
+  if (_has_bits_[0 / 32] & 3u) {
     if (has_detection()) {
       if (detection_ != NULL) detection_->::SSL_DetectionFrame::Clear();
     }
@@ -174,12 +184,14 @@ void SSL_WrapperPacket::Clear() {
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  mutable_unknown_fields()->Clear();
+  if (_internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->Clear();
+  }
 }
 
 bool SSL_WrapperPacket::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:SSL_WrapperPacket)
   for (;;) {
@@ -240,40 +252,40 @@ void SSL_WrapperPacket::SerializeWithCachedSizes(
   // optional .SSL_DetectionFrame detection = 1;
   if (has_detection()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->detection(), output);
+      1, *this->detection_, output);
   }
 
   // optional .SSL_GeometryData geometry = 2;
   if (has_geometry()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->geometry(), output);
+      2, *this->geometry_, output);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:SSL_WrapperPacket)
 }
 
-::google::protobuf::uint8* SSL_WrapperPacket::SerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* SSL_WrapperPacket::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:SSL_WrapperPacket)
   // optional .SSL_DetectionFrame detection = 1;
   if (has_detection()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        1, this->detection(), target);
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->detection_, false, target);
   }
 
   // optional .SSL_GeometryData geometry = 2;
   if (has_geometry()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        2, this->geometry(), target);
+      InternalWriteMessageNoVirtualToArray(
+        2, *this->geometry_, false, target);
   }
 
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -282,25 +294,26 @@ void SSL_WrapperPacket::SerializeWithCachedSizes(
 }
 
 int SSL_WrapperPacket::ByteSize() const {
+// @@protoc_insertion_point(message_byte_size_start:SSL_WrapperPacket)
   int total_size = 0;
 
-  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+  if (_has_bits_[0 / 32] & 3u) {
     // optional .SSL_DetectionFrame detection = 1;
     if (has_detection()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->detection());
+          *this->detection_);
     }
 
     // optional .SSL_GeometryData geometry = 2;
     if (has_geometry()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->geometry());
+          *this->geometry_);
     }
 
   }
-  if (!unknown_fields().empty()) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -312,19 +325,27 @@ int SSL_WrapperPacket::ByteSize() const {
 }
 
 void SSL_WrapperPacket::MergeFrom(const ::google::protobuf::Message& from) {
-  GOOGLE_CHECK_NE(&from, this);
-  const SSL_WrapperPacket* source =
-    ::google::protobuf::internal::dynamic_cast_if_available<const SSL_WrapperPacket*>(
-      &from);
+// @@protoc_insertion_point(generalized_merge_from_start:SSL_WrapperPacket)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
+  const SSL_WrapperPacket* source = 
+      ::google::protobuf::internal::DynamicCastToGenerated<const SSL_WrapperPacket>(
+          &from);
   if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:SSL_WrapperPacket)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:SSL_WrapperPacket)
     MergeFrom(*source);
   }
 }
 
 void SSL_WrapperPacket::MergeFrom(const SSL_WrapperPacket& from) {
-  GOOGLE_CHECK_NE(&from, this);
+// @@protoc_insertion_point(class_specific_merge_from_start:SSL_WrapperPacket)
+  if (GOOGLE_PREDICT_FALSE(&from == this)) {
+    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
+  }
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_detection()) {
       mutable_detection()->::SSL_DetectionFrame::MergeFrom(from.detection());
@@ -333,16 +354,20 @@ void SSL_WrapperPacket::MergeFrom(const SSL_WrapperPacket& from) {
       mutable_geometry()->::SSL_GeometryData::MergeFrom(from.geometry());
     }
   }
-  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  if (from._internal_metadata_.have_unknown_fields()) {
+    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+  }
 }
 
 void SSL_WrapperPacket::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:SSL_WrapperPacket)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void SSL_WrapperPacket::CopyFrom(const SSL_WrapperPacket& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:SSL_WrapperPacket)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -351,22 +376,24 @@ void SSL_WrapperPacket::CopyFrom(const SSL_WrapperPacket& from) {
 bool SSL_WrapperPacket::IsInitialized() const {
 
   if (has_detection()) {
-    if (!this->detection().IsInitialized()) return false;
+    if (!this->detection_->IsInitialized()) return false;
   }
   if (has_geometry()) {
-    if (!this->geometry().IsInitialized()) return false;
+    if (!this->geometry_->IsInitialized()) return false;
   }
   return true;
 }
 
 void SSL_WrapperPacket::Swap(SSL_WrapperPacket* other) {
-  if (other != this) {
-    std::swap(detection_, other->detection_);
-    std::swap(geometry_, other->geometry_);
-    std::swap(_has_bits_[0], other->_has_bits_[0]);
-    _unknown_fields_.Swap(&other->_unknown_fields_);
-    std::swap(_cached_size_, other->_cached_size_);
-  }
+  if (other == this) return;
+  InternalSwap(other);
+}
+void SSL_WrapperPacket::InternalSwap(SSL_WrapperPacket* other) {
+  std::swap(detection_, other->detection_);
+  std::swap(geometry_, other->geometry_);
+  std::swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  std::swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata SSL_WrapperPacket::GetMetadata() const {
@@ -377,6 +404,98 @@ void SSL_WrapperPacket::Swap(SSL_WrapperPacket* other) {
   return metadata;
 }
 
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// SSL_WrapperPacket
+
+// optional .SSL_DetectionFrame detection = 1;
+bool SSL_WrapperPacket::has_detection() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+void SSL_WrapperPacket::set_has_detection() {
+  _has_bits_[0] |= 0x00000001u;
+}
+void SSL_WrapperPacket::clear_has_detection() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+void SSL_WrapperPacket::clear_detection() {
+  if (detection_ != NULL) detection_->::SSL_DetectionFrame::Clear();
+  clear_has_detection();
+}
+const ::SSL_DetectionFrame& SSL_WrapperPacket::detection() const {
+  // @@protoc_insertion_point(field_get:SSL_WrapperPacket.detection)
+  return detection_ != NULL ? *detection_ : *default_instance_->detection_;
+}
+::SSL_DetectionFrame* SSL_WrapperPacket::mutable_detection() {
+  set_has_detection();
+  if (detection_ == NULL) {
+    detection_ = new ::SSL_DetectionFrame;
+  }
+  // @@protoc_insertion_point(field_mutable:SSL_WrapperPacket.detection)
+  return detection_;
+}
+::SSL_DetectionFrame* SSL_WrapperPacket::release_detection() {
+  // @@protoc_insertion_point(field_release:SSL_WrapperPacket.detection)
+  clear_has_detection();
+  ::SSL_DetectionFrame* temp = detection_;
+  detection_ = NULL;
+  return temp;
+}
+void SSL_WrapperPacket::set_allocated_detection(::SSL_DetectionFrame* detection) {
+  delete detection_;
+  detection_ = detection;
+  if (detection) {
+    set_has_detection();
+  } else {
+    clear_has_detection();
+  }
+  // @@protoc_insertion_point(field_set_allocated:SSL_WrapperPacket.detection)
+}
+
+// optional .SSL_GeometryData geometry = 2;
+bool SSL_WrapperPacket::has_geometry() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+void SSL_WrapperPacket::set_has_geometry() {
+  _has_bits_[0] |= 0x00000002u;
+}
+void SSL_WrapperPacket::clear_has_geometry() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+void SSL_WrapperPacket::clear_geometry() {
+  if (geometry_ != NULL) geometry_->::SSL_GeometryData::Clear();
+  clear_has_geometry();
+}
+const ::SSL_GeometryData& SSL_WrapperPacket::geometry() const {
+  // @@protoc_insertion_point(field_get:SSL_WrapperPacket.geometry)
+  return geometry_ != NULL ? *geometry_ : *default_instance_->geometry_;
+}
+::SSL_GeometryData* SSL_WrapperPacket::mutable_geometry() {
+  set_has_geometry();
+  if (geometry_ == NULL) {
+    geometry_ = new ::SSL_GeometryData;
+  }
+  // @@protoc_insertion_point(field_mutable:SSL_WrapperPacket.geometry)
+  return geometry_;
+}
+::SSL_GeometryData* SSL_WrapperPacket::release_geometry() {
+  // @@protoc_insertion_point(field_release:SSL_WrapperPacket.geometry)
+  clear_has_geometry();
+  ::SSL_GeometryData* temp = geometry_;
+  geometry_ = NULL;
+  return temp;
+}
+void SSL_WrapperPacket::set_allocated_geometry(::SSL_GeometryData* geometry) {
+  delete geometry_;
+  geometry_ = geometry;
+  if (geometry) {
+    set_has_geometry();
+  } else {
+    clear_has_geometry();
+  }
+  // @@protoc_insertion_point(field_set_allocated:SSL_WrapperPacket.geometry)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 
