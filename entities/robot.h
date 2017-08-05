@@ -26,7 +26,7 @@ public:
     Robot(int id);
 
     /*Setters*/
-    void setVisionData(Mat_<float> &_state, float _confidence); //method to set all of the vision data
+    void setVisionData(Mat_<float> _state, float _confidence); //method to set all of the vision data
 
     /*Getters*/
     int getId();
@@ -41,8 +41,7 @@ public:
 };
 
 struct visionRobot{
-    visionRobot():id(-1), found(false), confidence(0.f){}
-    int id;
+    visionRobot(): found(false), confidence(0.f){}
     float x, y, orientation, confidence;
     bool found;
 };

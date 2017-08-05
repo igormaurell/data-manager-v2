@@ -16,7 +16,7 @@ Robot::Robot(int _id)
 
 
 /*Setters*/
-void Robot::setVisionData(Mat_<float> &_state, float _confidence)
+void Robot::setVisionData(Mat_<float> _state, float _confidence)
 {
     state_v = _state.clone();
     confidence_v = _confidence;
