@@ -4,9 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT       += core gui widgets
 
 TARGET = data-manager-v2
 TEMPLATE = app
@@ -15,7 +13,7 @@ INCLUDEPATH += vision-manager \
                feedback-manager \
                entities \
                proto-lib
-LIBS += -L/proto-lib -lproto
+LIBS += -L$$PWD/proto-lib -lproto
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked as deprecated (the exact warnings
