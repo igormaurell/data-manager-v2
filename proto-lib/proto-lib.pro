@@ -28,7 +28,7 @@ SOURCES += \
     grSim_Commands.pb.cc
 
 HEADERS +=\
-        ProtoCPP_global.h \
+    ProtoCPP_global.h \
     variaveis_IA.pb.h \
     messages_robocup_ssl_wrapper.pb.h \
     messages_robocup_ssl_referee.pb.h \

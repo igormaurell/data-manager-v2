@@ -12,6 +12,8 @@ using namespace cv;
 //STL includes
 #include <iostream>
 #include <vector>
+#include <map>
+#include <string>
 using namespace std;
 
 //OpenGL includes
