@@ -3,7 +3,7 @@
 #include <messages_robocup_ssl_detection.pb.h>
 #include <messages_robocup_ssl_geometry.pb.h>
 #include <messages_robocup_ssl_wrapper.pb.h>
-#include <mensagem_gerente_visao.pb.h>
+#include <messages_vision_manager.pb.h>
 
 #include "definitions.h"
 #include "ball.h"

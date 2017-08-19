@@ -1,0 +1,25 @@
+import "messages_robocup_ssl_referee.proto";
+import "messages_vision_manager.proto";
+import "messages_ai_data_manager.proto";
+
+message AI2DSimulatorPackage {
+	optional BallPackage ball = 1;
+	optional SSL_Referee referee = 2;
+	optional string play = 3;
+	repeated string world_facts = 4;
+	repeated AIRobotPackage team = 5;
+	repeated RobotPackage enemy = 6;
+  
+	enum TeamColor{
+	  Yellow = 0;
+	  Blue = 1;
+	}
+	
+	enum FieldSide{
+	  Left = 0;
+	  Right = 1;
+	}
+	
+	required TeamColor team_color = 7;
+	optional FieldSide field_side = 8;
+}

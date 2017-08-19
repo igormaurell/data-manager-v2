@@ -1,0 +1,15 @@
+message ControlPackage {
+	enum FieldSide{
+		Left = 0;
+		Right = 1;
+	}
+	required FieldSide field_side = 1;
+
+	enum TeamColor{
+		Yellow = 0;
+		Blue = 1;
+	}
+	required TeamColor team_color = 2;
+
+	required int32 id_GK = 3; 
+}

@@ -19,7 +19,7 @@ using namespace std;
 //OpenGL includes
 
 //ProtoLIB includes
-#include "mensagem_gerente_dados.pb.h"
+#include "messages_data_manager.pb.h"
 
 enum TeamColor{
     Blue, Yellow
