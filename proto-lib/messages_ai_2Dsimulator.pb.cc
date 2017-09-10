@@ -7,7 +7,6 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -28,7 +27,6 @@ const ::google::protobuf::EnumDescriptor* AI2DSimulatorPackage_FieldSide_descrip
 }  // namespace
 
 
-void protobuf_AssignDesc_messages_5fai_5f2Dsimulator_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_messages_5fai_5f2Dsimulator_2eproto() {
   protobuf_AddDesc_messages_5fai_5f2Dsimulator_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -47,16 +45,16 @@ void protobuf_AssignDesc_messages_5fai_5f2Dsimulator_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AI2DSimulatorPackage, field_side_),
   };
   AI2DSimulatorPackage_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       AI2DSimulatorPackage_descriptor_,
       AI2DSimulatorPackage::default_instance_,
       AI2DSimulatorPackage_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AI2DSimulatorPackage, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AI2DSimulatorPackage, _unknown_fields_),
       -1,
-      -1,
-      sizeof(AI2DSimulatorPackage),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AI2DSimulatorPackage, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(AI2DSimulatorPackage));
   AI2DSimulatorPackage_TeamColor_descriptor_ = AI2DSimulatorPackage_descriptor_->enum_type(0);
   AI2DSimulatorPackage_FieldSide_descriptor_ = AI2DSimulatorPackage_descriptor_->enum_type(1);
 }
@@ -69,11 +67,10 @@ inline void protobuf_AssignDescriptorsOnce() {
                  &protobuf_AssignDesc_messages_5fai_5f2Dsimulator_2eproto);
 }
 
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      AI2DSimulatorPackage_descriptor_, &AI2DSimulatorPackage::default_instance());
+    AI2DSimulatorPackage_descriptor_, &AI2DSimulatorPackage::default_instance());
 }
 
 }  // namespace
@@ -83,7 +80,6 @@ void protobuf_ShutdownFile_messages_5fai_5f2Dsimulator_2eproto() {
   delete AI2DSimulatorPackage_reflection_;
 }
 
-void protobuf_AddDesc_messages_5fai_5f2Dsimulator_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AddDesc_messages_5fai_5f2Dsimulator_2eproto() {
   static bool already_here = false;
   if (already_here) return;
@@ -137,13 +133,13 @@ bool AI2DSimulatorPackage_TeamColor_IsValid(int value) {
   }
 }
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#ifndef _MSC_VER
 const AI2DSimulatorPackage_TeamColor AI2DSimulatorPackage::Yellow;
 const AI2DSimulatorPackage_TeamColor AI2DSimulatorPackage::Blue;
 const AI2DSimulatorPackage_TeamColor AI2DSimulatorPackage::TeamColor_MIN;
 const AI2DSimulatorPackage_TeamColor AI2DSimulatorPackage::TeamColor_MAX;
 const int AI2DSimulatorPackage::TeamColor_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // _MSC_VER
 const ::google::protobuf::EnumDescriptor* AI2DSimulatorPackage_FieldSide_descriptor() {
   protobuf_AssignDescriptorsOnce();
   return AI2DSimulatorPackage_FieldSide_descriptor_;
@@ -158,14 +154,14 @@ bool AI2DSimulatorPackage_FieldSide_IsValid(int value) {
   }
 }
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#ifndef _MSC_VER
 const AI2DSimulatorPackage_FieldSide AI2DSimulatorPackage::Left;
 const AI2DSimulatorPackage_FieldSide AI2DSimulatorPackage::Right;
 const AI2DSimulatorPackage_FieldSide AI2DSimulatorPackage::FieldSide_MIN;
 const AI2DSimulatorPackage_FieldSide AI2DSimulatorPackage::FieldSide_MAX;
 const int AI2DSimulatorPackage::FieldSide_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // _MSC_VER
+#ifndef _MSC_VER
 const int AI2DSimulatorPackage::kBallFieldNumber;
 const int AI2DSimulatorPackage::kRefereeFieldNumber;
 const int AI2DSimulatorPackage::kPlayFieldNumber;
@@ -174,10 +170,10 @@ const int AI2DSimulatorPackage::kTeamFieldNumber;
 const int AI2DSimulatorPackage::kEnemyFieldNumber;
 const int AI2DSimulatorPackage::kTeamColorFieldNumber;
 const int AI2DSimulatorPackage::kFieldSideFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !_MSC_VER
 
 AI2DSimulatorPackage::AI2DSimulatorPackage()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:AI2DSimulatorPackage)
 }
@@ -188,8 +184,7 @@ void AI2DSimulatorPackage::InitAsDefaultInstance() {
 }
 
 AI2DSimulatorPackage::AI2DSimulatorPackage(const AI2DSimulatorPackage& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:AI2DSimulatorPackage)
@@ -200,7 +195,7 @@ void AI2DSimulatorPackage::SharedCtor() {
   _cached_size_ = 0;
   ball_ = NULL;
   referee_ = NULL;
-  play_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  play_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   team_color_ = 0;
   field_side_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -212,7 +207,9 @@ AI2DSimulatorPackage::~AI2DSimulatorPackage() {
 }
 
 void AI2DSimulatorPackage::SharedDtor() {
-  play_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (play_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete play_;
+  }
   if (this != default_instance_) {
     delete ball_;
     delete referee_;
@@ -236,33 +233,22 @@ const AI2DSimulatorPackage& AI2DSimulatorPackage::default_instance() {
 
 AI2DSimulatorPackage* AI2DSimulatorPackage::default_instance_ = NULL;
 
-AI2DSimulatorPackage* AI2DSimulatorPackage::New(::google::protobuf::Arena* arena) const {
-  AI2DSimulatorPackage* n = new AI2DSimulatorPackage;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+AI2DSimulatorPackage* AI2DSimulatorPackage::New() const {
+  return new AI2DSimulatorPackage;
 }
 
 void AI2DSimulatorPackage::Clear() {
-// @@protoc_insertion_point(message_clear_start:AI2DSimulatorPackage)
-#if defined(__clang__)
-#define ZR_HELPER_(f) \
-  _Pragma("clang diagnostic push") \
-  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
-  __builtin_offsetof(AI2DSimulatorPackage, f) \
-  _Pragma("clang diagnostic pop")
-#else
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<AI2DSimulatorPackage*>(16)->f)
-#endif
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<AI2DSimulatorPackage*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
-  if (_has_bits_[0 / 32] & 199u) {
+  if (_has_bits_[0 / 32] & 199) {
     ZR_(team_color_, field_side_);
     if (has_ball()) {
       if (ball_ != NULL) ball_->::BallPackage::Clear();
@@ -271,25 +257,25 @@ void AI2DSimulatorPackage::Clear() {
       if (referee_ != NULL) referee_->::SSL_Referee::Clear();
     }
     if (has_play()) {
-      play_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+      if (play_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        play_->clear();
+      }
     }
   }
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   world_facts_.Clear();
   team_.Clear();
   enemy_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool AI2DSimulatorPackage::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:AI2DSimulatorPackage)
   for (;;) {
@@ -331,7 +317,7 @@ bool AI2DSimulatorPackage::MergePartialFromCodedStream(
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
             this->play().data(), this->play().length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "AI2DSimulatorPackage.play");
+            "play");
         } else {
           goto handle_unusual;
         }
@@ -349,7 +335,7 @@ bool AI2DSimulatorPackage::MergePartialFromCodedStream(
             this->world_facts(this->world_facts_size() - 1).data(),
             this->world_facts(this->world_facts_size() - 1).length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "AI2DSimulatorPackage.world_facts");
+            "world_facts");
         } else {
           goto handle_unusual;
         }
@@ -362,31 +348,26 @@ bool AI2DSimulatorPackage::MergePartialFromCodedStream(
       case 5: {
         if (tag == 42) {
          parse_team:
-          DO_(input->IncrementRecursionDepth());
-         parse_loop_team:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_team()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(42)) goto parse_loop_team;
-        if (input->ExpectTag(50)) goto parse_loop_enemy;
-        input->UnsafeDecrementRecursionDepth();
+        if (input->ExpectTag(42)) goto parse_team;
+        if (input->ExpectTag(50)) goto parse_enemy;
         break;
       }
 
       // repeated .RobotPackage enemy = 6;
       case 6: {
         if (tag == 50) {
-          DO_(input->IncrementRecursionDepth());
-         parse_loop_enemy:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtualNoRecursionDepth(
+         parse_enemy:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                 input, add_enemy()));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(50)) goto parse_loop_enemy;
-        input->UnsafeDecrementRecursionDepth();
+        if (input->ExpectTag(50)) goto parse_enemy;
         if (input->ExpectTag(56)) goto parse_team_color;
         break;
       }
@@ -459,13 +440,13 @@ void AI2DSimulatorPackage::SerializeWithCachedSizes(
   // optional .BallPackage ball = 1;
   if (has_ball()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->ball_, output);
+      1, this->ball(), output);
   }
 
   // optional .SSL_Referee referee = 2;
   if (has_referee()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->referee_, output);
+      2, this->referee(), output);
   }
 
   // optional string play = 3;
@@ -473,29 +454,29 @@ void AI2DSimulatorPackage::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->play().data(), this->play().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "AI2DSimulatorPackage.play");
+      "play");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       3, this->play(), output);
   }
 
   // repeated string world_facts = 4;
   for (int i = 0; i < this->world_facts_size(); i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->world_facts(i).data(), this->world_facts(i).length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "AI2DSimulatorPackage.world_facts");
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->world_facts(i).data(), this->world_facts(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "world_facts");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       4, this->world_facts(i), output);
   }
 
   // repeated .AIRobotPackage team = 5;
-  for (unsigned int i = 0, n = this->team_size(); i < n; i++) {
+  for (int i = 0; i < this->team_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       5, this->team(i), output);
   }
 
   // repeated .RobotPackage enemy = 6;
-  for (unsigned int i = 0, n = this->enemy_size(); i < n; i++) {
+  for (int i = 0; i < this->enemy_size(); i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       6, this->enemy(i), output);
   }
@@ -512,28 +493,28 @@ void AI2DSimulatorPackage::SerializeWithCachedSizes(
       8, this->field_side(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:AI2DSimulatorPackage)
 }
 
-::google::protobuf::uint8* AI2DSimulatorPackage::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* AI2DSimulatorPackage::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:AI2DSimulatorPackage)
   // optional .BallPackage ball = 1;
   if (has_ball()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        1, *this->ball_, false, target);
+      WriteMessageNoVirtualToArray(
+        1, this->ball(), target);
   }
 
   // optional .SSL_Referee referee = 2;
   if (has_referee()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        2, *this->referee_, false, target);
+      WriteMessageNoVirtualToArray(
+        2, this->referee(), target);
   }
 
   // optional string play = 3;
@@ -541,7 +522,7 @@ void AI2DSimulatorPackage::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->play().data(), this->play().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "AI2DSimulatorPackage.play");
+      "play");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         3, this->play(), target);
@@ -552,23 +533,23 @@ void AI2DSimulatorPackage::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->world_facts(i).data(), this->world_facts(i).length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "AI2DSimulatorPackage.world_facts");
+      "world_facts");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(4, this->world_facts(i), target);
   }
 
   // repeated .AIRobotPackage team = 5;
-  for (unsigned int i = 0, n = this->team_size(); i < n; i++) {
+  for (int i = 0; i < this->team_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        5, this->team(i), false, target);
+      WriteMessageNoVirtualToArray(
+        5, this->team(i), target);
   }
 
   // repeated .RobotPackage enemy = 6;
-  for (unsigned int i = 0, n = this->enemy_size(); i < n; i++) {
+  for (int i = 0; i < this->enemy_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        6, this->enemy(i), false, target);
+      WriteMessageNoVirtualToArray(
+        6, this->enemy(i), target);
   }
 
   // required .AI2DSimulatorPackage.TeamColor team_color = 7;
@@ -583,7 +564,7 @@ void AI2DSimulatorPackage::SerializeWithCachedSizes(
       8, this->field_side(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -592,27 +573,21 @@ void AI2DSimulatorPackage::SerializeWithCachedSizes(
 }
 
 int AI2DSimulatorPackage::ByteSize() const {
-// @@protoc_insertion_point(message_byte_size_start:AI2DSimulatorPackage)
   int total_size = 0;
 
-  // required .AI2DSimulatorPackage.TeamColor team_color = 7;
-  if (has_team_color()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->team_color());
-  }
-  if (_has_bits_[0 / 32] & 135u) {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // optional .BallPackage ball = 1;
     if (has_ball()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->ball_);
+          this->ball());
     }
 
     // optional .SSL_Referee referee = 2;
     if (has_referee()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          *this->referee_);
+          this->referee());
     }
 
     // optional string play = 3;
@@ -620,6 +595,12 @@ int AI2DSimulatorPackage::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->play());
+    }
+
+    // required .AI2DSimulatorPackage.TeamColor team_color = 7;
+    if (has_team_color()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->team_color());
     }
 
     // optional .AI2DSimulatorPackage.FieldSide field_side = 8;
@@ -652,7 +633,7 @@ int AI2DSimulatorPackage::ByteSize() const {
         this->enemy(i));
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -664,27 +645,19 @@ int AI2DSimulatorPackage::ByteSize() const {
 }
 
 void AI2DSimulatorPackage::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:AI2DSimulatorPackage)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  const AI2DSimulatorPackage* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const AI2DSimulatorPackage>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const AI2DSimulatorPackage* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const AI2DSimulatorPackage*>(
+      &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:AI2DSimulatorPackage)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:AI2DSimulatorPackage)
     MergeFrom(*source);
   }
 }
 
 void AI2DSimulatorPackage::MergeFrom(const AI2DSimulatorPackage& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:AI2DSimulatorPackage)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
+  GOOGLE_CHECK_NE(&from, this);
   world_facts_.MergeFrom(from.world_facts_);
   team_.MergeFrom(from.team_);
   enemy_.MergeFrom(from.enemy_);
@@ -696,8 +669,7 @@ void AI2DSimulatorPackage::MergeFrom(const AI2DSimulatorPackage& from) {
       mutable_referee()->::SSL_Referee::MergeFrom(from.referee());
     }
     if (from.has_play()) {
-      set_has_play();
-      play_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.play_);
+      set_play(from.play());
     }
     if (from.has_team_color()) {
       set_team_color(from.team_color());
@@ -706,20 +678,16 @@ void AI2DSimulatorPackage::MergeFrom(const AI2DSimulatorPackage& from) {
       set_field_side(from.field_side());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void AI2DSimulatorPackage::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:AI2DSimulatorPackage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void AI2DSimulatorPackage::CopyFrom(const AI2DSimulatorPackage& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:AI2DSimulatorPackage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -729,10 +697,10 @@ bool AI2DSimulatorPackage::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000040) != 0x00000040) return false;
 
   if (has_ball()) {
-    if (!this->ball_->IsInitialized()) return false;
+    if (!this->ball().IsInitialized()) return false;
   }
   if (has_referee()) {
-    if (!this->referee_->IsInitialized()) return false;
+    if (!this->referee().IsInitialized()) return false;
   }
   if (!::google::protobuf::internal::AllAreInitialized(this->team())) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->enemy())) return false;
@@ -740,21 +708,19 @@ bool AI2DSimulatorPackage::IsInitialized() const {
 }
 
 void AI2DSimulatorPackage::Swap(AI2DSimulatorPackage* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void AI2DSimulatorPackage::InternalSwap(AI2DSimulatorPackage* other) {
-  std::swap(ball_, other->ball_);
-  std::swap(referee_, other->referee_);
-  play_.Swap(&other->play_);
-  world_facts_.UnsafeArenaSwap(&other->world_facts_);
-  team_.UnsafeArenaSwap(&other->team_);
-  enemy_.UnsafeArenaSwap(&other->enemy_);
-  std::swap(team_color_, other->team_color_);
-  std::swap(field_side_, other->field_side_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(ball_, other->ball_);
+    std::swap(referee_, other->referee_);
+    std::swap(play_, other->play_);
+    world_facts_.Swap(&other->world_facts_);
+    team_.Swap(&other->team_);
+    enemy_.Swap(&other->enemy_);
+    std::swap(team_color_, other->team_color_);
+    std::swap(field_side_, other->field_side_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata AI2DSimulatorPackage::GetMetadata() const {
@@ -765,317 +731,6 @@ void AI2DSimulatorPackage::InternalSwap(AI2DSimulatorPackage* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// AI2DSimulatorPackage
-
-// optional .BallPackage ball = 1;
-bool AI2DSimulatorPackage::has_ball() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void AI2DSimulatorPackage::set_has_ball() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void AI2DSimulatorPackage::clear_has_ball() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void AI2DSimulatorPackage::clear_ball() {
-  if (ball_ != NULL) ball_->::BallPackage::Clear();
-  clear_has_ball();
-}
-const ::BallPackage& AI2DSimulatorPackage::ball() const {
-  // @@protoc_insertion_point(field_get:AI2DSimulatorPackage.ball)
-  return ball_ != NULL ? *ball_ : *default_instance_->ball_;
-}
-::BallPackage* AI2DSimulatorPackage::mutable_ball() {
-  set_has_ball();
-  if (ball_ == NULL) {
-    ball_ = new ::BallPackage;
-  }
-  // @@protoc_insertion_point(field_mutable:AI2DSimulatorPackage.ball)
-  return ball_;
-}
-::BallPackage* AI2DSimulatorPackage::release_ball() {
-  // @@protoc_insertion_point(field_release:AI2DSimulatorPackage.ball)
-  clear_has_ball();
-  ::BallPackage* temp = ball_;
-  ball_ = NULL;
-  return temp;
-}
-void AI2DSimulatorPackage::set_allocated_ball(::BallPackage* ball) {
-  delete ball_;
-  ball_ = ball;
-  if (ball) {
-    set_has_ball();
-  } else {
-    clear_has_ball();
-  }
-  // @@protoc_insertion_point(field_set_allocated:AI2DSimulatorPackage.ball)
-}
-
-// optional .SSL_Referee referee = 2;
-bool AI2DSimulatorPackage::has_referee() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void AI2DSimulatorPackage::set_has_referee() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void AI2DSimulatorPackage::clear_has_referee() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void AI2DSimulatorPackage::clear_referee() {
-  if (referee_ != NULL) referee_->::SSL_Referee::Clear();
-  clear_has_referee();
-}
-const ::SSL_Referee& AI2DSimulatorPackage::referee() const {
-  // @@protoc_insertion_point(field_get:AI2DSimulatorPackage.referee)
-  return referee_ != NULL ? *referee_ : *default_instance_->referee_;
-}
-::SSL_Referee* AI2DSimulatorPackage::mutable_referee() {
-  set_has_referee();
-  if (referee_ == NULL) {
-    referee_ = new ::SSL_Referee;
-  }
-  // @@protoc_insertion_point(field_mutable:AI2DSimulatorPackage.referee)
-  return referee_;
-}
-::SSL_Referee* AI2DSimulatorPackage::release_referee() {
-  // @@protoc_insertion_point(field_release:AI2DSimulatorPackage.referee)
-  clear_has_referee();
-  ::SSL_Referee* temp = referee_;
-  referee_ = NULL;
-  return temp;
-}
-void AI2DSimulatorPackage::set_allocated_referee(::SSL_Referee* referee) {
-  delete referee_;
-  referee_ = referee;
-  if (referee) {
-    set_has_referee();
-  } else {
-    clear_has_referee();
-  }
-  // @@protoc_insertion_point(field_set_allocated:AI2DSimulatorPackage.referee)
-}
-
-// optional string play = 3;
-bool AI2DSimulatorPackage::has_play() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void AI2DSimulatorPackage::set_has_play() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void AI2DSimulatorPackage::clear_has_play() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void AI2DSimulatorPackage::clear_play() {
-  play_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_play();
-}
- const ::std::string& AI2DSimulatorPackage::play() const {
-  // @@protoc_insertion_point(field_get:AI2DSimulatorPackage.play)
-  return play_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void AI2DSimulatorPackage::set_play(const ::std::string& value) {
-  set_has_play();
-  play_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:AI2DSimulatorPackage.play)
-}
- void AI2DSimulatorPackage::set_play(const char* value) {
-  set_has_play();
-  play_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:AI2DSimulatorPackage.play)
-}
- void AI2DSimulatorPackage::set_play(const char* value, size_t size) {
-  set_has_play();
-  play_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:AI2DSimulatorPackage.play)
-}
- ::std::string* AI2DSimulatorPackage::mutable_play() {
-  set_has_play();
-  // @@protoc_insertion_point(field_mutable:AI2DSimulatorPackage.play)
-  return play_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- ::std::string* AI2DSimulatorPackage::release_play() {
-  // @@protoc_insertion_point(field_release:AI2DSimulatorPackage.play)
-  clear_has_play();
-  return play_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
- void AI2DSimulatorPackage::set_allocated_play(::std::string* play) {
-  if (play != NULL) {
-    set_has_play();
-  } else {
-    clear_has_play();
-  }
-  play_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), play);
-  // @@protoc_insertion_point(field_set_allocated:AI2DSimulatorPackage.play)
-}
-
-// repeated string world_facts = 4;
-int AI2DSimulatorPackage::world_facts_size() const {
-  return world_facts_.size();
-}
-void AI2DSimulatorPackage::clear_world_facts() {
-  world_facts_.Clear();
-}
- const ::std::string& AI2DSimulatorPackage::world_facts(int index) const {
-  // @@protoc_insertion_point(field_get:AI2DSimulatorPackage.world_facts)
-  return world_facts_.Get(index);
-}
- ::std::string* AI2DSimulatorPackage::mutable_world_facts(int index) {
-  // @@protoc_insertion_point(field_mutable:AI2DSimulatorPackage.world_facts)
-  return world_facts_.Mutable(index);
-}
- void AI2DSimulatorPackage::set_world_facts(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:AI2DSimulatorPackage.world_facts)
-  world_facts_.Mutable(index)->assign(value);
-}
- void AI2DSimulatorPackage::set_world_facts(int index, const char* value) {
-  world_facts_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:AI2DSimulatorPackage.world_facts)
-}
- void AI2DSimulatorPackage::set_world_facts(int index, const char* value, size_t size) {
-  world_facts_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:AI2DSimulatorPackage.world_facts)
-}
- ::std::string* AI2DSimulatorPackage::add_world_facts() {
-  // @@protoc_insertion_point(field_add_mutable:AI2DSimulatorPackage.world_facts)
-  return world_facts_.Add();
-}
- void AI2DSimulatorPackage::add_world_facts(const ::std::string& value) {
-  world_facts_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:AI2DSimulatorPackage.world_facts)
-}
- void AI2DSimulatorPackage::add_world_facts(const char* value) {
-  world_facts_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:AI2DSimulatorPackage.world_facts)
-}
- void AI2DSimulatorPackage::add_world_facts(const char* value, size_t size) {
-  world_facts_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:AI2DSimulatorPackage.world_facts)
-}
- const ::google::protobuf::RepeatedPtrField< ::std::string>&
-AI2DSimulatorPackage::world_facts() const {
-  // @@protoc_insertion_point(field_list:AI2DSimulatorPackage.world_facts)
-  return world_facts_;
-}
- ::google::protobuf::RepeatedPtrField< ::std::string>*
-AI2DSimulatorPackage::mutable_world_facts() {
-  // @@protoc_insertion_point(field_mutable_list:AI2DSimulatorPackage.world_facts)
-  return &world_facts_;
-}
-
-// repeated .AIRobotPackage team = 5;
-int AI2DSimulatorPackage::team_size() const {
-  return team_.size();
-}
-void AI2DSimulatorPackage::clear_team() {
-  team_.Clear();
-}
-const ::AIRobotPackage& AI2DSimulatorPackage::team(int index) const {
-  // @@protoc_insertion_point(field_get:AI2DSimulatorPackage.team)
-  return team_.Get(index);
-}
-::AIRobotPackage* AI2DSimulatorPackage::mutable_team(int index) {
-  // @@protoc_insertion_point(field_mutable:AI2DSimulatorPackage.team)
-  return team_.Mutable(index);
-}
-::AIRobotPackage* AI2DSimulatorPackage::add_team() {
-  // @@protoc_insertion_point(field_add:AI2DSimulatorPackage.team)
-  return team_.Add();
-}
-::google::protobuf::RepeatedPtrField< ::AIRobotPackage >*
-AI2DSimulatorPackage::mutable_team() {
-  // @@protoc_insertion_point(field_mutable_list:AI2DSimulatorPackage.team)
-  return &team_;
-}
-const ::google::protobuf::RepeatedPtrField< ::AIRobotPackage >&
-AI2DSimulatorPackage::team() const {
-  // @@protoc_insertion_point(field_list:AI2DSimulatorPackage.team)
-  return team_;
-}
-
-// repeated .RobotPackage enemy = 6;
-int AI2DSimulatorPackage::enemy_size() const {
-  return enemy_.size();
-}
-void AI2DSimulatorPackage::clear_enemy() {
-  enemy_.Clear();
-}
-const ::RobotPackage& AI2DSimulatorPackage::enemy(int index) const {
-  // @@protoc_insertion_point(field_get:AI2DSimulatorPackage.enemy)
-  return enemy_.Get(index);
-}
-::RobotPackage* AI2DSimulatorPackage::mutable_enemy(int index) {
-  // @@protoc_insertion_point(field_mutable:AI2DSimulatorPackage.enemy)
-  return enemy_.Mutable(index);
-}
-::RobotPackage* AI2DSimulatorPackage::add_enemy() {
-  // @@protoc_insertion_point(field_add:AI2DSimulatorPackage.enemy)
-  return enemy_.Add();
-}
-::google::protobuf::RepeatedPtrField< ::RobotPackage >*
-AI2DSimulatorPackage::mutable_enemy() {
-  // @@protoc_insertion_point(field_mutable_list:AI2DSimulatorPackage.enemy)
-  return &enemy_;
-}
-const ::google::protobuf::RepeatedPtrField< ::RobotPackage >&
-AI2DSimulatorPackage::enemy() const {
-  // @@protoc_insertion_point(field_list:AI2DSimulatorPackage.enemy)
-  return enemy_;
-}
-
-// required .AI2DSimulatorPackage.TeamColor team_color = 7;
-bool AI2DSimulatorPackage::has_team_color() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
-}
-void AI2DSimulatorPackage::set_has_team_color() {
-  _has_bits_[0] |= 0x00000040u;
-}
-void AI2DSimulatorPackage::clear_has_team_color() {
-  _has_bits_[0] &= ~0x00000040u;
-}
-void AI2DSimulatorPackage::clear_team_color() {
-  team_color_ = 0;
-  clear_has_team_color();
-}
- ::AI2DSimulatorPackage_TeamColor AI2DSimulatorPackage::team_color() const {
-  // @@protoc_insertion_point(field_get:AI2DSimulatorPackage.team_color)
-  return static_cast< ::AI2DSimulatorPackage_TeamColor >(team_color_);
-}
- void AI2DSimulatorPackage::set_team_color(::AI2DSimulatorPackage_TeamColor value) {
-  assert(::AI2DSimulatorPackage_TeamColor_IsValid(value));
-  set_has_team_color();
-  team_color_ = value;
-  // @@protoc_insertion_point(field_set:AI2DSimulatorPackage.team_color)
-}
-
-// optional .AI2DSimulatorPackage.FieldSide field_side = 8;
-bool AI2DSimulatorPackage::has_field_side() const {
-  return (_has_bits_[0] & 0x00000080u) != 0;
-}
-void AI2DSimulatorPackage::set_has_field_side() {
-  _has_bits_[0] |= 0x00000080u;
-}
-void AI2DSimulatorPackage::clear_has_field_side() {
-  _has_bits_[0] &= ~0x00000080u;
-}
-void AI2DSimulatorPackage::clear_field_side() {
-  field_side_ = 0;
-  clear_has_field_side();
-}
- ::AI2DSimulatorPackage_FieldSide AI2DSimulatorPackage::field_side() const {
-  // @@protoc_insertion_point(field_get:AI2DSimulatorPackage.field_side)
-  return static_cast< ::AI2DSimulatorPackage_FieldSide >(field_side_);
-}
- void AI2DSimulatorPackage::set_field_side(::AI2DSimulatorPackage_FieldSide value) {
-  assert(::AI2DSimulatorPackage_FieldSide_IsValid(value));
-  set_has_field_side();
-  field_side_ = value;
-  // @@protoc_insertion_point(field_set:AI2DSimulatorPackage.field_side)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

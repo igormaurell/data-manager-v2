@@ -1,25 +1,28 @@
 #include "robot.h"
 
 /*Constructor*/
-Robot::Robot(int _id)
+Robot::Robot(int _id): id(_id), confidence_v(0), frames_in(0), frames_out(0)
 {
-    id = _id;
-
     state = Mat_<float>(3,1);
     state_v = Mat_<float>(3,1);
-    confidence_v = 0;
-
     velocity = Mat_<float>(3,1);
-
-    frames_in = frames_out = 0;
 }
 
+Robot::operator RobotPackage() const
+{
+    RobotPackage package;
+    package.set_id(id);
+    package.set_x(state[0][0]);
+    package.set_y(state[1][0]);
+    package.set_orientation(state[2][0]);
+    return package;
+}
 
 /*Setters*/
-void Robot::setVisionData(Mat_<float> &_state, float _confidence)
+void Robot::setVisionData(visionRobot& vision_robot)
 {
-    state_v = _state.clone();
-    confidence_v = _confidence;
+    state_v = vision_robot.state.clone();
+    confidence_v = vision_robot.confidence;
 }
 
 /*Getters*/

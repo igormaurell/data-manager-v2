@@ -7,7 +7,6 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -28,7 +27,6 @@ const ::google::protobuf::EnumDescriptor* ControlPackage_TeamColor_descriptor_ =
 }  // namespace
 
 
-void protobuf_AssignDesc_messages_5fcontrol_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_messages_5fcontrol_2eproto() {
   protobuf_AddDesc_messages_5fcontrol_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -42,16 +40,16 @@ void protobuf_AssignDesc_messages_5fcontrol_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ControlPackage, id_gk_),
   };
   ControlPackage_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       ControlPackage_descriptor_,
       ControlPackage::default_instance_,
       ControlPackage_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ControlPackage, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ControlPackage, _unknown_fields_),
       -1,
-      -1,
-      sizeof(ControlPackage),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(ControlPackage, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(ControlPackage));
   ControlPackage_FieldSide_descriptor_ = ControlPackage_descriptor_->enum_type(0);
   ControlPackage_TeamColor_descriptor_ = ControlPackage_descriptor_->enum_type(1);
 }
@@ -64,11 +62,10 @@ inline void protobuf_AssignDescriptorsOnce() {
                  &protobuf_AssignDesc_messages_5fcontrol_2eproto);
 }
 
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      ControlPackage_descriptor_, &ControlPackage::default_instance());
+    ControlPackage_descriptor_, &ControlPackage::default_instance());
 }
 
 }  // namespace
@@ -78,7 +75,6 @@ void protobuf_ShutdownFile_messages_5fcontrol_2eproto() {
   delete ControlPackage_reflection_;
 }
 
-void protobuf_AddDesc_messages_5fcontrol_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AddDesc_messages_5fcontrol_2eproto() {
   static bool already_here = false;
   if (already_here) return;
@@ -122,13 +118,13 @@ bool ControlPackage_FieldSide_IsValid(int value) {
   }
 }
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#ifndef _MSC_VER
 const ControlPackage_FieldSide ControlPackage::Left;
 const ControlPackage_FieldSide ControlPackage::Right;
 const ControlPackage_FieldSide ControlPackage::FieldSide_MIN;
 const ControlPackage_FieldSide ControlPackage::FieldSide_MAX;
 const int ControlPackage::FieldSide_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // _MSC_VER
 const ::google::protobuf::EnumDescriptor* ControlPackage_TeamColor_descriptor() {
   protobuf_AssignDescriptorsOnce();
   return ControlPackage_TeamColor_descriptor_;
@@ -143,21 +139,21 @@ bool ControlPackage_TeamColor_IsValid(int value) {
   }
 }
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#ifndef _MSC_VER
 const ControlPackage_TeamColor ControlPackage::Yellow;
 const ControlPackage_TeamColor ControlPackage::Blue;
 const ControlPackage_TeamColor ControlPackage::TeamColor_MIN;
 const ControlPackage_TeamColor ControlPackage::TeamColor_MAX;
 const int ControlPackage::TeamColor_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // _MSC_VER
+#ifndef _MSC_VER
 const int ControlPackage::kFieldSideFieldNumber;
 const int ControlPackage::kTeamColorFieldNumber;
 const int ControlPackage::kIdGKFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !_MSC_VER
 
 ControlPackage::ControlPackage()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:ControlPackage)
 }
@@ -166,8 +162,7 @@ void ControlPackage::InitAsDefaultInstance() {
 }
 
 ControlPackage::ControlPackage(const ControlPackage& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:ControlPackage)
@@ -208,46 +203,33 @@ const ControlPackage& ControlPackage::default_instance() {
 
 ControlPackage* ControlPackage::default_instance_ = NULL;
 
-ControlPackage* ControlPackage::New(::google::protobuf::Arena* arena) const {
-  ControlPackage* n = new ControlPackage;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+ControlPackage* ControlPackage::New() const {
+  return new ControlPackage;
 }
 
 void ControlPackage::Clear() {
-// @@protoc_insertion_point(message_clear_start:ControlPackage)
-#if defined(__clang__)
-#define ZR_HELPER_(f) \
-  _Pragma("clang diagnostic push") \
-  _Pragma("clang diagnostic ignored \"-Winvalid-offsetof\"") \
-  __builtin_offsetof(ControlPackage, f) \
-  _Pragma("clang diagnostic pop")
-#else
-#define ZR_HELPER_(f) reinterpret_cast<char*>(\
-  &reinterpret_cast<ControlPackage*>(16)->f)
-#endif
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<ControlPackage*>(16)->f) - \
+   reinterpret_cast<char*>(16))
 
-#define ZR_(first, last) do {\
-  ::memset(&first, 0,\
-           ZR_HELPER_(last) - ZR_HELPER_(first) + sizeof(last));\
-} while (0)
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
 
   ZR_(field_side_, id_gk_);
 
-#undef ZR_HELPER_
+#undef OFFSET_OF_FIELD_
 #undef ZR_
 
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool ControlPackage::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:ControlPackage)
   for (;;) {
@@ -351,15 +333,15 @@ void ControlPackage::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->id_gk(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:ControlPackage)
 }
 
-::google::protobuf::uint8* ControlPackage::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* ControlPackage::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:ControlPackage)
   // required .ControlPackage.FieldSide field_side = 1;
   if (has_field_side()) {
@@ -378,7 +360,7 @@ void ControlPackage::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->id_gk(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -386,53 +368,31 @@ void ControlPackage::SerializeWithCachedSizes(
   return target;
 }
 
-int ControlPackage::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:ControlPackage)
-  int total_size = 0;
-
-  if (has_field_side()) {
-    // required .ControlPackage.FieldSide field_side = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->field_side());
-  }
-
-  if (has_team_color()) {
-    // required .ControlPackage.TeamColor team_color = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->team_color());
-  }
-
-  if (has_id_gk()) {
-    // required int32 id_GK = 3;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->id_gk());
-  }
-
-  return total_size;
-}
 int ControlPackage::ByteSize() const {
-// @@protoc_insertion_point(message_byte_size_start:ControlPackage)
   int total_size = 0;
 
-  if (((_has_bits_[0] & 0x00000007) ^ 0x00000007) == 0) {  // All required fields are present.
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // required .ControlPackage.FieldSide field_side = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->field_side());
+    if (has_field_side()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->field_side());
+    }
 
     // required .ControlPackage.TeamColor team_color = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->team_color());
+    if (has_team_color()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->team_color());
+    }
 
     // required int32 id_GK = 3;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->id_gk());
+    if (has_id_gk()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->id_gk());
+    }
 
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
   }
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -444,27 +404,19 @@ int ControlPackage::ByteSize() const {
 }
 
 void ControlPackage::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ControlPackage)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  const ControlPackage* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const ControlPackage>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const ControlPackage* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const ControlPackage*>(
+      &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ControlPackage)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ControlPackage)
     MergeFrom(*source);
   }
 }
 
 void ControlPackage::MergeFrom(const ControlPackage& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ControlPackage)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_field_side()) {
       set_field_side(from.field_side());
@@ -476,20 +428,16 @@ void ControlPackage::MergeFrom(const ControlPackage& from) {
       set_id_gk(from.id_gk());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void ControlPackage::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ControlPackage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void ControlPackage::CopyFrom(const ControlPackage& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:ControlPackage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -502,16 +450,14 @@ bool ControlPackage::IsInitialized() const {
 }
 
 void ControlPackage::Swap(ControlPackage* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void ControlPackage::InternalSwap(ControlPackage* other) {
-  std::swap(field_side_, other->field_side_);
-  std::swap(team_color_, other->team_color_);
-  std::swap(id_gk_, other->id_gk_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(field_side_, other->field_side_);
+    std::swap(team_color_, other->team_color_);
+    std::swap(id_gk_, other->id_gk_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata ControlPackage::GetMetadata() const {
@@ -522,84 +468,6 @@ void ControlPackage::InternalSwap(ControlPackage* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// ControlPackage
-
-// required .ControlPackage.FieldSide field_side = 1;
-bool ControlPackage::has_field_side() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void ControlPackage::set_has_field_side() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void ControlPackage::clear_has_field_side() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void ControlPackage::clear_field_side() {
-  field_side_ = 0;
-  clear_has_field_side();
-}
- ::ControlPackage_FieldSide ControlPackage::field_side() const {
-  // @@protoc_insertion_point(field_get:ControlPackage.field_side)
-  return static_cast< ::ControlPackage_FieldSide >(field_side_);
-}
- void ControlPackage::set_field_side(::ControlPackage_FieldSide value) {
-  assert(::ControlPackage_FieldSide_IsValid(value));
-  set_has_field_side();
-  field_side_ = value;
-  // @@protoc_insertion_point(field_set:ControlPackage.field_side)
-}
-
-// required .ControlPackage.TeamColor team_color = 2;
-bool ControlPackage::has_team_color() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void ControlPackage::set_has_team_color() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void ControlPackage::clear_has_team_color() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void ControlPackage::clear_team_color() {
-  team_color_ = 0;
-  clear_has_team_color();
-}
- ::ControlPackage_TeamColor ControlPackage::team_color() const {
-  // @@protoc_insertion_point(field_get:ControlPackage.team_color)
-  return static_cast< ::ControlPackage_TeamColor >(team_color_);
-}
- void ControlPackage::set_team_color(::ControlPackage_TeamColor value) {
-  assert(::ControlPackage_TeamColor_IsValid(value));
-  set_has_team_color();
-  team_color_ = value;
-  // @@protoc_insertion_point(field_set:ControlPackage.team_color)
-}
-
-// required int32 id_GK = 3;
-bool ControlPackage::has_id_gk() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void ControlPackage::set_has_id_gk() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void ControlPackage::clear_has_id_gk() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void ControlPackage::clear_id_gk() {
-  id_gk_ = 0;
-  clear_has_id_gk();
-}
- ::google::protobuf::int32 ControlPackage::id_gk() const {
-  // @@protoc_insertion_point(field_get:ControlPackage.id_GK)
-  return id_gk_;
-}
- void ControlPackage::set_id_gk(::google::protobuf::int32 value) {
-  set_has_id_gk();
-  id_gk_ = value;
-  // @@protoc_insertion_point(field_set:ControlPackage.id_GK)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

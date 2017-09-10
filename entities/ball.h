@@ -2,6 +2,14 @@
 #define BALL_H
 
 #include "definitions.h"
+#include "messages_vision_manager.pb.h"
+
+struct visionBall{
+    visionBall(): confidence(0.f), found(false){ state = Mat_<float>(3,1); }
+    Mat_<float> state;
+    float confidence;
+    bool found;
+};
 
 class Ball
 {
@@ -17,19 +25,14 @@ private:
 public:
     Ball();
 
+    operator BallPackage() const;
+
     /*Setters*/
-    void setVisionData(Mat_<float> _state, float _confidence);
+    void setVisionData(visionBall& vision_ball);
 
     /*Getters*/
     Mat_<float> getState();
     Mat_<float> getVelocity();
     float getConfibility();
 };
-
-struct visionBall{
-    visionBall(): confidence(0.f), found(false){}
-    float x, y, z, confidence;
-    bool found;
-};
-
 #endif // BALL_H

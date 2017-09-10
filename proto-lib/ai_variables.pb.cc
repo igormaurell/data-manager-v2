@@ -7,7 +7,6 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -26,7 +25,6 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 }  // namespace
 
 
-void protobuf_AssignDesc_ai_5fvariables_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_ai_5fvariables_2eproto() {
   protobuf_AddDesc_ai_5fvariables_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -40,16 +38,16 @@ void protobuf_AssignDesc_ai_5fvariables_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AIVariablesPackage, component_value_),
   };
   AIVariablesPackage_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       AIVariablesPackage_descriptor_,
       AIVariablesPackage::default_instance_,
       AIVariablesPackage_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AIVariablesPackage, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AIVariablesPackage, _unknown_fields_),
       -1,
-      -1,
-      sizeof(AIVariablesPackage),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(AIVariablesPackage, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(AIVariablesPackage));
 }
 
 namespace {
@@ -60,11 +58,10 @@ inline void protobuf_AssignDescriptorsOnce() {
                  &protobuf_AssignDesc_ai_5fvariables_2eproto);
 }
 
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      AIVariablesPackage_descriptor_, &AIVariablesPackage::default_instance());
+    AIVariablesPackage_descriptor_, &AIVariablesPackage::default_instance());
 }
 
 }  // namespace
@@ -74,7 +71,6 @@ void protobuf_ShutdownFile_ai_5fvariables_2eproto() {
   delete AIVariablesPackage_reflection_;
 }
 
-void protobuf_AddDesc_ai_5fvariables_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AddDesc_ai_5fvariables_2eproto() {
   static bool already_here = false;
   if (already_here) return;
@@ -101,14 +97,14 @@ struct StaticDescriptorInitializer_ai_5fvariables_2eproto {
 
 // ===================================================================
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#ifndef _MSC_VER
 const int AIVariablesPackage::kComponentFieldNumber;
 const int AIVariablesPackage::kComponentNameFieldNumber;
 const int AIVariablesPackage::kComponentValueFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !_MSC_VER
 
 AIVariablesPackage::AIVariablesPackage()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:AIVariablesPackage)
 }
@@ -117,8 +113,7 @@ void AIVariablesPackage::InitAsDefaultInstance() {
 }
 
 AIVariablesPackage::AIVariablesPackage(const AIVariablesPackage& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:AIVariablesPackage)
@@ -157,28 +152,21 @@ const AIVariablesPackage& AIVariablesPackage::default_instance() {
 
 AIVariablesPackage* AIVariablesPackage::default_instance_ = NULL;
 
-AIVariablesPackage* AIVariablesPackage::New(::google::protobuf::Arena* arena) const {
-  AIVariablesPackage* n = new AIVariablesPackage;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+AIVariablesPackage* AIVariablesPackage::New() const {
+  return new AIVariablesPackage;
 }
 
 void AIVariablesPackage::Clear() {
-// @@protoc_insertion_point(message_clear_start:AIVariablesPackage)
   component_.Clear();
   component_name_.Clear();
   component_value_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool AIVariablesPackage::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:AIVariablesPackage)
   for (;;) {
@@ -196,7 +184,7 @@ bool AIVariablesPackage::MergePartialFromCodedStream(
             this->component(this->component_size() - 1).data(),
             this->component(this->component_size() - 1).length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "AIVariablesPackage.component");
+            "component");
         } else {
           goto handle_unusual;
         }
@@ -215,7 +203,7 @@ bool AIVariablesPackage::MergePartialFromCodedStream(
             this->component_name(this->component_name_size() - 1).data(),
             this->component_name(this->component_name_size() - 1).length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "AIVariablesPackage.component_name");
+            "component_name");
         } else {
           goto handle_unusual;
         }
@@ -234,7 +222,7 @@ bool AIVariablesPackage::MergePartialFromCodedStream(
             this->component_value(this->component_value_size() - 1).data(),
             this->component_value(this->component_value_size() - 1).length(),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "AIVariablesPackage.component_value");
+            "component_value");
         } else {
           goto handle_unusual;
         }
@@ -270,50 +258,50 @@ void AIVariablesPackage::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_start:AIVariablesPackage)
   // repeated string component = 1;
   for (int i = 0; i < this->component_size(); i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->component(i).data(), this->component(i).length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "AIVariablesPackage.component");
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->component(i).data(), this->component(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "component");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       1, this->component(i), output);
   }
 
   // repeated string component_name = 2;
   for (int i = 0; i < this->component_name_size(); i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->component_name(i).data(), this->component_name(i).length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "AIVariablesPackage.component_name");
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->component_name(i).data(), this->component_name(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "component_name");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       2, this->component_name(i), output);
   }
 
   // repeated string component_value = 3;
   for (int i = 0; i < this->component_value_size(); i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->component_value(i).data(), this->component_value(i).length(),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "AIVariablesPackage.component_value");
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->component_value(i).data(), this->component_value(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "component_value");
     ::google::protobuf::internal::WireFormatLite::WriteString(
       3, this->component_value(i), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:AIVariablesPackage)
 }
 
-::google::protobuf::uint8* AIVariablesPackage::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* AIVariablesPackage::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:AIVariablesPackage)
   // repeated string component = 1;
   for (int i = 0; i < this->component_size(); i++) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->component(i).data(), this->component(i).length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "AIVariablesPackage.component");
+      "component");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(1, this->component(i), target);
   }
@@ -323,7 +311,7 @@ void AIVariablesPackage::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->component_name(i).data(), this->component_name(i).length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "AIVariablesPackage.component_name");
+      "component_name");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(2, this->component_name(i), target);
   }
@@ -333,12 +321,12 @@ void AIVariablesPackage::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->component_value(i).data(), this->component_value(i).length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "AIVariablesPackage.component_value");
+      "component_value");
     target = ::google::protobuf::internal::WireFormatLite::
       WriteStringToArray(3, this->component_value(i), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -347,7 +335,6 @@ void AIVariablesPackage::SerializeWithCachedSizes(
 }
 
 int AIVariablesPackage::ByteSize() const {
-// @@protoc_insertion_point(message_byte_size_start:AIVariablesPackage)
   int total_size = 0;
 
   // repeated string component = 1;
@@ -371,7 +358,7 @@ int AIVariablesPackage::ByteSize() const {
       this->component_value(i));
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -383,44 +370,32 @@ int AIVariablesPackage::ByteSize() const {
 }
 
 void AIVariablesPackage::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:AIVariablesPackage)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  const AIVariablesPackage* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const AIVariablesPackage>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const AIVariablesPackage* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const AIVariablesPackage*>(
+      &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:AIVariablesPackage)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:AIVariablesPackage)
     MergeFrom(*source);
   }
 }
 
 void AIVariablesPackage::MergeFrom(const AIVariablesPackage& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:AIVariablesPackage)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
+  GOOGLE_CHECK_NE(&from, this);
   component_.MergeFrom(from.component_);
   component_name_.MergeFrom(from.component_name_);
   component_value_.MergeFrom(from.component_value_);
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void AIVariablesPackage::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:AIVariablesPackage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void AIVariablesPackage::CopyFrom(const AIVariablesPackage& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:AIVariablesPackage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -432,16 +407,14 @@ bool AIVariablesPackage::IsInitialized() const {
 }
 
 void AIVariablesPackage::Swap(AIVariablesPackage* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void AIVariablesPackage::InternalSwap(AIVariablesPackage* other) {
-  component_.UnsafeArenaSwap(&other->component_);
-  component_name_.UnsafeArenaSwap(&other->component_name_);
-  component_value_.UnsafeArenaSwap(&other->component_value_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    component_.Swap(&other->component_);
+    component_name_.Swap(&other->component_name_);
+    component_value_.Swap(&other->component_value_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata AIVariablesPackage::GetMetadata() const {
@@ -452,175 +425,6 @@ void AIVariablesPackage::InternalSwap(AIVariablesPackage* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// AIVariablesPackage
-
-// repeated string component = 1;
-int AIVariablesPackage::component_size() const {
-  return component_.size();
-}
-void AIVariablesPackage::clear_component() {
-  component_.Clear();
-}
- const ::std::string& AIVariablesPackage::component(int index) const {
-  // @@protoc_insertion_point(field_get:AIVariablesPackage.component)
-  return component_.Get(index);
-}
- ::std::string* AIVariablesPackage::mutable_component(int index) {
-  // @@protoc_insertion_point(field_mutable:AIVariablesPackage.component)
-  return component_.Mutable(index);
-}
- void AIVariablesPackage::set_component(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:AIVariablesPackage.component)
-  component_.Mutable(index)->assign(value);
-}
- void AIVariablesPackage::set_component(int index, const char* value) {
-  component_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:AIVariablesPackage.component)
-}
- void AIVariablesPackage::set_component(int index, const char* value, size_t size) {
-  component_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:AIVariablesPackage.component)
-}
- ::std::string* AIVariablesPackage::add_component() {
-  // @@protoc_insertion_point(field_add_mutable:AIVariablesPackage.component)
-  return component_.Add();
-}
- void AIVariablesPackage::add_component(const ::std::string& value) {
-  component_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:AIVariablesPackage.component)
-}
- void AIVariablesPackage::add_component(const char* value) {
-  component_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:AIVariablesPackage.component)
-}
- void AIVariablesPackage::add_component(const char* value, size_t size) {
-  component_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:AIVariablesPackage.component)
-}
- const ::google::protobuf::RepeatedPtrField< ::std::string>&
-AIVariablesPackage::component() const {
-  // @@protoc_insertion_point(field_list:AIVariablesPackage.component)
-  return component_;
-}
- ::google::protobuf::RepeatedPtrField< ::std::string>*
-AIVariablesPackage::mutable_component() {
-  // @@protoc_insertion_point(field_mutable_list:AIVariablesPackage.component)
-  return &component_;
-}
-
-// repeated string component_name = 2;
-int AIVariablesPackage::component_name_size() const {
-  return component_name_.size();
-}
-void AIVariablesPackage::clear_component_name() {
-  component_name_.Clear();
-}
- const ::std::string& AIVariablesPackage::component_name(int index) const {
-  // @@protoc_insertion_point(field_get:AIVariablesPackage.component_name)
-  return component_name_.Get(index);
-}
- ::std::string* AIVariablesPackage::mutable_component_name(int index) {
-  // @@protoc_insertion_point(field_mutable:AIVariablesPackage.component_name)
-  return component_name_.Mutable(index);
-}
- void AIVariablesPackage::set_component_name(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:AIVariablesPackage.component_name)
-  component_name_.Mutable(index)->assign(value);
-}
- void AIVariablesPackage::set_component_name(int index, const char* value) {
-  component_name_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:AIVariablesPackage.component_name)
-}
- void AIVariablesPackage::set_component_name(int index, const char* value, size_t size) {
-  component_name_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:AIVariablesPackage.component_name)
-}
- ::std::string* AIVariablesPackage::add_component_name() {
-  // @@protoc_insertion_point(field_add_mutable:AIVariablesPackage.component_name)
-  return component_name_.Add();
-}
- void AIVariablesPackage::add_component_name(const ::std::string& value) {
-  component_name_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:AIVariablesPackage.component_name)
-}
- void AIVariablesPackage::add_component_name(const char* value) {
-  component_name_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:AIVariablesPackage.component_name)
-}
- void AIVariablesPackage::add_component_name(const char* value, size_t size) {
-  component_name_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:AIVariablesPackage.component_name)
-}
- const ::google::protobuf::RepeatedPtrField< ::std::string>&
-AIVariablesPackage::component_name() const {
-  // @@protoc_insertion_point(field_list:AIVariablesPackage.component_name)
-  return component_name_;
-}
- ::google::protobuf::RepeatedPtrField< ::std::string>*
-AIVariablesPackage::mutable_component_name() {
-  // @@protoc_insertion_point(field_mutable_list:AIVariablesPackage.component_name)
-  return &component_name_;
-}
-
-// repeated string component_value = 3;
-int AIVariablesPackage::component_value_size() const {
-  return component_value_.size();
-}
-void AIVariablesPackage::clear_component_value() {
-  component_value_.Clear();
-}
- const ::std::string& AIVariablesPackage::component_value(int index) const {
-  // @@protoc_insertion_point(field_get:AIVariablesPackage.component_value)
-  return component_value_.Get(index);
-}
- ::std::string* AIVariablesPackage::mutable_component_value(int index) {
-  // @@protoc_insertion_point(field_mutable:AIVariablesPackage.component_value)
-  return component_value_.Mutable(index);
-}
- void AIVariablesPackage::set_component_value(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:AIVariablesPackage.component_value)
-  component_value_.Mutable(index)->assign(value);
-}
- void AIVariablesPackage::set_component_value(int index, const char* value) {
-  component_value_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:AIVariablesPackage.component_value)
-}
- void AIVariablesPackage::set_component_value(int index, const char* value, size_t size) {
-  component_value_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:AIVariablesPackage.component_value)
-}
- ::std::string* AIVariablesPackage::add_component_value() {
-  // @@protoc_insertion_point(field_add_mutable:AIVariablesPackage.component_value)
-  return component_value_.Add();
-}
- void AIVariablesPackage::add_component_value(const ::std::string& value) {
-  component_value_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:AIVariablesPackage.component_value)
-}
- void AIVariablesPackage::add_component_value(const char* value) {
-  component_value_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:AIVariablesPackage.component_value)
-}
- void AIVariablesPackage::add_component_value(const char* value, size_t size) {
-  component_value_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:AIVariablesPackage.component_value)
-}
- const ::google::protobuf::RepeatedPtrField< ::std::string>&
-AIVariablesPackage::component_value() const {
-  // @@protoc_insertion_point(field_list:AIVariablesPackage.component_value)
-  return component_value_;
-}
- ::google::protobuf::RepeatedPtrField< ::std::string>*
-AIVariablesPackage::mutable_component_value() {
-  // @@protoc_insertion_point(field_mutable_list:AIVariablesPackage.component_value)
-  return &component_value_;
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

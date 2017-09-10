@@ -6,26 +6,21 @@ message PathPlanningPackage {
 message AIRobotPackage {
 	required uint32 id = 1;
 
-	required float x = 2;
-	required float y = 3;
-	required float orientation = 4;
+	required string skill = 2;
+	required string tactic = 3;
 
-	required string skill = 5;
-	required string tactic = 6;
-	repeated string sensorial_info = 7;
+	required float target_x = 4;
+	required float target_y = 5;
 
-	required float target_x = 8;
-	required float target_y = 9;
+	required PathPlanningPackage path_planning = 6;
 
-	required PathPlanningPackage path_planning = 10;
+	optional float velocity_x = 7;
+	optional float velocity_y = 8;
+	optional float velocity_theta = 9;
 
-	optional float velocity_x = 11;
-	optional float velocity_y = 12;
-	optional float velocity_theta = 13;
-
-	optional float low_kick = 14;
-	optional float high_kick = 15;
-	optional float dribbler = 16;	
+	optional float low_kick = 10;
+	optional float high_kick = 11;
+	optional float dribbler = 12;	
 }
 
 message AIDataManagerPackage {

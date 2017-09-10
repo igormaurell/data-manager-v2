@@ -1,7 +1,15 @@
 #ifndef ROBOT_H
 #define ROBOT_H
 
+#include "messages_vision_manager.pb.h"
 #include "definitions.h"
+
+struct visionRobot{
+    visionRobot(): found(false), confidence(0.f){ state = Mat_<float>(3,1); }
+    Mat_<float> state;
+    float confidence;
+    bool found;
+};
 
 class Robot
 {
@@ -25,8 +33,10 @@ protected:
 public:
     Robot(int id);
 
+    operator RobotPackage() const;
+
     /*Setters*/
-    void setVisionData(Mat_<float> &_state, float _confidence); //method to set all of the vision data
+    void setVisionData(visionRobot &vision_robot); //method to set all of the vision data
 
     /*Getters*/
     int getId();
@@ -38,12 +48,6 @@ public:
     bool found(); //verify if the robot is playing
     void operator ++(); //increases frames_in and put 0 on frames_out
     void operator --(); //increases frames_out and put 0 on frames_in
-};
-
-struct visionRobot{
-    visionRobot(): found(false), confidence(0.f){}
-    float x, y, orientation, confidence;
-    bool found;
 };
 
 #endif // ROBOT_H

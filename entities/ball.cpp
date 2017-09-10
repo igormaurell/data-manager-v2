@@ -10,15 +10,24 @@ Ball::Ball()
     confidence_v = 0;
 }
 
+Ball::operator BallPackage() const
+{
+    BallPackage package;
+    package.set_x(state[0][0]);
+    package.set_y(state[1][0]);
+    package.set_z(state[2][0]);
+    return package;
+}
+
 /*Setters*/
-void Ball::setVisionData(Mat_<float> _state, float _confidence)
+void Ball::setVisionData(visionBall& vision_ball)
 {
     Mat_<float> last_state_v;
     last_state_v = Mat_<float>(3,1);
-    state_v = _state.clone();
-    confidence_v = _confidence;
+    state_v = vision_ball.state.clone();
+    confidence_v = vision_ball.confidence;
 
-    //velocity
+    //calculate velocity
 }
 
 /*Getters*/

@@ -7,7 +7,6 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
@@ -26,7 +25,6 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 }  // namespace
 
 
-void protobuf_AssignDesc_messages_5fdata_5fmanager_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AssignDesc_messages_5fdata_5fmanager_2eproto() {
   protobuf_AddDesc_messages_5fdata_5fmanager_2eproto();
   const ::google::protobuf::FileDescriptor* file =
@@ -40,16 +38,16 @@ void protobuf_AssignDesc_messages_5fdata_5fmanager_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DataPackage, control_),
   };
   DataPackage_reflection_ =
-    ::google::protobuf::internal::GeneratedMessageReflection::NewGeneratedMessageReflection(
+    new ::google::protobuf::internal::GeneratedMessageReflection(
       DataPackage_descriptor_,
       DataPackage::default_instance_,
       DataPackage_offsets_,
       GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DataPackage, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DataPackage, _unknown_fields_),
       -1,
-      -1,
-      sizeof(DataPackage),
-      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(DataPackage, _internal_metadata_),
-      -1);
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(DataPackage));
 }
 
 namespace {
@@ -60,11 +58,10 @@ inline void protobuf_AssignDescriptorsOnce() {
                  &protobuf_AssignDesc_messages_5fdata_5fmanager_2eproto);
 }
 
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
-      DataPackage_descriptor_, &DataPackage::default_instance());
+    DataPackage_descriptor_, &DataPackage::default_instance());
 }
 
 }  // namespace
@@ -74,7 +71,6 @@ void protobuf_ShutdownFile_messages_5fdata_5fmanager_2eproto() {
   delete DataPackage_reflection_;
 }
 
-void protobuf_AddDesc_messages_5fdata_5fmanager_2eproto() GOOGLE_ATTRIBUTE_COLD;
 void protobuf_AddDesc_messages_5fdata_5fmanager_2eproto() {
   static bool already_here = false;
   if (already_here) return;
@@ -107,14 +103,14 @@ struct StaticDescriptorInitializer_messages_5fdata_5fmanager_2eproto {
 
 // ===================================================================
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#ifndef _MSC_VER
 const int DataPackage::kVisionFieldNumber;
 const int DataPackage::kRefereeFieldNumber;
 const int DataPackage::kControlFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !_MSC_VER
 
 DataPackage::DataPackage()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   // @@protoc_insertion_point(constructor:DataPackage)
 }
@@ -126,8 +122,7 @@ void DataPackage::InitAsDefaultInstance() {
 }
 
 DataPackage::DataPackage(const DataPackage& from)
-  : ::google::protobuf::Message(),
-    _internal_metadata_(NULL) {
+  : ::google::protobuf::Message() {
   SharedCtor();
   MergeFrom(from);
   // @@protoc_insertion_point(copy_constructor:DataPackage)
@@ -171,17 +166,12 @@ const DataPackage& DataPackage::default_instance() {
 
 DataPackage* DataPackage::default_instance_ = NULL;
 
-DataPackage* DataPackage::New(::google::protobuf::Arena* arena) const {
-  DataPackage* n = new DataPackage;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
+DataPackage* DataPackage::New() const {
+  return new DataPackage;
 }
 
 void DataPackage::Clear() {
-// @@protoc_insertion_point(message_clear_start:DataPackage)
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & 7) {
     if (has_vision()) {
       if (vision_ != NULL) vision_->::VisionPackage::Clear();
     }
@@ -193,14 +183,12 @@ void DataPackage::Clear() {
     }
   }
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
-  if (_internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->Clear();
-  }
+  mutable_unknown_fields()->Clear();
 }
 
 bool DataPackage::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:DataPackage)
   for (;;) {
@@ -274,53 +262,53 @@ void DataPackage::SerializeWithCachedSizes(
   // required .VisionPackage vision = 1;
   if (has_vision()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->vision_, output);
+      1, this->vision(), output);
   }
 
   // required .SSL_Referee referee = 2;
   if (has_referee()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, *this->referee_, output);
+      2, this->referee(), output);
   }
 
   // optional .ControlPackage control = 3;
   if (has_control()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, *this->control_, output);
+      3, this->control(), output);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:DataPackage)
 }
 
-::google::protobuf::uint8* DataPackage::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
+::google::protobuf::uint8* DataPackage::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:DataPackage)
   // required .VisionPackage vision = 1;
   if (has_vision()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        1, *this->vision_, false, target);
+      WriteMessageNoVirtualToArray(
+        1, this->vision(), target);
   }
 
   // required .SSL_Referee referee = 2;
   if (has_referee()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        2, *this->referee_, false, target);
+      WriteMessageNoVirtualToArray(
+        2, this->referee(), target);
   }
 
   // optional .ControlPackage control = 3;
   if (has_control()) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageNoVirtualToArray(
-        3, *this->control_, false, target);
+      WriteMessageNoVirtualToArray(
+        3, this->control(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
   }
@@ -328,52 +316,33 @@ void DataPackage::SerializeWithCachedSizes(
   return target;
 }
 
-int DataPackage::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:DataPackage)
-  int total_size = 0;
-
-  if (has_vision()) {
-    // required .VisionPackage vision = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->vision_);
-  }
-
-  if (has_referee()) {
-    // required .SSL_Referee referee = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->referee_);
-  }
-
-  return total_size;
-}
 int DataPackage::ByteSize() const {
-// @@protoc_insertion_point(message_byte_size_start:DataPackage)
   int total_size = 0;
 
-  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     // required .VisionPackage vision = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->vision_);
+    if (has_vision()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->vision());
+    }
 
     // required .SSL_Referee referee = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->referee_);
+    if (has_referee()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->referee());
+    }
 
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  // optional .ControlPackage control = 3;
-  if (has_control()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        *this->control_);
-  }
+    // optional .ControlPackage control = 3;
+    if (has_control()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->control());
+    }
 
-  if (_internal_metadata_.have_unknown_fields()) {
+  }
+  if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         unknown_fields());
@@ -385,27 +354,19 @@ int DataPackage::ByteSize() const {
 }
 
 void DataPackage::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:DataPackage)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
-  const DataPackage* source = 
-      ::google::protobuf::internal::DynamicCastToGenerated<const DataPackage>(
-          &from);
+  GOOGLE_CHECK_NE(&from, this);
+  const DataPackage* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const DataPackage*>(
+      &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:DataPackage)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:DataPackage)
     MergeFrom(*source);
   }
 }
 
 void DataPackage::MergeFrom(const DataPackage& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:DataPackage)
-  if (GOOGLE_PREDICT_FALSE(&from == this)) {
-    ::google::protobuf::internal::MergeFromFail(__FILE__, __LINE__);
-  }
+  GOOGLE_CHECK_NE(&from, this);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_vision()) {
       mutable_vision()->::VisionPackage::MergeFrom(from.vision());
@@ -417,20 +378,16 @@ void DataPackage::MergeFrom(const DataPackage& from) {
       mutable_control()->::ControlPackage::MergeFrom(from.control());
     }
   }
-  if (from._internal_metadata_.have_unknown_fields()) {
-    mutable_unknown_fields()->MergeFrom(from.unknown_fields());
-  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
 void DataPackage::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:DataPackage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void DataPackage::CopyFrom(const DataPackage& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:DataPackage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -440,28 +397,26 @@ bool DataPackage::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
 
   if (has_vision()) {
-    if (!this->vision_->IsInitialized()) return false;
+    if (!this->vision().IsInitialized()) return false;
   }
   if (has_referee()) {
-    if (!this->referee_->IsInitialized()) return false;
+    if (!this->referee().IsInitialized()) return false;
   }
   if (has_control()) {
-    if (!this->control_->IsInitialized()) return false;
+    if (!this->control().IsInitialized()) return false;
   }
   return true;
 }
 
 void DataPackage::Swap(DataPackage* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void DataPackage::InternalSwap(DataPackage* other) {
-  std::swap(vision_, other->vision_);
-  std::swap(referee_, other->referee_);
-  std::swap(control_, other->control_);
-  std::swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  std::swap(_cached_size_, other->_cached_size_);
+  if (other != this) {
+    std::swap(vision_, other->vision_);
+    std::swap(referee_, other->referee_);
+    std::swap(control_, other->control_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
 }
 
 ::google::protobuf::Metadata DataPackage::GetMetadata() const {
@@ -472,142 +427,6 @@ void DataPackage::InternalSwap(DataPackage* other) {
   return metadata;
 }
 
-#if PROTOBUF_INLINE_NOT_IN_HEADERS
-// DataPackage
-
-// required .VisionPackage vision = 1;
-bool DataPackage::has_vision() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-void DataPackage::set_has_vision() {
-  _has_bits_[0] |= 0x00000001u;
-}
-void DataPackage::clear_has_vision() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-void DataPackage::clear_vision() {
-  if (vision_ != NULL) vision_->::VisionPackage::Clear();
-  clear_has_vision();
-}
-const ::VisionPackage& DataPackage::vision() const {
-  // @@protoc_insertion_point(field_get:DataPackage.vision)
-  return vision_ != NULL ? *vision_ : *default_instance_->vision_;
-}
-::VisionPackage* DataPackage::mutable_vision() {
-  set_has_vision();
-  if (vision_ == NULL) {
-    vision_ = new ::VisionPackage;
-  }
-  // @@protoc_insertion_point(field_mutable:DataPackage.vision)
-  return vision_;
-}
-::VisionPackage* DataPackage::release_vision() {
-  // @@protoc_insertion_point(field_release:DataPackage.vision)
-  clear_has_vision();
-  ::VisionPackage* temp = vision_;
-  vision_ = NULL;
-  return temp;
-}
-void DataPackage::set_allocated_vision(::VisionPackage* vision) {
-  delete vision_;
-  vision_ = vision;
-  if (vision) {
-    set_has_vision();
-  } else {
-    clear_has_vision();
-  }
-  // @@protoc_insertion_point(field_set_allocated:DataPackage.vision)
-}
-
-// required .SSL_Referee referee = 2;
-bool DataPackage::has_referee() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-void DataPackage::set_has_referee() {
-  _has_bits_[0] |= 0x00000002u;
-}
-void DataPackage::clear_has_referee() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-void DataPackage::clear_referee() {
-  if (referee_ != NULL) referee_->::SSL_Referee::Clear();
-  clear_has_referee();
-}
-const ::SSL_Referee& DataPackage::referee() const {
-  // @@protoc_insertion_point(field_get:DataPackage.referee)
-  return referee_ != NULL ? *referee_ : *default_instance_->referee_;
-}
-::SSL_Referee* DataPackage::mutable_referee() {
-  set_has_referee();
-  if (referee_ == NULL) {
-    referee_ = new ::SSL_Referee;
-  }
-  // @@protoc_insertion_point(field_mutable:DataPackage.referee)
-  return referee_;
-}
-::SSL_Referee* DataPackage::release_referee() {
-  // @@protoc_insertion_point(field_release:DataPackage.referee)
-  clear_has_referee();
-  ::SSL_Referee* temp = referee_;
-  referee_ = NULL;
-  return temp;
-}
-void DataPackage::set_allocated_referee(::SSL_Referee* referee) {
-  delete referee_;
-  referee_ = referee;
-  if (referee) {
-    set_has_referee();
-  } else {
-    clear_has_referee();
-  }
-  // @@protoc_insertion_point(field_set_allocated:DataPackage.referee)
-}
-
-// optional .ControlPackage control = 3;
-bool DataPackage::has_control() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-void DataPackage::set_has_control() {
-  _has_bits_[0] |= 0x00000004u;
-}
-void DataPackage::clear_has_control() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-void DataPackage::clear_control() {
-  if (control_ != NULL) control_->::ControlPackage::Clear();
-  clear_has_control();
-}
-const ::ControlPackage& DataPackage::control() const {
-  // @@protoc_insertion_point(field_get:DataPackage.control)
-  return control_ != NULL ? *control_ : *default_instance_->control_;
-}
-::ControlPackage* DataPackage::mutable_control() {
-  set_has_control();
-  if (control_ == NULL) {
-    control_ = new ::ControlPackage;
-  }
-  // @@protoc_insertion_point(field_mutable:DataPackage.control)
-  return control_;
-}
-::ControlPackage* DataPackage::release_control() {
-  // @@protoc_insertion_point(field_release:DataPackage.control)
-  clear_has_control();
-  ::ControlPackage* temp = control_;
-  control_ = NULL;
-  return temp;
-}
-void DataPackage::set_allocated_control(::ControlPackage* control) {
-  delete control_;
-  control_ = control;
-  if (control) {
-    set_has_control();
-  } else {
-    clear_has_control();
-  }
-  // @@protoc_insertion_point(field_set_allocated:DataPackage.control)
-}
-
-#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // @@protoc_insertion_point(namespace_scope)
 

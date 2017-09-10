@@ -9,28 +9,35 @@
 #include "ball.h"
 #include "enemyRobot.h"
 #include "teamRobot.h"
+#include "config.h"
 
 class VisionManager
 {
 private:
     Ball* ball;
-    vector<EnemyRobot*> enemies;
-    vector<TeamRobot*> allies;
+    vector<EnemyRobot*> enemy;
+    vector<TeamRobot*> team;
 
     visionBall ball_v;
     vector<visionRobot> blue_v;
     vector<visionRobot> yellow_v;
 
     vector<bool> read_cameras;
+    long frame_number;
+    double delay;
+
+    bool ready;
 
     bool allFieldRead();
     void resetVisionData();
     void updateEntities();
 
 public:
-    VisionManager(Ball* _ball, vector<EnemyRobot*> _enemies, vector<TeamRobot*> _allies);
+    VisionManager(Ball* _ball, vector<TeamRobot*>& _team, vector<EnemyRobot*>& _enemy);
 
-    void readVisionData(const SSL_DetectionFrame &camFrame);
+    void mountVisionPackage(VisionPackage& package);
+
+    bool readVisionData(const SSL_DetectionFrame& package);
 };
 
 #endif // VISIONMANAGER_H
