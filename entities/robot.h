@@ -5,8 +5,8 @@
 #include "definitions.h"
 
 struct visionRobot{
-    visionRobot(): found(false), confidence(0.f){ state = Mat_<float>(3,1); }
-    Mat_<float> state;
+    visionRobot(): found(false), confidence(0.f){ pose = Mat_<float>(3,1); }
+    Mat_<float> pose;
     float confidence;
     bool found;
 };
@@ -22,12 +22,12 @@ private:
 
 protected:
     /*Final data*/
-    Mat_<float> state; //final state (after kalman or particle-filter)
+    Mat_<float> pose; //final pose (after kalman or particle-filter)
     Mat_<float> velocity; //velocity of a robot (from feedback-manager or position vector difference)
     //final confidence will be a covariance matrix
 
-    /*Vision data*/
-    Mat_<float> state_v; //visualized state (from vision-manager)
+    /*vision-manager data*/
+    Mat_<float> pose_v; //visualized pose (from vision-manager)
     float confidence_v; //confidence of visualization (from vision-manager)
 
 public:
@@ -40,7 +40,7 @@ public:
 
     /*Getters*/
     int getId();
-    Mat_<float> getState();
+    Mat_<float> getPose();
     float getconfidence();
     Mat_<float> getVelocity();
 

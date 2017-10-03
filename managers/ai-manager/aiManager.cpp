@@ -10,5 +10,6 @@ void AIManager::readAIData(const AIDataManagerPackage &package)
     for(int i = 0 ; i < robots ; i++) {
         robot = package.team(i);
         team[robot.id()]->setAIData(robot);
+        Clock::stamp("robot_ai_" + to_string(robot.id()));
     }
 }

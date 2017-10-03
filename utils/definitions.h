@@ -1,17 +1,19 @@
 #ifndef DEFINITIONS_H
 #define DEFINITIONS_H
 
+#include "clock.h"
+
 //QT includes
 #include <QUdpSocket>
 
 //OpenCV includes
 #include <opencv/cv.h>
+#include <opencv2/video/tracking.hpp>
 using namespace cv;
 
 //STL includes
 #include <iostream>
 #include <vector>
-#include <map>
 #include <string>
 using namespace std;
 
@@ -23,7 +25,6 @@ using namespace std;
 enum TeamColor{
     Blue, Yellow
 };
-
 const string CONFIG_PATH = "../data-manager-v2/config/config.json";
 
 const int FRAMES_FOUNDED = 5;
