@@ -34,9 +34,9 @@ bool VisionManager::readVisionData(const SSL_DetectionFrame& package)
     for(i = 0;i<num_balls;i++){
         aux_ball = package.balls(i);
         if(aux_ball.confidence()>ball_v.confidence){
-            ball_v.state[0][0] = aux_ball.x();
-            ball_v.state[1][0] = aux_ball.y();
-            ball_v.state[2][0] = aux_ball.z();
+            ball_v.pose[0][0] = aux_ball.x();
+            ball_v.pose[1][0] = aux_ball.y();
+            ball_v.pose[2][0] = aux_ball.z();
             ball_v.confidence = aux_ball.confidence();
             ball_v.found = true;
         }
@@ -49,9 +49,9 @@ bool VisionManager::readVisionData(const SSL_DetectionFrame& package)
     for(i = 0;i<num_robots;i++){
         aux_robot = package.robots_blue(i);
         if(aux_robot.confidence()>blue_v[aux_robot.robot_id()].confidence){
-            blue_v[aux_robot.robot_id()].state[0][0] = aux_robot.x();
-            blue_v[aux_robot.robot_id()].state[1][0] = aux_robot.y();
-            blue_v[aux_robot.robot_id()].state[2][0] = aux_robot.orientation();
+            blue_v[aux_robot.robot_id()].pose[0][0] = aux_robot.x();
+            blue_v[aux_robot.robot_id()].pose[1][0] = aux_robot.y();
+            blue_v[aux_robot.robot_id()].pose[2][0] = aux_robot.orientation();
             blue_v[aux_robot.robot_id()].confidence = aux_robot.confidence();
             blue_v[aux_robot.robot_id()].found = true;
         }
@@ -61,9 +61,9 @@ bool VisionManager::readVisionData(const SSL_DetectionFrame& package)
     for(i = 0;i<num_robots;i++){
         aux_robot = package.robots_yellow(i);
         if(aux_robot.confidence()>yellow_v[aux_robot.robot_id()].confidence){
-            yellow_v[aux_robot.robot_id()].state[0][0] = aux_robot.x();
-            yellow_v[aux_robot.robot_id()].state[1][0] = aux_robot.y();
-            yellow_v[aux_robot.robot_id()].state[2][0] = aux_robot.orientation();
+            yellow_v[aux_robot.robot_id()].pose[0][0] = aux_robot.x();
+            yellow_v[aux_robot.robot_id()].pose[1][0] = aux_robot.y();
+            yellow_v[aux_robot.robot_id()].pose[2][0] = aux_robot.orientation();
             yellow_v[aux_robot.robot_id()].confidence = aux_robot.confidence();
             yellow_v[aux_robot.robot_id()].found = true;
         }
@@ -73,7 +73,7 @@ bool VisionManager::readVisionData(const SSL_DetectionFrame& package)
         frame_number = package.frame_number();
         delay = package.t_sent() - package.t_capture();
         updateEntities();
-        //calcula kalman
+        calculateKalmanFilter();
         resetVisionData();
         return true;
     }
@@ -104,6 +104,7 @@ void VisionManager::updateEntities()
             if(blue_v[i].found){
                 team[i]++;
                 team[i]->setVisionData(blue_v[i]);
+                Clock::stamp("robot_v_" + to_string(i));
             }
             else{
                 team[i]--;
@@ -126,6 +127,7 @@ void VisionManager::updateEntities()
             if(yellow_v[i].found){
                 team[i]++;
                 team[i]->setVisionData(yellow_v[i]);
+                Clock::stamp("robot_v_" + to_string(i));
             }
             else{
                 team[i]--;
@@ -145,25 +147,18 @@ void VisionManager::updateEntities()
     }
 }
 
-void VisionManager::kalmanPredict()
-{
-
-}
-
 void VisionManager::mountVisionPackage(VisionPackage& package)
 {
     package.set_frame_number(frame_number);
     package.set_delay(delay);
 
-    RobotPackage *robot;
+    package.ball() = *(ball);
+
     for(int i = 0 ; i < NUM_MAX_ROBOTS ; i++){
-        if(team[i]->found()){
-            robot = package.add_team();
-            *(robot) = *(team[i]);
-        }
+        if(team[i]->found())
+            *(package.add_team()) = *(team[i]);;
 
         if(enemy[i]->found())
-            robot = package.add_enemy();
-            *(robot) = *(enemy[i]);
+            *(package.add_enemy()) = *(enemy[i]);
     }
 }

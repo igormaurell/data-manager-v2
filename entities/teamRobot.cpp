@@ -4,6 +4,7 @@
 TeamRobot::TeamRobot(int _id): Robot(_id),capacitor_charge(0), batery_charge(0), orientation(0),
     skill(""), tactic(""), kick_type(LOW), kick_power(0.0), dribbler_velocity(0.0)
 {
+    wheels_velocity = Mat_<float>(4,1);
     command = Mat_<float>(3,1);
 }
 
@@ -11,7 +12,7 @@ TeamRobot::TeamRobot(int _id): Robot(_id),capacitor_charge(0), batery_charge(0),
 /*Setters*/
 void TeamRobot::setFeedbackData(feedbackRobot& feedback_robot)
 {
-    velocity = feedback_robot.velocity.clone();
+    wheels_velocity = feedback_robot.wheels_velocity.clone();
     capacitor_charge = feedback_robot.capacitor_charge;
     batery_charge = feedback_robot.batery_charge;
     orientation = feedback_robot.orientation;

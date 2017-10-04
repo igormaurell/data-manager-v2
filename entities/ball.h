@@ -5,8 +5,8 @@
 #include "messages_vision_manager.pb.h"
 
 struct visionBall{
-    visionBall(): confidence(0.f), found(false){ state = Mat_<float>(3,1); }
-    Mat_<float> state;
+    visionBall(): confidence(0.f), found(false){ pose = Mat_<float>(3,1); }
+    Mat_<float> pose;
     float confidence;
     bool found;
 };
@@ -15,11 +15,11 @@ class Ball
 {
 private:
     /*Final data*/
-    Mat_<float> state;
+    Mat_<float> pose;
     Mat_<float> velocity;
 
     /*Vision data*/
-    Mat_<float> state_v;
+    Mat_<float> pose_v;
     float confidence_v;
 
 public:
@@ -31,7 +31,7 @@ public:
     void setVisionData(visionBall& vision_ball);
 
     /*Getters*/
-    Mat_<float> getState();
+    Mat_<float> getPose();
     Mat_<float> getVelocity();
     float getConfibility();
 };

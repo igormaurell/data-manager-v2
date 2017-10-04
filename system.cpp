@@ -1,5 +1,4 @@
 #include "system.h"
-
 System::System()
 {
     ball = new Ball();
@@ -60,6 +59,8 @@ void System::start()
         cout<<"Pronto para receber dados da SSL Vision."<<endl;
     }
     else cout<<"Nao foi possivel conectar na SSL Vision."<<endl;
+
+    Clock::setStartTime();
 }
 void System::stop()
 {
@@ -169,4 +170,9 @@ void System::resetRefereeData(){
     blue_team->set_timeouts(4);
     blue_team->set_timeout_time(300000000);
     blue_team->set_goalie(0);
+}
+
+void readFeedbackData()
+{
+
 }

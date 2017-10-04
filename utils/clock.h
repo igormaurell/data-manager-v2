@@ -1,6 +1,8 @@
 #ifndef CLOCK_H
 #define CLOCK_H
-#include "definitions.h"
+#include <iostream>
+#include <map>
+#include <string>
 #include <ctime>
 #include <cmath>
 using namespace std;
@@ -8,20 +10,20 @@ using namespace std;
 class Clock
 {
 private:
-    map<string, double> timestamps;
-    double start;
+    static map<string, double> timestamps;
+    static double start;
 
 public:
     Clock();
 
-    void setStartTime();
+    static void setStartTime();
 
-    void stamp(string _stamper);
-    void delStamper(string _stamper);
-    void clearTimestamp();
+    static void stamp(string _stamper);
+    static void delStamper(string _stamper);
+    static void clearTimestamp();
 
-    double getDeltaT(string _stamper1, string _stamper2);
-    double getTimestamp(string _stamper);
+    static double getDeltaT(string _stamper1, string _stamper2);
+    static double getTimestamp(string _stamper);
 };
 
 #endif //CLOCK_H
