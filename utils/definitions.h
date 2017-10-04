@@ -6,6 +6,7 @@
 
 //OpenCV includes
 #include <opencv/cv.h>
+#include <opencv2/video/tracking.hpp>
 using namespace cv;
 
 //STL includes

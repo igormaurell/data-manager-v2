@@ -145,6 +145,11 @@ void VisionManager::updateEntities()
     }
 }
 
+void VisionManager::kalmanPredict()
+{
+
+}
+
 void VisionManager::mountVisionPackage(VisionPackage& package)
 {
     package.set_frame_number(frame_number);
