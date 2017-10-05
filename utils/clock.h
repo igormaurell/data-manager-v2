@@ -10,20 +10,14 @@ using namespace std;
 class Clock
 {
 private:
-    static map<string, double> timestamps;
-    static double start;
+    static float start;
 
 public:
     Clock();
 
     static void setStartTime();
 
-    static void stamp(string _stamper);
-    static void delStamper(string _stamper);
-    static void clearTimestamp();
-
-    static double getDeltaT(string _stamper1, string _stamper2);
-    static double getTimestamp(string _stamper);
+    static float calculateDeltaT();
 };
 
 #endif //CLOCK_H

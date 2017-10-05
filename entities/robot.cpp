@@ -1,11 +1,9 @@
 #include "robot.h"
 
 /*Constructor*/
-Robot::Robot(int _id): id(_id), confidence_v(0), frames_in(0), frames_out(0)
+Robot::Robot(int _id): id(_id), confidence(0.f), frames_in(0), frames_out(0)
 {
     pose = Mat_<float>(3,1);
-    pose_v = Mat_<float>(3,1);
-    velocity = Mat_<float>(3,1);
 }
 
 Robot::operator RobotPackage() const
@@ -18,13 +16,6 @@ Robot::operator RobotPackage() const
     return package;
 }
 
-/*Setters*/
-void Robot::setVisionData(visionRobot& vision_robot)
-{
-    pose_v = vision_robot.pose.clone();
-    confidence_v = vision_robot.confidence;
-}
-
 /*Getters*/
 int Robot::getId(){
     return id;
@@ -35,13 +26,8 @@ Mat_<float> Robot::getPose(){
 }
 
 float Robot::getconfidence(){
-    return confidence_v;
+    return confidence;
 }
-
-Mat_<float> Robot::getVelocity(){
-    return velocity;
-}
-
 
 /*Control methods*/
 bool Robot::found()

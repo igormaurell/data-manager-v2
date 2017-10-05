@@ -5,8 +5,9 @@
 #include "definitions.h"
 
 struct visionRobot{
-    visionRobot(): found(false), confidence(0.f){ pose = Mat_<float>(3,1); }
+    visionRobot(): found(false), confidence(0.f), time(0.f){ pose = Mat_<float>(3,1); }
     Mat_<float> pose;
+    float time;
     float confidence;
     bool found;
 };
@@ -23,26 +24,17 @@ private:
 protected:
     /*Final data*/
     Mat_<float> pose; //final pose (after kalman or particle-filter)
-    Mat_<float> velocity; //velocity of a robot (from feedback-manager or position vector difference)
-    //final confidence will be a covariance matrix
-
-    /*vision-manager data*/
-    Mat_<float> pose_v; //visualized pose (from vision-manager)
-    float confidence_v; //confidence of visualization (from vision-manager)
+    float confidence;
 
 public:
     Robot(int id);
 
     operator RobotPackage() const;
 
-    /*Setters*/
-    void setVisionData(visionRobot &vision_robot); //method to set all of the vision data
-
     /*Getters*/
     int getId();
     Mat_<float> getPose();
     float getconfidence();
-    Mat_<float> getVelocity();
 
     /*Control methods*/
     bool found(); //verify if the robot is playing

@@ -1,13 +1,9 @@
 #include "ball.h"
 
 /*Constructor*/
-Ball::Ball()
+Ball::Ball(): confidence(0.f)
 {
     pose = Mat_<float>(3,1);
-    velocity = Mat_<float>(2,1);
-
-    pose_v = Mat_<float>(3,1);
-    confidence_v = 0;
 }
 
 Ball::operator BallPackage() const
@@ -22,12 +18,8 @@ Ball::operator BallPackage() const
 /*Setters*/
 void Ball::setVisionData(visionBall& vision_ball)
 {
-    Mat_<float> last_pose_v;
-    last_pose_v = Mat_<float>(3,1);
-    pose_v = vision_ball.pose.clone();
-    confidence_v = vision_ball.confidence;
-
-    //calculate velocity
+    pose = vision_ball.pose.clone();
+    confidence = vision_ball.confidence;
 }
 
 /*Getters*/
@@ -36,13 +28,8 @@ Mat_<float> Ball::getPose()
     return pose.clone();
 }
 
-Mat_<float> Ball::getVelocity()
-{
-    return velocity.clone();
-}
-
 float Ball::getConfibility()
 {
-    return confidence_v;
+    return confidence;
 }
 

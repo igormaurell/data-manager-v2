@@ -8,18 +8,21 @@ enum KickType{
 };
 
 struct feedbackRobot{
-    feedbackRobot(): capacitor_charge(0), batery_charge(0), orientation(0) { wheels_velocity = Mat_<float>(4,1); }
-    Mat_<float> wheels_velocity;
+    feedbackRobot(): capacitor_charge(0.f), batery_charge(0.f), time(0.f) { state = Mat_<float>(6,1); }
+    Mat_<float> state;
+    float time;
     float capacitor_charge;
     float batery_charge;
-    float orientation;
 };
 
 class TeamRobot: public Robot
 {
 private:
+    /*kalman data*/
+    Mat_<float> state;
+    Mat_<float> deltat_state;
+
     /*feedback-manager data*/
-    Mat_<float> wheels_velocity;
     float capacitor_charge;
     float batery_charge;
     float orientation;
@@ -38,6 +41,7 @@ public:
     TeamRobot(int _id);
 
     /*Setters*/
+    void setVisionData(visionRobot& vision_robot);
     void setFeedbackData(feedbackRobot& feedback_robot);
     void setAIData(AIRobotPackage& ai_robot);
 

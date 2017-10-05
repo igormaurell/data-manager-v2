@@ -16,11 +16,7 @@ class Ball
 private:
     /*Final data*/
     Mat_<float> pose;
-    Mat_<float> velocity;
-
-    /*Vision data*/
-    Mat_<float> pose_v;
-    float confidence_v;
+    float confidence;
 
 public:
     Ball();
@@ -32,7 +28,6 @@ public:
 
     /*Getters*/
     Mat_<float> getPose();
-    Mat_<float> getVelocity();
     float getConfibility();
 };
 #endif // BALL_H

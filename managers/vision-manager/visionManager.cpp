@@ -52,6 +52,7 @@ bool VisionManager::readVisionData(const SSL_DetectionFrame& package)
             blue_v[aux_robot.robot_id()].pose[0][0] = aux_robot.x();
             blue_v[aux_robot.robot_id()].pose[1][0] = aux_robot.y();
             blue_v[aux_robot.robot_id()].pose[2][0] = aux_robot.orientation();
+            blue_v[aux_robot.robot_id()].time = Clock::calculateDeltaT();
             blue_v[aux_robot.robot_id()].confidence = aux_robot.confidence();
             blue_v[aux_robot.robot_id()].found = true;
         }
@@ -64,6 +65,7 @@ bool VisionManager::readVisionData(const SSL_DetectionFrame& package)
             yellow_v[aux_robot.robot_id()].pose[0][0] = aux_robot.x();
             yellow_v[aux_robot.robot_id()].pose[1][0] = aux_robot.y();
             yellow_v[aux_robot.robot_id()].pose[2][0] = aux_robot.orientation();
+            yellow_v[aux_robot.robot_id()].time = Clock::calculateDeltaT();
             yellow_v[aux_robot.robot_id()].confidence = aux_robot.confidence();
             yellow_v[aux_robot.robot_id()].found = true;
         }
@@ -73,7 +75,6 @@ bool VisionManager::readVisionData(const SSL_DetectionFrame& package)
         frame_number = package.frame_number();
         delay = package.t_sent() - package.t_capture();
         updateEntities();
-        calculateKalmanFilter();
         resetVisionData();
         return true;
     }
@@ -104,7 +105,6 @@ void VisionManager::updateEntities()
             if(blue_v[i].found){
                 team[i]++;
                 team[i]->setVisionData(blue_v[i]);
-                Clock::stamp("robot_v_" + to_string(i));
             }
             else{
                 team[i]--;
@@ -127,7 +127,6 @@ void VisionManager::updateEntities()
             if(yellow_v[i].found){
                 team[i]++;
                 team[i]->setVisionData(yellow_v[i]);
-                Clock::stamp("robot_v_" + to_string(i));
             }
             else{
                 team[i]--;
@@ -152,7 +151,7 @@ void VisionManager::mountVisionPackage(VisionPackage& package)
     package.set_frame_number(frame_number);
     package.set_delay(delay);
 
-    package.ball() = *(ball);
+    *(package.mutable_ball()) = *(ball);
 
     for(int i = 0 ; i < NUM_MAX_ROBOTS ; i++){
         if(team[i]->found())
