@@ -33,7 +33,7 @@ private:
     void updateEntities();
 
 public:
-    VisionManager(Ball* _ball, vector<TeamRobot*>& _team, vector<EnemyRobot*>& _enemy);
+    VisionManager(Ball* _ball, vector<TeamRobot*> _team, vector<EnemyRobot*> _enemy);
 
     void mountVisionPackage(VisionPackage& package);
 

@@ -25,7 +25,6 @@ private:
     /*feedback-manager data*/
     float capacitor_charge;
     float batery_charge;
-    float orientation;
 
     /*ai-manager data*/
     string skill;
@@ -48,7 +47,6 @@ public:
     /*Getters*/
     float getCapacitorCharge();
     float getBateryCharge();
-    float getOrientetion();
 };
 
 #endif // TEAMROBOT_H

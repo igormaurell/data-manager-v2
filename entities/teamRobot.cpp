@@ -1,7 +1,7 @@
 #include "teamRobot.h"
 
 /*Constructor*/
-TeamRobot::TeamRobot(int _id): Robot(_id),capacitor_charge(0.f), batery_charge(0.f), orientation(0.f),
+TeamRobot::TeamRobot(int _id): Robot(_id),capacitor_charge(0.f), batery_charge(0.f),
     skill(""), tactic(""), kick_type(LOW), kick_power(0.0), dribbler_velocity(0.0)
 {
     state = Mat_<float>(9,1);
@@ -12,8 +12,8 @@ TeamRobot::TeamRobot(int _id): Robot(_id),capacitor_charge(0.f), batery_charge(0
 /*Setters*/
 void TeamRobot::setVisionData(visionRobot &vision_robot)
 {
-    for(int i = 0 ; i < 3 ; i++) state[i][0]= vision_robot.pose[i-3][0];
-    for(int i = 0 ; i < 3 ; i++) deltat_state[i][0]= vision_robot.time;
+    for(int i = 0 ; i < 3 ; i++) state[i][0] = vision_robot.pose[i][0];
+    for(int i = 0 ; i < 3 ; i++) deltat_state[i][0] = vision_robot.time;
 }
 void TeamRobot::setFeedbackData(feedbackRobot& feedback_robot)
 {
@@ -63,9 +63,4 @@ float TeamRobot::getCapacitorCharge()
 float TeamRobot::getBateryCharge()
 {
     return batery_charge;
-}
-
-float TeamRobot::getOrientetion()
-{
-    return orientation;
 }

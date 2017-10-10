@@ -1,9 +1,11 @@
 #include "visionManager.h"
 
 /*Constructor*/
-VisionManager::VisionManager(Ball* _ball, vector<TeamRobot*>& _team, vector<EnemyRobot*>& _enemy): ball(_ball), team(_team),
+VisionManager::VisionManager(Ball* _ball, vector<TeamRobot*> _team, vector<EnemyRobot*> _enemy): ball(_ball), team(_team),
     enemy(_enemy)
-{}
+{
+    resetVisionData();
+}
 
 bool VisionManager::allFieldRead()
 {
@@ -26,6 +28,8 @@ bool VisionManager::readVisionData(const SSL_DetectionFrame& package)
     }
     else return false;
 
+    cout<<"Camera valida"<<endl;
+
     /*Ball*/
     SSL_DetectionBall aux_ball;
     int num_balls;
@@ -41,6 +45,8 @@ bool VisionManager::readVisionData(const SSL_DetectionFrame& package)
             ball_v.found = true;
         }
     }
+
+    cout<<"Bola lida"<<endl;
 
     /*Robots*/
     SSL_DetectionRobot aux_robot;
@@ -58,6 +64,8 @@ bool VisionManager::readVisionData(const SSL_DetectionFrame& package)
         }
     }
 
+    cout<<"Robos azuis lidos"<<endl;
+
     num_robots = package.robots_yellow_size();
     for(i = 0;i<num_robots;i++){
         aux_robot = package.robots_yellow(i);
@@ -70,6 +78,9 @@ bool VisionManager::readVisionData(const SSL_DetectionFrame& package)
             yellow_v[aux_robot.robot_id()].found = true;
         }
     }
+
+    cout<<"Robos amarelos lidos"<<endl;
+    cout<<"Leitura Feita"<<endl;
 
     if(allFieldRead()){
         frame_number = package.frame_number();
@@ -99,7 +110,7 @@ void VisionManager::updateEntities()
     }
     /*Robots*/
     //TEAM_COLOR going to be picked up from the interface
-    if(Config::control.team_color==Blue){
+    if(Config::control.team_color == ControlPackage::Blue){
         int i;
         for(i = 0 ; i<NUM_MAX_ROBOTS ; i++){
             if(blue_v[i].found){
@@ -126,6 +137,8 @@ void VisionManager::updateEntities()
         for(i = 0 ; i<NUM_MAX_ROBOTS ; i++){
             if(yellow_v[i].found){
                 team[i]++;
+                cout<<"x = "<<yellow_v[i].pose[0][0]<<" y = "<<yellow_v[i].pose[1][0]<<" o = "<<yellow_v[i].pose[2][0]<<endl;
+                cout<<"time = "<<yellow_v[i].time<<endl;
                 team[i]->setVisionData(yellow_v[i]);
             }
             else{
@@ -136,7 +149,7 @@ void VisionManager::updateEntities()
         for(i = 0 ; i<NUM_MAX_ROBOTS ; i++){
             if(blue_v[i].found){
                 enemy[i]++;
-                enemy[i]->setVisionData(blue_v[i]);
+                //enemy[i]->setVisionData(blue_v[i]);
             }
             else{
                 enemy[i]--;

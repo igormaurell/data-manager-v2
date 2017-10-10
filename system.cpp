@@ -123,11 +123,11 @@ void System::readVisionData()
 
         if(package.has_detection()) {
             SSL_DetectionFrame frame_package;
-            frame_package.CopyFrom(package);
+            frame_package.CopyFrom(package.detection());
 
             if(vision_manager->readVisionData(frame_package)) {
 
-                sendAIData();
+                //sendAIData();
             }
         }
         cout<<"Leitura finalizada."<<endl;
