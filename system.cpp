@@ -32,6 +32,10 @@ System::System()
 System::~System()
 {
     stop();
+
+    delete ai_manager;
+    delete feedback_manager;
+    delete ai_manager;
 }
 
 void System::start()

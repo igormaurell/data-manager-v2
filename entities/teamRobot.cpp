@@ -4,20 +4,26 @@
 TeamRobot::TeamRobot(int _id): Robot(_id),capacitor_charge(0.f), batery_charge(0.f),
     skill(""), tactic(""), kick_type(LOW), kick_power(0.0), dribbler_velocity(0.0)
 {
-    state = Mat_<float>(9,1);
-    deltat_state = Mat_<float>(9,1);
-    command = Mat_<float>(3,1);
+    state = Mat_<float>(8,1,0.f);
+    observation = Mat_<float>(8,1,0.f);
+    deltat_state = Mat_<float>(8,1,0.f);
+    H = Mat(8,8,CV_8UC1,Scalar(0));
+    command = Mat_<float>(3,1,0.f);
 }
 
 /*Setters*/
 void TeamRobot::setVisionData(visionRobot &vision_robot)
 {
-    for(int i = 0 ; i < 3 ; i++) state[i][0] = vision_robot.pose[i][0];
-    for(int i = 0 ; i < 3 ; i++) deltat_state[i][0] = vision_robot.time;
+    cout<<"IN"<<endl;
+    cout<<vision_robot.confidence<<endl;
+    cout<<"x = "<<vision_robot.pose[0][0]<<" y = "<<vision_robot.pose[1][0]<<" o = "<<vision_robot.pose[2][0]<<endl;
+    for(int i = 0 ; i < vision_robot.pose.rows - 1 ; i++) observation[i][0] = vision_robot.pose[i][0];
+    for(int i = 0 ; i < deltat_state.rows ; i++) deltat_state[i][0] = vision_robot.time;
+    confidence = vision_robot.confidence;
 }
 void TeamRobot::setFeedbackData(feedbackRobot& feedback_robot)
 {
-    for(int i = 3 ; i < state.rows ; i++) state[i][0]= feedback_robot.state[i-3][0];
+    for(int i = 3 ; i < state.rows ; i++) observation[i][0]= feedback_robot.state[i-3][0];
     for(int i = 3 ; i < deltat_state.rows ; i++) deltat_state[i][0]= feedback_robot.time;
     capacitor_charge = feedback_robot.capacitor_charge;
     batery_charge = feedback_robot.batery_charge;

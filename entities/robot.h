@@ -5,7 +5,7 @@
 #include "definitions.h"
 
 struct visionRobot{
-    visionRobot(): found(false), confidence(0.f), time(0.f){ pose = Mat_<float>(3,1); }
+    visionRobot(): time(0.f), confidence(0.f), found(false){ pose = Mat_<float>(3,1); }
     Mat_<float> pose;
     float time;
     float confidence;
@@ -23,7 +23,7 @@ private:
 
 protected:
     /*Final data*/
-    Mat_<float> pose; //final pose (after kalman or particle-filter)
+    Mat_<float> state;
     float confidence;
 
 public:
@@ -33,8 +33,11 @@ public:
 
     /*Getters*/
     int getId();
-    Mat_<float> getPose();
+    Mat_<float> getState();
     float getconfidence();
+
+    /*Setters*/
+    virtual void setVisionData(visionRobot &vision_robot) = 0;
 
     /*Control methods*/
     bool found(); //verify if the robot is playing

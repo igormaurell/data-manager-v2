@@ -15,8 +15,8 @@ class VisionManager
 {
 private:
     Ball* ball;
-    vector<EnemyRobot*> enemy;
     vector<TeamRobot*> team;
+    vector<EnemyRobot*> enemy;
 
     visionBall ball_v;
     vector<visionRobot> blue_v;
