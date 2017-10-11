@@ -27,6 +27,7 @@ void NetworkConfig::load(const json file)
 }
 
 ostream& operator <<(ostream& out, NetworkConfig network){
+    return out;
 }
 
 ControlConfig::ControlConfig(): field_side(ControlPackage::Left), team_color(ControlPackage::Yellow), id_gk(0)

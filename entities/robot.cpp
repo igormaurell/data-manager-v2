@@ -1,7 +1,7 @@
 #include "robot.h"
 
 /*Constructor*/
-Robot::Robot(int _id): id(_id), confidence(0.f), frames_in(0), frames_out(0){}
+Robot::Robot(int _id): id(_id), frames_in(0), frames_out(0), confidence(0.f){}
 
 Robot::operator RobotPackage() const
 {
@@ -40,13 +40,13 @@ bool Robot::found()
     }
 }
 
-void Robot::operator ++()
+void Robot::frameInside()
 {
     frames_out = 0;
     frames_in++;
 }
 
-void Robot::operator --()
+void Robot::frameOutside()
 {
     frames_in = 0;
     frames_out++;

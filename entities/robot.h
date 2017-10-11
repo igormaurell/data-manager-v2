@@ -5,7 +5,7 @@
 #include "definitions.h"
 
 struct visionRobot{
-    visionRobot(): time(0.f), confidence(0.f), found(false){ pose = Mat_<float>(3,1); }
+    visionRobot(): time(0.f), confidence(0.f), found(false){ pose = Mat_<float>(3,1,0.f); }
     Mat_<float> pose;
     float time;
     float confidence;
@@ -23,8 +23,8 @@ private:
 
 protected:
     /*Final data*/
-    Mat_<float> state;
     float confidence;
+    Mat_<float> state;
 
 public:
     Robot(int id);
@@ -41,8 +41,8 @@ public:
 
     /*Control methods*/
     bool found(); //verify if the robot is playing
-    void operator ++(); //increases frames_in and put 0 on frames_out
-    void operator --(); //increases frames_out and put 0 on frames_in
+    void frameInside(); //increases frames_in and put 0 on frames_out
+    void frameOutside(); //increases frames_out and put 0 on frames_in
 };
 
 #endif // ROBOT_H

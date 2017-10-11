@@ -3,6 +3,8 @@
 /*Constructor*/
 VisionManager::VisionManager(Ball* _ball, vector<TeamRobot*> _team, vector<EnemyRobot*> _enemy): ball(_ball), team(_team), enemy(_enemy)
 {
+    blue_v = vector<visionRobot>(NUM_MAX_ROBOTS);
+    yellow_v = vector<visionRobot>(NUM_MAX_ROBOTS);
     resetVisionData();
 }
 
@@ -33,7 +35,7 @@ bool VisionManager::readVisionData(const SSL_DetectionFrame& package)
     int num_balls;
     num_balls = package.balls_size();
     int i;
-    for(i = 0;i<num_balls;i++){
+    for(i = 0 ; i<num_balls ; i++){
         aux_ball = package.balls(i);
         if(aux_ball.confidence()>ball_v.confidence){
             ball_v.pose[0][0] = aux_ball.x();
@@ -47,29 +49,32 @@ bool VisionManager::readVisionData(const SSL_DetectionFrame& package)
     /*Robots*/
     SSL_DetectionRobot aux_robot;
     int num_robots;
+    int robot_id;
     num_robots = package.robots_blue_size();
-    for(i = 0;i<num_robots;i++){
+    for(i = 0 ; i<num_robots ; i++){
         aux_robot = package.robots_blue(i);
-        if(aux_robot.confidence()>blue_v[aux_robot.robot_id()].confidence){
-            blue_v[aux_robot.robot_id()].pose[0][0] = aux_robot.x();
-            blue_v[aux_robot.robot_id()].pose[1][0] = aux_robot.y();
-            blue_v[aux_robot.robot_id()].pose[2][0] = aux_robot.orientation();
-            blue_v[aux_robot.robot_id()].time = Clock::calculateDeltaT();
-            blue_v[aux_robot.robot_id()].confidence = aux_robot.confidence();
-            blue_v[aux_robot.robot_id()].found = true;
+        robot_id = aux_robot.robot_id();
+        if(aux_robot.confidence()>blue_v[robot_id].confidence){
+            blue_v[robot_id].pose[0][0] = aux_robot.x();
+            blue_v[robot_id].pose[1][0] = aux_robot.y();
+            blue_v[robot_id].pose[2][0] = aux_robot.orientation();
+            blue_v[robot_id].time = Clock::calculateDeltaT();
+            blue_v[robot_id].confidence = aux_robot.confidence();
+            blue_v[robot_id].found = true;
         }
     }
 
     num_robots = package.robots_yellow_size();
-    for(i = 0;i<num_robots;i++){
+    for(i = 0 ; i<num_robots ; i++){
         aux_robot = package.robots_yellow(i);
-        if(aux_robot.confidence()>yellow_v[aux_robot.robot_id()].confidence){
-            yellow_v[aux_robot.robot_id()].pose[0][0] = aux_robot.x();
-            yellow_v[aux_robot.robot_id()].pose[1][0] = aux_robot.y();
-            yellow_v[aux_robot.robot_id()].pose[2][0] = aux_robot.orientation();
-            yellow_v[aux_robot.robot_id()].time = Clock::calculateDeltaT();
-            yellow_v[aux_robot.robot_id()].confidence = aux_robot.confidence();
-            yellow_v[aux_robot.robot_id()].found = true;
+        robot_id = aux_robot.robot_id();
+        if(aux_robot.confidence()>yellow_v[robot_id].confidence){
+            yellow_v[robot_id].pose[0][0] = aux_robot.x();
+            yellow_v[robot_id].pose[1][0] = aux_robot.y();
+            yellow_v[robot_id].pose[2][0] = aux_robot.orientation();
+            yellow_v[robot_id].time = Clock::calculateDeltaT();
+            yellow_v[robot_id].confidence = aux_robot.confidence();
+            yellow_v[robot_id].found = true;
         }
     }
 
@@ -87,8 +92,10 @@ void VisionManager::resetVisionData()
 {
     read_cameras = vector<bool>(NUM_CAMERAS, false);
 
-    blue_v = vector<visionRobot>(NUM_MAX_ROBOTS, visionRobot());
-    yellow_v = vector<visionRobot>(NUM_MAX_ROBOTS, visionRobot());
+    for(int i = 0 ; i < NUM_MAX_ROBOTS ; i++){
+        blue_v[i] = visionRobot();
+        yellow_v[i] = visionRobot();
+    }
 
     ball_v = visionBall();
 }
@@ -97,6 +104,7 @@ void VisionManager::updateEntities()
 {
     /*Ball*/
     if(ball_v.found){
+        cout<<"-ball-"<<endl;
         ball->setVisionData(ball_v);
     }
     /*Robots*/
@@ -105,21 +113,25 @@ void VisionManager::updateEntities()
         int i;
         for(i = 0 ; i<NUM_MAX_ROBOTS ; i++){
             if(blue_v[i].found){
+                cout<<"-team-"<<endl;
+                cout<<"robot: "<<i<<endl;
                 team[i]->setVisionData(blue_v[i]);
-                //team[i]++;
+                team[i]->frameInside();
             }
             else{
-                //team[i]--;
+                team[i]->frameOutside();
             }
         }
 
         for(i = 0 ; i<NUM_MAX_ROBOTS ; i++){
             if(yellow_v[i].found){
+                cout<<"-enemy-"<<endl;
+                cout<<"robot: "<<i<<endl;
                 enemy[i]->setVisionData(yellow_v[i]);
-                //enemy[i]++;
+                enemy[i]->frameInside();
             }
             else{
-                //enemy[i]--;
+                enemy[i]->frameOutside();
             }
         }
     }
@@ -127,23 +139,25 @@ void VisionManager::updateEntities()
         int i;
         for(i = 0 ; i<NUM_MAX_ROBOTS ; i++){
             if(yellow_v[i].found){
-                cout<<"x = "<<yellow_v[i].pose[0][0]<<" y = "<<yellow_v[i].pose[1][0]<<" o = "<<yellow_v[i].pose[2][0]<<endl;
-                cout<<"time = "<<yellow_v[i].time<<endl;
+                cout<<"-team-"<<endl;
+                cout<<"robot: "<<i<<endl;
                 team[i]->setVisionData(yellow_v[i]);
-                //team[i]++;
+                team[i]->frameInside();
             }
             else{
-                team[i]--;
+                team[i]->frameOutside();
             }
         }
 
         for(i = 0 ; i<NUM_MAX_ROBOTS ; i++){
             if(blue_v[i].found){
+                cout<<"-enemy-"<<endl;
+                cout<<"robot: "<<i<<endl;
                 enemy[i]->setVisionData(blue_v[i]);
-                //enemy[i]++;
+                enemy[i]->frameInside();
             }
             else{
-                //enemy[i]--;
+                enemy[i]->frameOutside();
             }
         }
 

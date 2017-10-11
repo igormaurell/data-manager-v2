@@ -14,8 +14,6 @@ TeamRobot::TeamRobot(int _id): Robot(_id),capacitor_charge(0.f), batery_charge(0
 /*Setters*/
 void TeamRobot::setVisionData(visionRobot &vision_robot)
 {
-    cout<<"IN"<<endl;
-    cout<<vision_robot.confidence<<endl;
     cout<<"x = "<<vision_robot.pose[0][0]<<" y = "<<vision_robot.pose[1][0]<<" o = "<<vision_robot.pose[2][0]<<endl;
     for(int i = 0 ; i < vision_robot.pose.rows - 1 ; i++) observation[i][0] = vision_robot.pose[i][0];
     for(int i = 0 ; i < deltat_state.rows ; i++) deltat_state[i][0] = vision_robot.time;
