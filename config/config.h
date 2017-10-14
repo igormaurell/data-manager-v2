@@ -16,8 +16,6 @@ public:
     NetworkConfig();
     void load(const json file);
 
-    friend ostream& operator <<(ostream& out, NetworkConfig network);
-
     string ai_ip;
     int ai_receive_port;
     int ai_send_port;

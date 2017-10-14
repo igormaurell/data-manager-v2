@@ -16,8 +16,8 @@ INCLUDEPATH += managers/vision-manager \
                managers/ai-manager \
                entities \
                utils \
-               proto-lib \
 	       config
+INCLUDEPATH += ../proto-lib
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked as deprecated (the exact warnings
@@ -56,7 +56,7 @@ HEADERS += mainwindow.h \
     	   system.h \
            managers/ai-manager/aiManager.h
 
-LIBS += -L$$PWD/proto-lib -lproto
+LIBS += -L../proto-lib -lproto
 LIBS += -lprotobuf `pkg-config --libs opencv`
 
 FORMS    += mainwindow.ui

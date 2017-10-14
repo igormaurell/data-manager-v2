@@ -1,5 +1,0 @@
-message AIVariablesPackage {
-	repeated string component = 1;
-	repeated string component_name = 2;
-	repeated string component_value = 3;	
-}
