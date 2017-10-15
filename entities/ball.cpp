@@ -20,7 +20,7 @@ void Ball::setVisionData(visionBall& vision_ball)
 {
     pose = vision_ball.pose.clone();
 
-    cout<<"x = "<<pose[0][0]<<" y = "<<pose[1][0]<<" z = "<<pose[2][0]<<endl;
+    //cout<<"x = "<<pose[0][0]<<" y = "<<pose[1][0]<<" z = "<<pose[2][0]<<endl;
     confidence = vision_ball.confidence;
 }
 

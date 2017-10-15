@@ -30,7 +30,6 @@ private:
     VisionManager *vision_manager;
 
     SSL_Referee referee_data;
-    VisionPackage vision_data;
 
 private slots:
     void readAIData();

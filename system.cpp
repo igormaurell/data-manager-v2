@@ -84,8 +84,24 @@ void System::sendAIData()
 {
     QByteArray data;
     DataPackage package;
+    VisionPackage vision_data;
     int ans;
+
+    vision_manager->mountVisionPackage(vision_data);
     package.mutable_vision()->CopyFrom(vision_data);
+    RobotPackage robot;
+    cout<<"---team---"<<endl;
+    for(int i = 0 ; i < vision_data.team_size() ; i++){
+        robot = vision_data.team(i);
+        cout<<"ID: "<<robot.id()<<endl;
+        cout<<"x: "<<robot.x()<<" y: "<<robot.y()<<" o: "<<robot.orientation()<<endl;
+    }
+    cout<<"---enemy---"<<endl;
+    for(int i = 0 ; i < vision_data.enemy_size() ; i++){
+        robot = vision_data.enemy(i);
+        cout<<"ID: "<<robot.id()<<endl;
+        cout<<"x: "<<robot.x()<<" y: "<<robot.y()<<" o: "<<robot.orientation()<<endl;;
+    }
     package.mutable_referee()->CopyFrom(referee_data);
     ControlPackage* control_data = package.mutable_control();
     control_data->set_field_side(Config::control.field_side);
@@ -130,8 +146,7 @@ void System::readVisionData()
             frame_package.CopyFrom(package.detection());
 
             if(vision_manager->readVisionData(frame_package)) {
-
-                //sendAIData();
+                sendAIData();
             }
         }
         cout<<"Leitura finalizada."<<endl;

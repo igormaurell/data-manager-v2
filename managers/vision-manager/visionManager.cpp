@@ -72,6 +72,7 @@ bool VisionManager::readVisionData(const SSL_DetectionFrame& package)
             yellow_v[robot_id].pose[0][0] = aux_robot.x();
             yellow_v[robot_id].pose[1][0] = aux_robot.y();
             yellow_v[robot_id].pose[2][0] = aux_robot.orientation();
+            //cout<<aux_robot.orientation()<<endl;
             yellow_v[robot_id].time = Clock::calculateDeltaT();
             yellow_v[robot_id].confidence = aux_robot.confidence();
             yellow_v[robot_id].found = true;
@@ -104,7 +105,7 @@ void VisionManager::updateEntities()
 {
     /*Ball*/
     if(ball_v.found){
-        cout<<"-ball-"<<endl;
+        //cout<<"-ball-"<<endl;
         ball->setVisionData(ball_v);
     }
     /*Robots*/
@@ -113,9 +114,10 @@ void VisionManager::updateEntities()
         int i;
         for(i = 0 ; i<NUM_MAX_ROBOTS ; i++){
             if(blue_v[i].found){
-                cout<<"-team-"<<endl;
-                cout<<"robot: "<<i<<endl;
+                //cout<<"-team-"<<endl;
+                //cout<<"robot: "<<i<<endl;
                 team[i]->setVisionData(blue_v[i]);
+                team[i]->kalmanFilter();
                 team[i]->frameInside();
             }
             else{
@@ -125,8 +127,8 @@ void VisionManager::updateEntities()
 
         for(i = 0 ; i<NUM_MAX_ROBOTS ; i++){
             if(yellow_v[i].found){
-                cout<<"-enemy-"<<endl;
-                cout<<"robot: "<<i<<endl;
+                //cout<<"-enemy-"<<endl;
+                //cout<<"robot: "<<i<<endl;
                 enemy[i]->setVisionData(yellow_v[i]);
                 enemy[i]->frameInside();
             }
@@ -139,9 +141,10 @@ void VisionManager::updateEntities()
         int i;
         for(i = 0 ; i<NUM_MAX_ROBOTS ; i++){
             if(yellow_v[i].found){
-                cout<<"-team-"<<endl;
-                cout<<"robot: "<<i<<endl;
+                //cout<<"-team-"<<endl;
+                //cout<<"robot: "<<i<<endl;
                 team[i]->setVisionData(yellow_v[i]);
+                team[i]->kalmanFilter();
                 team[i]->frameInside();
             }
             else{
@@ -151,8 +154,8 @@ void VisionManager::updateEntities()
 
         for(i = 0 ; i<NUM_MAX_ROBOTS ; i++){
             if(blue_v[i].found){
-                cout<<"-enemy-"<<endl;
-                cout<<"robot: "<<i<<endl;
+                //cout<<"-enemy-"<<endl;
+                //cout<<"robot: "<<i<<endl;
                 enemy[i]->setVisionData(blue_v[i]);
                 enemy[i]->frameInside();
             }

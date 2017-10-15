@@ -49,6 +49,8 @@ public:
     /*Getters*/
     float getCapacitorCharge();
     float getBateryCharge();
+
+    void kalmanFilter();
 };
 
 #endif // TEAMROBOT_H
